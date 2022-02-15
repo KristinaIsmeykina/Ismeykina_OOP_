@@ -9,7 +9,6 @@ namespace Model
 {
     public class Person
     {
-
         private string _name;
         private string _surname;
         private int _age;
@@ -85,7 +84,6 @@ namespace Model
                 const int MinAge = 1;
                 const int MaxAge = 120;
                 if (value < MinAge || value > MaxAge)
-
                 {
                     throw new ArgumentException($"Значение должно находится в диапазоне:" +
                         $" {MinAge} - {MaxAge}");
@@ -183,6 +181,5 @@ namespace Model
                 return $"{Name} {Surname} {Age} {Gender}";
             }
         }
-
     }
 }

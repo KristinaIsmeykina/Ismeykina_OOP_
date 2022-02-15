@@ -26,8 +26,15 @@ namespace Model
         /// </summary>
         public void DeleteLast()
         {
-            int count = _personList.Length;
-            Array.Resize(ref _personList, count - 1);
+            if (_personList.Length>0)
+            {
+                int count = _personList.Length;
+                Array.Resize(ref _personList, count - 1);
+            }
+            else
+            {
+                throw new Exception("Список пуст");
+            }
         }
 
         /// <summary>
@@ -36,13 +43,18 @@ namespace Model
         /// <param name="index"> индекс человека</param>
         public void DeletePersonByIndex(int index)
         {
+           
             int count = _personList.Length;
+            if ((index+1 > count)|| (index<0))
+            {
+                throw new Exception("Такого индекса нет");
+            }
             Person[] tmpPersonList = _personList;
             int tmpIndex = 0;
             _personList = new Person[count - 1];
             for (int i = 0; i < count; i++)
             {
-                if (i != count)
+                if (i != index)
                 {
                     _personList[tmpIndex] = tmpPersonList[i];
                     tmpIndex++;

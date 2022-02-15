@@ -11,6 +11,5 @@ namespace Model
         Male,
         Female,
         Unknown
-
     }
 }

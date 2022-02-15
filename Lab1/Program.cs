@@ -94,8 +94,11 @@ namespace View
                " 2 - Female ");
 
         }
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="action">выполняемое действие</param>
+        /// <param name="inputMessage"> Сообщение, отображаемое в консоли</param>
         private static void ActionHandler(Action action, string inputMessage)
         {
             while (true)
