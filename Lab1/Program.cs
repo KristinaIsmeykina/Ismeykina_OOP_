@@ -9,7 +9,7 @@ namespace View
 {
     public class Program
     {
-        static public void Main(string[] args)
+        public static void Main(string[] args)
         {
             List<string> names = new List<string>
             {
@@ -92,8 +92,9 @@ namespace View
             ActionHandler(action4, "Введите пол человека:" +
                " 1 -  Male " +
                " 2 - Female ");
-
+            return personRead;
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -116,13 +117,14 @@ namespace View
                 }
             }
         }
+
         /// <summary>
         /// Выводит на экран персон списка
         /// </summary>
         /// <param name="list"> Список персон</param>
         static void GetAllPerson(PersonList list)
         {
-            for (int i = 0; i < list.Length; i++)
+            for (int i = 0; i < list.Length(); i++)
             {
                 Console.WriteLine(list.GetPersonByIndex(i).Info);
             }

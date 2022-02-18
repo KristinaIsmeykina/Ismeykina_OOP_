@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    //TODO: XML
     public class Person
     {
         private string _name;
@@ -15,64 +16,34 @@ namespace Model
 
         public string Name
         {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                if (String.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Значение не может быть пустым");
-                }
-
-                if (ValidName(value) != true)
-                {
-                    throw new ArgumentException("Значение должно содержать только" +
-                        " латинские или только аншлийские символы");
-                }
-                if (CheckFirstLetter(value) != true)
-                {
-                    _name = ChangeFirstLetter(value);
-                    Console.WriteLine(" Значение изменено");
-                }
-                else
-                {
-                    _name = value;
-                }
-            }
+            get => _name;
+            set => _name = CheckValue(value);
         }
 
         public string Surname
         {
-            get
-            {
-                return _surname;
-            }
-            set
-            {
-                if (String.IsNullOrEmpty(value))
-                {
-                    throw new ArgumentException("Значение не может быть пустым");
-                }
-
-                if (ValidName(value) != true)
-                {
-                    throw new ArgumentException("Значение должно содержать только" +
-                        " латинские или только английские символы");
-                }
-                if (CheckFirstLetter(value) != true)
-                {
-                    _surname = ChangeFirstLetter(value);
-                    Console.WriteLine(" Значение изменено");
-                }
-                else
-                {
-                    _surname = value;
-                }
-
-            }
+            get => _surname;
+            set => _surname = CheckValue(value);
         }
+
+
+        private string CheckValue(string inputValue)
+        {
+            if (String.IsNullOrEmpty(inputValue))
+            {
+                throw new ArgumentException("Значение не может быть пустым");
+            }
+
+            if (!ValidName(inputValue))
+            {
+                throw new ArgumentException("Значение должно содержать только" +
+                                            " латинские или только аншлийские символы");
+            }
+            return !CheckFirstLetter(inputValue) 
+                ? ChangeFirstLetter(inputValue) 
+                : inputValue;
+        }
+
         public int Age
         {
             get
@@ -81,6 +52,7 @@ namespace Model
             }
             set
             {
+                //TODO: RSDN
                 const int MinAge = 1;
                 const int MaxAge = 120;
                 if (value < MinAge || value > MaxAge)
@@ -91,6 +63,7 @@ namespace Model
                 _age = value;
             }
         }
+
         public GenderPerson Gender { get; set; }
 
         /// <summary>
@@ -107,6 +80,7 @@ namespace Model
             Age = age;
             Gender = gender;
         }
+
 
         public Person() : this("", "", 0, GenderPerson.Unknown)
         { }
@@ -154,6 +128,7 @@ namespace Model
         /// <returns></returns>
         public string ChangeFirstLetter(string input)
         {
+            //TODO: RSDN
             return input.Substring(0, 1).ToUpper() + input.Substring(1, input.Length - 1).ToLower();
         }
 
@@ -166,7 +141,9 @@ namespace Model
         public static Person GetRandomPerson(List<string> names, List<string> surnames)
         {
             Random rnd = new Random();
+            //TODO: RSDN
             Person person = new Person(names[rnd.Next(0, names.Count() - 1)],
+                //TODO: to const
                 surnames[rnd.Next(0, surnames.Count() - 1)], rnd.Next(1, 120), GenderPerson.Male);
             return person;
         }
@@ -174,12 +151,6 @@ namespace Model
         /// <summary>
         /// Получает информацию о человеке
         /// </summary>
-        public string Info
-        {
-            get
-            {
-                return $"{Name} {Surname} {Age} {Gender}";
-            }
-        }
+        public string Info => $"{Name} {Surname} {Age} {Gender}";
     }
 }

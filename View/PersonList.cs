@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model
 {
+    //TODO: XML
     public class PersonList
     {
         private Person[] _personList = new Person[0];
@@ -45,7 +42,8 @@ namespace Model
         {
            
             int count = _personList.Length;
-            if ((index+1 > count)|| (index<0))
+
+            if ((index + 1 > count)|| (index<0))
             {
                 throw new Exception("Такого индекса нет");
             }
@@ -79,6 +77,7 @@ namespace Model
         /// <returns></returns>
         public Person GetPersonByIndex(int index)
         {
+            //TODO: 
             return _personList[index];
         }
 
