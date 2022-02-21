@@ -11,9 +11,8 @@ namespace View
     {
         public static void Main(string[] args)
         {
-            //Console.OutputEncoding = Encoding.UTF8;
-            //Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            //Console.InputEncoding = Encoding.GetEncoding(1251);
+            Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
 
             List<string> names = new List<string>
             {
@@ -148,6 +147,11 @@ namespace View
                     Console.WriteLine(e.Message);
                     Console.WriteLine("Try again!");
                 }
+                //catch (FormatException e)
+                //{
+                //    Console.WriteLine(e.Message);
+                //    Console.WriteLine("Try again!");
+                //}
             }
         }
 
