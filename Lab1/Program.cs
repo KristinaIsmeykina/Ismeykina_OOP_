@@ -100,7 +100,8 @@ namespace View
 
             Action action4 = () =>
             {
-                int personReadGender = Convert.ToInt32(Console.ReadLine());
+                int personReadGender;
+                int.TryParse(Console.ReadLine(), out personReadGender);
                 switch (personReadGender)
                 {
                     case 1:
