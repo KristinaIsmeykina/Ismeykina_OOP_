@@ -63,11 +63,10 @@ namespace Model
             if (!ValidName(inputValue))
             {
                 throw new ArgumentException("Значение должно содержать только" +
-                                    " латинские или только аншлийские символы");
+                                    " латинские или только английские символы");
             }
-            return !CheckFirstLetter(inputValue) 
-                ? ChangeFirstLetter(inputValue) 
-                : inputValue;
+            return ChangeFirstLetter(inputValue); 
+            
         }
 
         /// <summary>
@@ -136,20 +135,6 @@ namespace Model
             return false;
         }
 
-        /// <summary>
-        /// Проверяет, является ли первая буква заглавной
-        /// </summary>
-        /// <param name="input"> строка для проверки</param>
-        /// <returns></returns>
-        public static bool CheckFirstLetter(string input)
-        {
-            Regex regexFirstLetter = new Regex(@"^[А-Я]|[A-Z]$");
-            if (regexFirstLetter.IsMatch(input.Substring(0, 1)))
-            {
-                return true;
-            }
-            return false;
-        }
 
         /// <summary>
         /// Изменяет первую букву на заглавную

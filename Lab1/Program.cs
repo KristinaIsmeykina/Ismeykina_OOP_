@@ -11,6 +11,10 @@ namespace View
     {
         public static void Main(string[] args)
         {
+            //Console.OutputEncoding = Encoding.UTF8;
+            //Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            //Console.InputEncoding = Encoding.GetEncoding(1251);
+
             List<string> names = new List<string>
             {
                 "Anatoliy", "Anton", "Boris", "Vadim", "Viktor", "Vitaly",
@@ -80,19 +84,19 @@ namespace View
             {
                 personRead.Name = Console.ReadLine();
             };
-            ActionHandler(action1, "Enter name of person");
+            ActionHandler(action1, "Введите имя человека");
 
             Action action2 = () =>
             {
                 personRead.Surname = Console.ReadLine();
             };
-            ActionHandler(action2, "Enter name of person");
+            ActionHandler(action2, "Введите фамилию человека");
 
             Action action3 = () =>
             {
                 personRead.Age = int.Parse(Console.ReadLine());
             };
-            ActionHandler(action3, "Enter age of person");
+            ActionHandler(action3, "Введите возраст человека");
 
             Action action4 = () =>
             {
