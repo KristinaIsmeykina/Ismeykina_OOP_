@@ -3,6 +3,9 @@
 namespace Model
 {
     //TODO: XML
+    /// <summary>
+    /// Класс: список Person
+    /// </summary>
     public class PersonList
     {
         private Person[] _personList = new Person[0];
@@ -43,10 +46,7 @@ namespace Model
            
             int count = _personList.Length;
 
-            if ((index + 1 > count)|| (index<0))
-            {
-                throw new Exception("Такого индекса нет");
-            }
+            CheckValidIndex(index);
             Person[] tmpPersonList = _personList;
             int tmpIndex = 0;
             _personList = new Person[count - 1];
@@ -57,6 +57,16 @@ namespace Model
                     _personList[tmpIndex] = tmpPersonList[i];
                     tmpIndex++;
                 }
+            }
+        }
+
+        public void CheckValidIndex(int index)
+        {
+            int count = _personList.Length;
+
+            if ((index + 1 > count) || (index < 0))
+            {
+                throw new Exception("Такого индекса нет");
             }
         }
 
@@ -78,6 +88,7 @@ namespace Model
         public Person GetPersonByIndex(int index)
         {
             //TODO: 
+            CheckValidIndex(index);
             return _personList[index];
         }
 

@@ -39,6 +39,34 @@ namespace View
             GetAllPerson(personList1);
             Console.WriteLine("Выввод персон 2-го списка");
             GetAllPerson(personList2);
+            Console.ReadKey();
+            Console.WriteLine("");
+
+            Console.WriteLine("Добавление новой персоны в 1-ый список");
+            personList1.Add(ReadPerson());
+            Console.ReadKey();
+            Console.WriteLine();
+
+            Console.WriteLine("Копирование 2-го человека из 1-го списка в конец 2-го");
+            personList2.Add(personList1.GetPersonByIndex(1));
+            GetAllPerson(personList1);
+            GetAllPerson(personList2);
+            Console.ReadKey();
+            Console.WriteLine();
+
+            Console.WriteLine("Удаление 2-го человека из 1-ого списка");
+            personList1.DeletePersonByIndex(1);
+            GetAllPerson(personList1);
+            GetAllPerson(personList2);
+            Console.ReadKey();
+            Console.WriteLine();
+
+            Console.WriteLine("Очистка 2-го списка");
+            personList2.Clear();
+            GetAllPerson(personList1);
+            GetAllPerson(personList2);
+            Console.ReadKey();
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -122,7 +150,7 @@ namespace View
         /// Выводит на экран персон списка
         /// </summary>
         /// <param name="list"> Список персон</param>
-        static void GetAllPerson(PersonList list)
+        public static void GetAllPerson(PersonList list)
         {
             for (int i = 0; i < list.Length(); i++)
             {
@@ -130,5 +158,7 @@ namespace View
             }
 
         }
+
+
     }
 }

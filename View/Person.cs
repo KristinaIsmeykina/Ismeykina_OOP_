@@ -8,25 +8,51 @@ using System.Threading.Tasks;
 namespace Model
 {
     //TODO: XML
+    /// <summary>
+    /// Класс Person
+    /// </summary>
     public class Person
     {
+        public const int MinAge = 1;
+        public const int MaxAge = 120;
+        /// <summary>
+        /// Имя персоны
+        /// </summary>
         private string _name;
+
+        /// <summary>
+        /// Фамилия персоны
+        /// </summary>
         private string _surname;
+
+        /// <summary>
+        /// Возраст персоны
+        /// </summary>
         private int _age;
 
+        /// <summary>
+        /// Свойство для получения и установки имя персоны
+        /// </summary>
         public string Name
         {
             get => _name;
             set => _name = CheckValue(value);
         }
 
+        /// <summary>
+        /// Свойство для получения и установки фамилии персоны
+        /// </summary>
         public string Surname
         {
             get => _surname;
             set => _surname = CheckValue(value);
         }
 
-
+        /// <summary>
+        /// Возвращает правильную строку
+        /// </summary>
+        /// <param name="inputValue">переданная строка</param>
+        /// <returns></returns>
         private string CheckValue(string inputValue)
         {
             if (String.IsNullOrEmpty(inputValue))
@@ -37,33 +63,35 @@ namespace Model
             if (!ValidName(inputValue))
             {
                 throw new ArgumentException("Значение должно содержать только" +
-                                            " латинские или только аншлийские символы");
+                                    " латинские или только аншлийские символы");
             }
             return !CheckFirstLetter(inputValue) 
                 ? ChangeFirstLetter(inputValue) 
                 : inputValue;
         }
 
+        /// <summary>
+        /// Свойство для получения и установки возраста персоны
+        /// </summary>
         public int Age
         {
-            get
-            {
-                return _age;
-            }
+            get => _age;
             set
             {
                 //TODO: RSDN
-                const int MinAge = 1;
-                const int MaxAge = 120;
+
                 if (value < MinAge || value > MaxAge)
                 {
-                    throw new ArgumentException($"Значение должно находится в диапазоне:" +
-                        $" {MinAge} - {MaxAge}");
+                    throw new ArgumentException($"Значение должно находится в диапазоне:"
+                        + $" {MinAge} - {MaxAge}");
                 }
                 _age = value;
             }
         }
 
+        /// <summary>
+        /// Свойство для получения и установки пола персоны
+        /// </summary>
         public GenderPerson Gender { get; set; }
 
         /// <summary>
@@ -81,8 +109,10 @@ namespace Model
             Gender = gender;
         }
 
-
-        public Person() : this("", "", 0, GenderPerson.Unknown)
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
+        public Person() : this("Unknown", "Unknown", 1, GenderPerson.Unknown)
         { }
 
         /// <summary>
@@ -129,7 +159,8 @@ namespace Model
         public string ChangeFirstLetter(string input)
         {
             //TODO: RSDN
-            return input.Substring(0, 1).ToUpper() + input.Substring(1, input.Length - 1).ToLower();
+            return input.Substring(0, 1).ToUpper() + 
+                input.Substring(1, input.Length - 1).ToLower();
         }
 
         /// <summary>
@@ -144,7 +175,8 @@ namespace Model
             //TODO: RSDN
             Person person = new Person(names[rnd.Next(0, names.Count() - 1)],
                 //TODO: to const
-                surnames[rnd.Next(0, surnames.Count() - 1)], rnd.Next(1, 120), GenderPerson.Male);
+                surnames[rnd.Next(0, surnames.Count() - 1)], 
+                rnd.Next(MinAge, MaxAge), GenderPerson.Male);
             return person;
         }
 

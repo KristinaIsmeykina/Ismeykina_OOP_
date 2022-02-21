@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 namespace Model
 {
     //TODO: XML
+    /// <summary>
+    /// Список: пол персоны 
+    /// </summary>
     public enum GenderPerson
     {
         Male,
