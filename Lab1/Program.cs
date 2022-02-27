@@ -30,12 +30,12 @@ namespace View
             var personList1 = new PersonList();
             var personList2 = new PersonList();
 
-            Console.WriteLine("Создание 2-х списков по 3 человека" +
+            Console.WriteLine("Создание 2-х списков по 3 человека" + "\n"+
                 "Нажмите любую клавишу");
             for (int i = 0; i < 3; i++)
             {
-                personList1.Add(Person.GetRandomPerson(names, surnames));
-                personList2.Add(Person.GetRandomPerson(names, surnames));
+                personList1.Add(Person.GetRandomPerson(names, surnames, Convert.ToInt32(personList1.Length()) ) );
+                personList2.Add(Person.GetRandomPerson(names, surnames, Convert.ToInt32(personList2.Length())+3 ) );
 
             }
             Console.WriteLine("Выввод персон 1-го списка");
@@ -50,9 +50,17 @@ namespace View
             Console.ReadKey();
             Console.WriteLine();
 
+            GetAllPerson(personList1);
+            Console.WriteLine("-------------");
+            GetAllPerson(personList2);
+            Console.ReadKey();
+            Console.WriteLine();
+
+
             Console.WriteLine("Копирование 2-го человека из 1-го списка в конец 2-го");
             personList2.Add(personList1.GetPersonByIndex(1));
             GetAllPerson(personList1);
+            Console.WriteLine("-------------");
             GetAllPerson(personList2);
             Console.ReadKey();
             Console.WriteLine();
@@ -60,6 +68,7 @@ namespace View
             Console.WriteLine("Удаление 2-го человека из 1-ого списка");
             personList1.DeletePersonByIndex(1);
             GetAllPerson(personList1);
+            Console.WriteLine("-------------");
             GetAllPerson(personList2);
             Console.ReadKey();
             Console.WriteLine();
@@ -67,6 +76,7 @@ namespace View
             Console.WriteLine("Очистка 2-го списка");
             personList2.Clear();
             GetAllPerson(personList1);
+            Console.WriteLine("-------------");
             GetAllPerson(personList2);
             Console.ReadKey();
             Console.WriteLine();
@@ -99,9 +109,8 @@ namespace View
 
             Action action4 = () =>
             {
-                int personReadGender;
-                int.TryParse(Console.ReadLine(), out personReadGender);
-                switch (personReadGender)
+               int personGender= Convert.ToInt32(Console.ReadLine());
+                switch (personGender)
                 {
                     case 1:
                         {
@@ -128,7 +137,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Выполняет действие, иначе выбрасывает исключение
         /// </summary>
         /// <param name="action">выполняемое действие</param>
         /// <param name="inputMessage"> Сообщение, отображаемое в консоли</param>
@@ -142,16 +151,18 @@ namespace View
                     action.Invoke();
                     return;
                 }
-                catch (ArgumentException e)
+                catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
-                    Console.WriteLine("Try again!");
+                    if (e is ArgumentException || e is FormatException)
+                    {
+                        Console.WriteLine(e.Message);
+                        Console.WriteLine("Try again!");
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
-                //catch (FormatException e)
-                //{
-                //    Console.WriteLine(e.Message);
-                //    Console.WriteLine("Try again!");
-                //}
             }
         }
 

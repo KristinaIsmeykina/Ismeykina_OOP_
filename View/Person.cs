@@ -13,8 +13,16 @@ namespace Model
     /// </summary>
     public class Person
     {
+        /// <summary>
+        /// Константа-минимальный возраст персоны
+        /// </summary>
         public const int MinAge = 1;
+
+        /// <summary>
+        /// Константа- максимальный возраст персоны
+        /// </summary>
         public const int MaxAge = 120;
+
         /// <summary>
         /// Имя персоны
         /// </summary>
@@ -154,9 +162,9 @@ namespace Model
         /// <param name="names"> Список рандомных имен</param>
         /// <param name="surnames">Список рандомных фамилий</param>
         /// <returns></returns>
-        public static Person GetRandomPerson(List<string> names, List<string> surnames)
+        public static Person GetRandomPerson(List<string> names, List<string> surnames, int n)
         {
-            Random rnd = new Random();
+            Random rnd = new Random(n);
             //TODO: RSDN
             Person person = new Person(names[rnd.Next(0, names.Count() - 1)],
                 //TODO: to const
