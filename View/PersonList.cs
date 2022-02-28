@@ -2,12 +2,12 @@
 
 namespace Model
 {
-    //TODO: XML
     /// <summary>
     /// Класс: список Person
     /// </summary>
     public class PersonList
     {
+        //TODO: XML
         private Person[] _personList = new Person[0];
 
         /// <summary>
@@ -60,6 +60,7 @@ namespace Model
             }
         }
 
+        //TODO: XML
         public void CheckValidIndex(int index)
         {
             int count = _personList.Length;
@@ -87,7 +88,6 @@ namespace Model
         /// <returns></returns>
         public Person GetPersonByIndex(int index)
         {
-            //TODO: 
             CheckValidIndex(index);
             return _personList[index];
         }

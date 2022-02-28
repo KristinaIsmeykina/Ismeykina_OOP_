@@ -32,10 +32,14 @@ namespace View
 
             Console.WriteLine("Создание 2-х списков по 3 человека" + "\n"+
                 "Нажмите любую клавишу");
+            //TODO: разобраться
+            var rnd = new Random();
+            //TODO: случайное создание
             for (int i = 0; i < 3; i++)
             {
-                personList1.Add(Person.GetRandomPerson(names, surnames, Convert.ToInt32(personList1.Length()) ) );
-                personList2.Add(Person.GetRandomPerson(names, surnames, Convert.ToInt32(personList2.Length())+3 ) );
+                //TODO: RSDN
+                personList1.Add(Person.GetRandomPerson(names, surnames, rnd) );
+                personList2.Add(Person.GetRandomPerson(names, surnames, rnd) );
 
             }
             Console.WriteLine("Выввод персон 1-го списка");
@@ -176,9 +180,6 @@ namespace View
             {
                 Console.WriteLine(list.GetPersonByIndex(i).Info);
             }
-
         }
-
-
     }
 }

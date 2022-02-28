@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    //TODO: XML
     /// <summary>
     /// Класс Person
     /// </summary>
@@ -85,8 +84,6 @@ namespace Model
             get => _age;
             set
             {
-                //TODO: RSDN
-
                 if (value < MinAge || value > MaxAge)
                 {
                     throw new ArgumentException($"Значение должно находится в диапазоне:"
@@ -151,25 +148,22 @@ namespace Model
         /// <returns></returns>
         public string ChangeFirstLetter(string input)
         {
-            //TODO: RSDN
             return input.Substring(0, 1).ToUpper() + 
                 input.Substring(1, input.Length - 1).ToLower();
         }
 
+        //TODO: XML
         /// <summary>
         /// Генерирует человека, использую имена и фамилии из списка
         /// </summary>
         /// <param name="names"> Список рандомных имен</param>
         /// <param name="surnames">Список рандомных фамилий</param>
         /// <returns></returns>
-        public static Person GetRandomPerson(List<string> names, List<string> surnames, int n)
+        public static Person GetRandomPerson(List<string> names, List<string> surnames, Random randomize)
         {
-            Random rnd = new Random(n);
-            //TODO: RSDN
-            Person person = new Person(names[rnd.Next(0, names.Count() - 1)],
-                //TODO: to const
-                surnames[rnd.Next(0, surnames.Count() - 1)], 
-                rnd.Next(MinAge, MaxAge), GenderPerson.Male);
+            Person person = new Person(names[randomize.Next(0, names.Count() - 1)],
+                surnames[randomize.Next(0, surnames.Count() - 1)], 
+                randomize.Next(MinAge, MaxAge), GenderPerson.Male);
             return person;
         }
 
