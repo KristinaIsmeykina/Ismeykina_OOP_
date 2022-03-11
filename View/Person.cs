@@ -12,11 +12,11 @@ namespace Model
     /// </summary>
     public class Person
     {
+       
         /// <summary>
         /// Константа-минимальный возраст персоны
         /// </summary>
         public const int MinAge = 1;
-
         /// <summary>
         /// Константа- максимальный возраст персоны
         /// </summary>
@@ -64,18 +64,18 @@ namespace Model
         {
             if (String.IsNullOrEmpty(inputValue))
             {
-                throw new ArgumentException("Значение не может быть пустым");
+                throw new ArgumentException("Value must not be empty");
             }
 
             if (!ValidName(inputValue))
             {
-                throw new ArgumentException("Значение должно содержать только" +
-                                    " латинские или только английские символы");
+                throw new ArgumentException("Use only latin or cyrilic");
+               
             }
             return ChangeFirstLetter(inputValue); 
             
         }
-
+        
         /// <summary>
         /// Свойство для получения и установки возраста персоны
         /// </summary>
@@ -86,13 +86,12 @@ namespace Model
             {
                 if (value < MinAge || value > MaxAge)
                 {
-                    throw new ArgumentException($"Значение должно находится в диапазоне:"
+                    throw new ArgumentException($"Age must be in range:"
                         + $" {MinAge} - {MaxAge}");
                 }
                 _age = value;
             }
         }
-
         /// <summary>
         /// Свойство для получения и установки пола персоны
         /// </summary>
@@ -125,15 +124,15 @@ namespace Model
         /// </summary>
         /// <param name="input">строка для проверки</param>
         /// <returns></returns>
-        public static bool ValidName(string input)
+        private  bool ValidName(string input)
         {
             Regex regexRUS = new Regex(@"^[А-Яа-я]+\-?([А-Яа-я]+)?$");
             Regex regexENG = new Regex(@"^[A-Za-z]+\-?([A-Za-z]+)?$");
-            if (regexRUS.IsMatch(input))
+            if (regexRUS.IsMatch(input) )
             {
                 return true;
             }
-            if (regexENG.IsMatch(input))
+            if (regexENG.IsMatch(input) )
             {
                 return true;
             }

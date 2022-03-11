@@ -7,6 +7,7 @@ using Model;
 
 namespace View
 {
+   
     public class Program
     {
         public static void Main(string[] args)
@@ -30,26 +31,25 @@ namespace View
             var personList1 = new PersonList();
             var personList2 = new PersonList();
 
-            Console.WriteLine("Создание 2-х списков по 3 человека" + "\n"+
-                "Нажмите любую клавишу");
+            Console.WriteLine("Creating 2 list of 3 people");
             //TODO: разобраться
             var rnd = new Random();
             //TODO: случайное создание
             for (int i = 0; i < 3; i++)
             {
                 //TODO: RSDN
-                personList1.Add(Person.GetRandomPerson(names, surnames, rnd) );
-                personList2.Add(Person.GetRandomPerson(names, surnames, rnd) );
+                personList1.Add(Person.GetRandomPerson(names, surnames, rnd));
+                personList2.Add(Person.GetRandomPerson(names, surnames, rnd));
 
             }
-            Console.WriteLine("Выввод персон 1-го списка");
+            Console.WriteLine("Output of persons of the 1st list ");
             GetAllPerson(personList1);
-            Console.WriteLine("Выввод персон 2-го списка");
+            Console.WriteLine("Output of persons of the 2nd list");
             GetAllPerson(personList2);
             Console.ReadKey();
             Console.WriteLine("");
 
-            Console.WriteLine("Добавление новой персоны в 1-ый список");
+            Console.WriteLine("Adding new person to 1st list");
             personList1.Add(ReadPerson());
             Console.ReadKey();
             Console.WriteLine();
@@ -61,7 +61,7 @@ namespace View
             Console.WriteLine();
 
 
-            Console.WriteLine("Копирование 2-го человека из 1-го списка в конец 2-го");
+            Console.WriteLine("Copying 2nd person from 1st list to the end of 2nd list");
             personList2.Add(personList1.GetPersonByIndex(1));
             GetAllPerson(personList1);
             Console.WriteLine("-------------");
@@ -69,7 +69,7 @@ namespace View
             Console.ReadKey();
             Console.WriteLine();
 
-            Console.WriteLine("Удаление 2-го человека из 1-ого списка");
+            Console.WriteLine("Deleting 2nd person from 1st list");
             personList1.DeletePersonByIndex(1);
             GetAllPerson(personList1);
             Console.WriteLine("-------------");
@@ -77,7 +77,7 @@ namespace View
             Console.ReadKey();
             Console.WriteLine();
 
-            Console.WriteLine("Очистка 2-го списка");
+            Console.WriteLine("Deleting 2nd list");
             personList2.Clear();
             GetAllPerson(personList1);
             Console.WriteLine("-------------");
@@ -85,7 +85,7 @@ namespace View
             Console.ReadKey();
             Console.WriteLine();
         }
-
+        
         /// <summary>
         /// Вводит Персону через консоль
         /// </summary>
@@ -97,19 +97,20 @@ namespace View
             {
                 personRead.Name = Console.ReadLine();
             };
-            ActionHandler(action1, "Введите имя человека");
+            ActionHandler(action1, "Enter name of person");
 
             Action action2 = () =>
             {
                 personRead.Surname = Console.ReadLine();
             };
-            ActionHandler(action2, "Введите фамилию человека");
+            ActionHandler(action2, "Enter surname of person");
 
             Action action3 = () =>
             {
                 personRead.Age = int.Parse(Console.ReadLine());
             };
-            ActionHandler(action3, "Введите возраст человека");
+            ActionHandler(action3, $"Enter age of person: value must be in range:" +
+                $" {Person.MinAge} - {Person.MaxAge} ");
 
             Action action4 = () =>
             {
@@ -126,17 +127,22 @@ namespace View
                             personRead.Gender = GenderPerson.Female;
                             return;
                         }
-                    default:
+                    case 3:
                         {
                             personRead.Gender = GenderPerson.Unknown;
-                            Console.WriteLine("Присвоено значение по умолчанию");
+                            return;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("Value must be: 1, 2, 3 ");
                             break;
                         }
                 }
             };
-            ActionHandler(action4, "Введите пол человека:" +
-               " 1 -  Male " +
-               " 2 - Female ");
+            ActionHandler(action4, "Enter gender of person:" +
+               " 1 - Male " +
+               " 2 - Female "+
+               " 3 - Unknown" );
             return personRead;
         }
 
