@@ -7,7 +7,9 @@ namespace Model
     /// </summary>
     public class PersonList
     {
-        //TODO: XML
+        /// <summary>
+        /// Список из персон
+        /// </summary>
         private Person[] _personList = new Person[0];
 
         /// <summary>
@@ -60,7 +62,10 @@ namespace Model
             }
         }
 
-        //TODO: XML
+       /// <summary>
+       /// Проверяет корректность введенного индекса персоны в списке
+       /// </summary>
+       /// <param name="index"></param>
         public void CheckValidIndex(int index)
         {
             int count = _personList.Length;
