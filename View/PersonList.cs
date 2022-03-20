@@ -80,7 +80,7 @@ namespace Model
         /// Получает индекс человека
         /// </summary>
         /// <param name="person"></param>
-        /// <returns></returns>
+        /// <returns>индекс</returns>
         public int GetIndexOfPerson(Person person)
         {
             return Array.IndexOf(_personList, person);
@@ -90,7 +90,7 @@ namespace Model
         /// Получает человека по индексу
         /// </summary>
         /// <param name="index"> индекс человека</param>
-        /// <returns></returns>
+        /// <returns> персона</returns>
         public Person GetPersonByIndex(int index)
         {
             CheckValidIndex(index);
@@ -108,7 +108,7 @@ namespace Model
         /// <summary>
         /// Находит длину списка
         /// </summary>
-        /// <returns></returns>
+        /// <returns> длина списка</returns>
         public int Length()
         {
             return _personList.Length;

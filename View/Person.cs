@@ -56,6 +56,11 @@ namespace Model
         }
 
         /// <summary>
+        /// Язык
+        /// </summary>
+        private string _lang;
+
+        /// <summary>
         /// Возвращает правильную строку
         /// </summary>
         /// <param name="inputValue">переданная строка</param>
@@ -67,7 +72,7 @@ namespace Model
                 throw new ArgumentException("Value must not be empty");
             }
 
-            if (!ValidName(inputValue))
+            if (_name != null && ValidName(inputValue)!= ValidName(_name))
             {
                 throw new ArgumentException("Use only latin or cyrilic");
                
@@ -128,12 +133,14 @@ namespace Model
         {
             Regex regexRUS = new Regex(@"^[А-Яа-я]+\-?([А-Яа-я]+)?$");
             Regex regexENG = new Regex(@"^[A-Za-z]+\-?([A-Za-z]+)?$");
-            if (regexRUS.IsMatch(input) )
+            if (regexRUS.IsMatch(input)  && (this._lang == null || this._lang == "Rus"))
             {
+                this._lang = "Rus";
                 return true;
             }
-            if (regexENG.IsMatch(input) )
+            if (regexENG.IsMatch(input) && (this._lang == null || this._lang == "Eng"))
             {
+                this._lang = "Eng";
                 return true;
             }
             return false;
@@ -153,10 +160,11 @@ namespace Model
 
         //TODO: XML
         /// <summary>
-        /// Генерирует человека, использую имена и фамилии из списка
+        /// Генерирует человека, используя имена и фамилии из списка
         /// </summary>
         /// <param name="names"> Список рандомных имен</param>
         /// <param name="surnames">Список рандомных фамилий</param>
+        /// <param name="randomize">Экземпляр класса Random </param>
         /// <returns></returns>
         public static Person GetRandomPerson(List<string> names, List<string> surnames, Random randomize)
         {
