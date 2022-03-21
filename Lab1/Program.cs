@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Model;
 
 namespace View
@@ -32,16 +30,14 @@ namespace View
             var personList2 = new PersonList();
 
             Console.WriteLine("Creating 2 list of 3 people");
-            //TODO: разобраться
+
             var rnd = new Random();
-            //TODO: случайное создание
             for (int i = 0; i < 3; i++)
             {
-                //TODO: RSDN
                 personList1.Add(Person.GetRandomPerson(names, surnames, rnd));
                 personList2.Add(Person.GetRandomPerson(names, surnames, rnd));
-
             }
+
             Console.WriteLine("Output of persons of the 1st list ");
             GetAllPerson(personList1);
             Console.WriteLine("Output of persons of the 2nd list");
@@ -93,25 +89,26 @@ namespace View
         static Person ReadPerson()
         {
             var personRead = new Person();
+            //TODO: RSDN
             Action action1 = () =>
             {
                 personRead.Name = Console.ReadLine();
             };
             ActionHandler(action1, "Enter name of person");
-
+            //TODO: RSDN
             Action action2 = () =>
             {
                 personRead.Surname = Console.ReadLine();
             };
             ActionHandler(action2, "Enter surname of person");
-
+            //TODO: RSDN
             Action action3 = () =>
             {
                 personRead.Age = int.Parse(Console.ReadLine());
             };
             ActionHandler(action3, $"Enter age of person: value must be in range:" +
                 $" {Person.MinAge} - {Person.MaxAge} ");
-
+            //TODO: RSDN
             Action action4 = () =>
             {
                int personGender= Convert.ToInt32(Console.ReadLine());

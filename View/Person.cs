@@ -74,8 +74,8 @@ namespace Model
 
             if (_name != null && ValidName(inputValue)!= ValidName(_name))
             {
+                //TODO: Некорректное сообщение
                 throw new ArgumentException("Use only latin or cyrilic");
-               
             }
             return ChangeFirstLetter(inputValue); 
             
@@ -138,6 +138,7 @@ namespace Model
                 this._lang = "Rus";
                 return true;
             }
+
             if (regexENG.IsMatch(input) && (this._lang == null || this._lang == "Eng"))
             {
                 this._lang = "Eng";
@@ -157,8 +158,7 @@ namespace Model
             return input.Substring(0, 1).ToUpper() + 
                 input.Substring(1, input.Length - 1).ToLower();
         }
-
-        //TODO: XML
+        
         /// <summary>
         /// Генерирует человека, используя имена и фамилии из списка
         /// </summary>
