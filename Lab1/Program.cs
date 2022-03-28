@@ -90,26 +90,26 @@ namespace View
         {
             var personRead = new Person();
             //TODO: RSDN
-            Action action1 = () =>
+            Action actionReadName = () =>
             {
                 personRead.Name = Console.ReadLine();
             };
-            ActionHandler(action1, "Enter name of person");
+            ActionHandler(actionReadName, "Enter name of person");
             //TODO: RSDN
-            Action action2 = () =>
+            Action actionReadSurname = () =>
             {
                 personRead.Surname = Console.ReadLine();
             };
-            ActionHandler(action2, "Enter surname of person");
+            ActionHandler(actionReadSurname, "Enter surname of person");
             //TODO: RSDN
-            Action action3 = () =>
+            Action actionReadAge = () =>
             {
                 personRead.Age = int.Parse(Console.ReadLine());
             };
-            ActionHandler(action3, $"Enter age of person: value must be in range:" +
+            ActionHandler(actionReadAge, $"Enter age of person: value must be in range:" +
                 $" {Person.MinAge} - {Person.MaxAge} ");
             //TODO: RSDN
-            Action action4 = () =>
+            Action actionReadGender = () =>
             {
                int personGender= Convert.ToInt32(Console.ReadLine());
                 switch (personGender)
@@ -136,7 +136,7 @@ namespace View
                         }
                 }
             };
-            ActionHandler(action4, "Enter gender of person:" +
+            ActionHandler(actionReadGender, "Enter gender of person:" +
                " 1 - Male " +
                " 2 - Female "+
                " 3 - Unknown" );

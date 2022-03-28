@@ -71,12 +71,17 @@ namespace Model
             {
                 throw new ArgumentException("Value must not be empty");
             }
+            if (ValidName(inputValue) == "Other")
+            {
+                throw new ArgumentException("Use only latin or cyrilic");
 
+            }
             if (_name != null && ValidName(inputValue)!= ValidName(_name))
             {
                 //TODO: Некорректное сообщение
-                throw new ArgumentException("Use only latin or cyrilic");
+                throw new ArgumentException("Name and Surname must be in the same language");
             }
+            
             return ChangeFirstLetter(inputValue); 
             
         }
@@ -128,25 +133,26 @@ namespace Model
         /// только английские символы
         /// </summary>
         /// <param name="input">строка для проверки</param>
-        /// <returns></returns>
-        private  bool ValidName(string input)
+        /// <returns>строковую переменную</returns>
+        private string ValidName(string input)
         {
             Regex regexRUS = new Regex(@"^[А-Яа-я]+\-?([А-Яа-я]+)?$");
             Regex regexENG = new Regex(@"^[A-Za-z]+\-?([A-Za-z]+)?$");
-            if (regexRUS.IsMatch(input)  && (this._lang == null || this._lang == "Rus"))
+            if (regexRUS.IsMatch(input))
             {
                 this._lang = "Rus";
-                return true;
             }
 
-            if (regexENG.IsMatch(input) && (this._lang == null || this._lang == "Eng"))
+            if (regexENG.IsMatch(input))
             {
                 this._lang = "Eng";
-                return true;
             }
-            return false;
+            else
+            {
+                this._lang = "Other";
+            }
+            return _lang;
         }
-
 
         /// <summary>
         /// Изменяет первую букву на заглавную
