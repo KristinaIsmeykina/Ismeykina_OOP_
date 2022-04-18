@@ -10,7 +10,7 @@ namespace Model
     /// <summary>
     /// Класс Person
     /// </summary>
-    public class Person
+    public abstract class Person
     {
        
         /// <summary>
@@ -172,17 +172,23 @@ namespace Model
         /// <param name="surnames">Список рандомных фамилий</param>
         /// <param name="randomize">Экземпляр класса Random </param>
         /// <returns></returns>
-        public static Person GetRandomPerson(List<string> names, List<string> surnames, Random randomize)
-        {
-            Person person = new Person(names[randomize.Next(0, names.Count() - 1)],
-                surnames[randomize.Next(0, surnames.Count() - 1)], 
-                randomize.Next(MinAge, MaxAge), GenderPerson.Male);
-            return person;
-        }
+        //public static Person GetRandomPerson(List<string> names, List<string> surnames, Random randomize)
+        //{
+        //    Person person = new Person(names[randomize.Next(0, names.Count() - 1)],
+        //        surnames[randomize.Next(0, surnames.Count() - 1)], 
+        //        randomize.Next(MinAge, MaxAge), GenderPerson.Male);
+        //    return person;
+        //}
 
         /// <summary>
         /// Получает информацию о человеке
         /// </summary>
-        public string Info => $"{Name} {Surname} {Age} {Gender}";
+        /// <returns></returns>
+        public abstract string Info();
+
+        /// <summary>
+        /// Получает информацию о человеке
+        /// </summary>
+        public string InfoPerson => $"{Name} {Surname} {Age} {Gender}";
     }
 }
