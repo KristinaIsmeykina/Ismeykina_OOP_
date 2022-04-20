@@ -13,14 +13,17 @@ namespace Model
     public abstract class Person
     {
        
+
+
         /// <summary>
-        /// Константа-минимальный возраст персоны
+        /// Свойство получения минимального возраста человека
         /// </summary>
-        public const int MinAge = 1;
+        protected abstract int MinAge { get; }
+
         /// <summary>
-        /// Константа- максимальный возраст персоны
+        /// Свойство получения максимального возраста человека
         /// </summary>
-        public const int MaxAge = 120;
+        protected abstract int MaxAge { get; }
 
         /// <summary>
         /// Имя персоны
@@ -165,20 +168,7 @@ namespace Model
                 input.Substring(1, input.Length - 1).ToLower();
         }
         
-        /// <summary>
-        /// Генерирует человека, используя имена и фамилии из списка
-        /// </summary>
-        /// <param name="names"> Список рандомных имен</param>
-        /// <param name="surnames">Список рандомных фамилий</param>
-        /// <param name="randomize">Экземпляр класса Random </param>
-        /// <returns></returns>
-        //public static Person GetRandomPerson(List<string> names, List<string> surnames, Random randomize)
-        //{
-        //    Person person = new Person(names[randomize.Next(0, names.Count() - 1)],
-        //        surnames[randomize.Next(0, surnames.Count() - 1)], 
-        //        randomize.Next(MinAge, MaxAge), GenderPerson.Male);
-        //    return person;
-        //}
+
 
         /// <summary>
         /// Получает информацию о человеке
@@ -189,6 +179,6 @@ namespace Model
         /// <summary>
         /// Получает информацию о человеке
         /// </summary>
-        public string InfoPerson => $"{Name} {Surname} {Age} {Gender}";
+        public string InfoPerson => $"Имя- {Name} Фамилия- {Surname} Возраст- {Age} Пол-{Gender}";
     }
 }

@@ -37,23 +37,22 @@ namespace Model
         /// Максимальный возраст взрослого
         /// </summary>
         private const int _maxAge = 120;
-
+        protected override int MinAge
+        {
+            get => _minAge;
+        }
+        protected override int MaxAge
+        {
+            get => _maxAge;
+        }
         /// <summary>
         /// Свойство паспортные данные
         /// </summary>
-        public string Passport
-        {
-            get => _passport;
-            set => _passport = value;
-        }
+        public string Passport { get; set; }
         /// <summary>
         /// Свойство состояние в браке
         /// </summary>
-        public bool MarriageStatus
-        {
-            get => _marriageStatus;
-            set => _marriageStatus = value;
-        }
+        public bool MarriageStatus { get; set; }
         public string MarriagePartner
         {
             get => _marriagePartner;
@@ -71,11 +70,7 @@ namespace Model
             }
         }
 
-        public string Workplace
-        {
-            get => _workplace;
-            set => _workplace = value;
-        }
+        public string Workplace { get; set; }
 
         /// <summary>
         /// Констурктор
@@ -87,32 +82,27 @@ namespace Model
         /// <param name="surname"></param>
         /// <param name="age"></param>
         /// <param name="gender"></param>
-        public Adult(string passport, string workplace, bool marriageStatus,
-            string name, string surname, int age, GenderPerson gender)
+        public Adult(string name, string surname, int age, GenderPerson gender, string passport, string workplace, bool marriageStatus,
+            string marriagePartner = null)
             : base(name, surname, age, gender)
         {
             Passport = passport;
             Workplace = workplace;
             MarriageStatus = marriageStatus;
+            MarriagePartner = marriagePartner;
         }
-        public override string Info()
-        {
-            string marriagePartner = null;
-            if (MarriageStatus ==true)
-            {
-                marriagePartner = $"{}";
-            }
-        }
+        public override string Info() => $"{base.InfoPerson}" +
+            $"Cостояние в браке - {MarriageStatus} Партнер - {MarriagePartner}";
         public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, bool marriageStatus)
         {
+            var rnd = new Random();
             var person = new Adult(rnd.Next(1000, 9999).ToString(),
                                   workplaces[rnd.Next(0, workplaces.Count() - 1)],
                                   marriageStatus,
-
                                   names[rnd.Next(0, names.Count() - 1)],
                                   surnames[rnd.Next(0, surnames.Count() - 1)],
                                   rnd.Next(_minAge, _maxAge),
-                                  (Gender)rnd.Next(0, 2));
+                                  (GenderPerson)rnd.Next(0, 2));
             return person;
         }
 

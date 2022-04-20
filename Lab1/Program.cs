@@ -25,6 +25,18 @@ namespace View
                 "Denisov", "Dmitriev", "Ivanov", "Igorsto", "Leonov", "Maksimov",
                 "Mikhalkov", "Nikitiev", "Oleg", "Pavlov", "Romanov", "Sergeev"
             };
+            List<string> workplace = new List<string>
+            {
+                "Power industry", "Gas station", "Post office",
+                "Power plant", "Data center", "Car manufacturing",
+                "Design office", "Window manufacturing", "Network company"
+            };
+            List<string> facilities = new List<string>
+            {
+                "Church school", "female gymnasium", "Middle school",
+                "High school", "Low school", "Physics Math school",
+                "social studies school", "nursery school"
+            };
 
             var personList1 = new PersonList();
             var personList2 = new PersonList();
