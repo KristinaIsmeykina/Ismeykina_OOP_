@@ -39,9 +39,9 @@ namespace View
             };
 
             var personList1 = new PersonList();
-            var personList2 = new PersonList();
+           
 
-            Console.WriteLine("Creating 2 list of 3 people");
+            Console.WriteLine("Creating a list of 7 people");
 
             var rnd = new Random();
             for (int i = 0; i < 3; i++)

@@ -91,8 +91,16 @@ namespace Model
             MarriageStatus = marriageStatus;
             MarriagePartner = marriagePartner;
         }
-        public override string Info() => $"{base.InfoPerson}" +
-            $"Cостояние в браке - {MarriageStatus} Партнер - {MarriagePartner}";
+        public override string Info()
+        {
+            string addition = null;
+            if (MarriageStatus == true)
+            {
+                addition = $"Marriage partner {MarriagePartner}";
+            }
+            return $"{base.InfoPerson}, Passport {Passport}, " +
+                   $"Workplace {Workplace}, Marriage status {MarriageStatus} {addition}";
+        }
         public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, bool marriageStatus)
         {
             var rnd = new Random();
@@ -105,7 +113,29 @@ namespace Model
                                   (GenderPerson)rnd.Next(0, 2));
             return person;
         }
+        public static List<Adult> GetAPair(List<string> names, List<string> surnames, List<string> workplaces)
+        {
+            var rnd = new Random();
+            List<Adult> pair = new List<Adult>();
+            pair.Add(GetRandomAdult(names, surnames, workplaces, true));
 
+            var person = new Adult($"{pair[0].Name} {pair[0].Surname}",
+                                   rnd.Next(1000, 9999).ToString(),
+                                   workplaces[rnd.Next(0, workplaces.Count() - 1)],
+                                   true,
+
+                                   names[rnd.Next(0, names.Count() - 1)],
+                                   pair[0].Surname,
+                                   pair[0].Age + rnd.Next(0, 8),
+                                   (Gender)rnd.Next(0, 2));
+            pair[0].MarriagePartner = $"{person.Name} {person.Surname}";
+            pair.Add(person);
+            return pair;
+        }
+        public string GoToWork()
+        {
+            return $"{this.Name} went to work to {this.Workplace}";
+        }
 
     }
 }
