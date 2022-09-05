@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Adult : Person
+    public class Adult : Person
     {
         /// <summary>
         /// Паспортные данные

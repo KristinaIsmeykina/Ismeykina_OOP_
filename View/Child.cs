@@ -64,7 +64,28 @@ namespace Model
                                   (GenderPerson)rnd.Next(0, 2));
             return person;
         }
-        public override string Info() => $"{base.InfoPerson}" +
-            $"Первый родитель - {FirstParent} Второй родитель - {SecondParent}";
+        public override string Info()
+        {
+            string addition = null;
+            if (SecondParent == null && FirstParent == null)
+            {
+                addition = $"Orphan";
+            }
+            else if (SecondParent == null)
+            {
+                addition = $"First parent {FirstParent}";
+            }
+            else if (FirstParent == null)
+            {
+                addition = $"First parent {SecondParent}";
+            }
+            else
+            {
+                addition = $"First parent {FirstParent}, Second parent {SecondParent}";
+            }
+
+            return $"{base.InfoBase()}, School or daycare {Facility}, Parents: " + addition;
+        }
+
     }
 }
