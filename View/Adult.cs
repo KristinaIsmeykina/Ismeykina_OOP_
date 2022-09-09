@@ -111,7 +111,7 @@ namespace Model
                                    (GenderPerson)rnd.Next(0, 2)),
                                    rnd.Next(1000, 9999).ToString(),
                                    workplaces[rnd.Next(0, workplaces.Count() - 1)],
-                                   marriageStatus)
+                                   marriageStatus);
             return person;
         }
         public static List<Adult> GetAPair(List<string> names, List<string> surnames, List<string> workplaces)
