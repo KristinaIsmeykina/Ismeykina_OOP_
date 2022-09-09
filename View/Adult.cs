@@ -108,8 +108,8 @@ namespace Model
                                    names[rnd.Next(0, names.Count() - 1)],
                                    surnames[rnd.Next(0, surnames.Count() - 1)],
                                    rnd.Next(_minAge, _maxAge),
-                                   (GenderPerson)rnd.Next(0, 2)),
-                                   rnd.Next(1000, 9999).ToString(),
+                                   (GenderPerson)rnd.Next(0, 2),
+                                   rnd.Next(1000, 5000).ToString(),
                                    workplaces[rnd.Next(0, workplaces.Count() - 1)],
                                    marriageStatus);
             return person;

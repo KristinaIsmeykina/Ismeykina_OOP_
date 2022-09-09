@@ -49,14 +49,17 @@ namespace View
             int adultsNumber = rnd.Next(1, 3);
             for (int i = 0; i < adultsNumber; i++)
             {
-                var pairList = Adult.GetRandomAdult(names, surnames, workplaces);
-                for (int j = 0; j < pairList.Count; j++)
+                var pairList = Adult.GetRandomAdult(names, surnames, workplaces, true);
+                for (int j = 0; j < adultsNumber; j++)
                 {
                     list1.Add(pairList);
                 }
       
             }
-            Show(lists);
+            foreach i in list1
+                {
+
+            }
             Console.ReadKey();
             Console.WriteLine("");
         }
