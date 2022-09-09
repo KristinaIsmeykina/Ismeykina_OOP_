@@ -49,15 +49,12 @@ namespace View
             int adultsNumber = rnd.Next(1, 3);
             for (int i = 0; i < adultsNumber; i++)
             {
-                var pairList = Adult.GetAPair(names, surnames, workplaces);
+                var pairList = Adult.GetRandomAdult(names, surnames, workplaces);
                 for (int j = 0; j < pairList.Count; j++)
                 {
-                    list1.Add(pairList[j]);
+                    list1.Add(pairList);
                 }
-                for (int i = 0; i < 7 - adultsNumber; i++)
-                {
-                    list1.Add(Child.GetRandomChild(names, surnames, facilities));
-                }
+      
             }
             Show(lists);
             Console.ReadKey();
