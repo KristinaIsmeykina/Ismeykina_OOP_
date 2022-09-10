@@ -5,7 +5,7 @@ using Model;
 
 namespace View
 {
-   
+
     public class Program
     {
         public static void Main(string[] args)
@@ -49,17 +49,19 @@ namespace View
             int adultsNumber = rnd.Next(1, 3);
             for (int i = 0; i < adultsNumber; i++)
             {
-                var pairList = Adult.GetRandomAdult(names, surnames, workplaces, true);
-                for (int j = 0; j < adultsNumber; j++)
-                {
+                var pairList = Adult.GetRandomAdult(names, surnames, workplaces, false);
+              
                     list1.Add(pairList);
-                }
-      
-            }
-            foreach i in list1
-                {
+               
 
+            }
+            for (int i = 0; i < list1.Length(); i++)
+            {
+                Console.WriteLine(lists[i].GetPersonByIndex(i).Info());
+                Console.WriteLine("");
             }
             Console.ReadKey();
             Console.WriteLine("");
         }
+    }
+}

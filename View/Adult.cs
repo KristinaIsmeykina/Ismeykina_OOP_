@@ -65,7 +65,8 @@ namespace Model
                 }
                 else
                 {
-                    throw new Exception("not married");
+                    // throw new Exception("not married");
+                    Console.WriteLine("not married");
                 }
             }
         }
@@ -114,25 +115,25 @@ namespace Model
                                    marriageStatus);
             return person;
         }
-        public static List<Adult> GetAPair(List<string> names, List<string> surnames, List<string> workplaces)
-        {
-            var rnd = new Random();
-            List<Adult> pair = new List<Adult>();
-            pair.Add(GetRandomAdult(names, surnames, workplaces, true));
+        //public static List<Adult> GetAPair(List<string> names, List<string> surnames, List<string> workplaces)
+        //{
+        //    var rnd = new Random();
+        //    List<Adult> pair = new List<Adult>();
+        //    pair.Add(GetRandomAdult(names, surnames, workplaces, true));
 
-            var person = new Adult($"{pair[0].Name} {pair[0].Surname}",
-                                   rnd.Next(1000, 9999).ToString(),
-                                   workplaces[rnd.Next(0, workplaces.Count() - 1)],
-                                   true,
+        //    var person = new Adult($"{pair[0].Name} {pair[0].Surname}",
+        //                           rnd.Next(1000, 9999).ToString(),
+        //                           workplaces[rnd.Next(0, workplaces.Count() - 1)],
+        //                           true,
 
-                                   names[rnd.Next(0, names.Count() - 1)],
-                                   pair[0].Surname,
-                                   pair[0].Age + rnd.Next(0, 8),
-                                   (Gender)rnd.Next(0, 2));
-            pair[0].MarriagePartner = $"{person.Name} {person.Surname}";
-            pair.Add(person);
-            return pair;
-        }
+        //                           names[rnd.Next(0, names.Count() - 1)],
+        //                           pair[0].Surname,
+        //                           pair[0].Age + rnd.Next(0, 8),
+        //                           (Gender)rnd.Next(0, 2));
+        //    pair[0].MarriagePartner = $"{person.Name} {person.Surname}";
+        //    pair.Add(person);
+        //    return pair;
+        //}
         public string GoToWork()
         {
             return $"{this.Name} went to work to {this.Workplace}";
