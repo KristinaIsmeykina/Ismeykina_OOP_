@@ -59,14 +59,15 @@ namespace View
                 var rnd = new Random();
                 int genderType = rnd.Next(0, 2);
                 bool marriageStatus = Convert.ToBoolean(rnd.Next(0,2));
+                var rnd2 = new Random();
                 if (genderType == 0)
                 {
 
-                    list1.Add(Adult.GetPair(maleNames, femaleNames, surnames, workplaces, marriageStatus, genderType));
+                    list1.Add(Adult.GetPair(maleNames, femaleNames, surnames, workplaces, marriageStatus, genderType, rnd2));
                 }
                 else if (genderType == 1)
                 {
-                    list1.Add(Adult.GetPair(femaleNames, maleNames, surnames, workplaces, marriageStatus, genderType));
+                    list1.Add(Adult.GetPair(femaleNames, maleNames, surnames, workplaces, marriageStatus, genderType, rnd2));
                 }
 
 

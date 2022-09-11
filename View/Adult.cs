@@ -114,9 +114,9 @@ namespace Model
             return $"{base.InfoPerson}, Passport {Passport}, " +
                    $"Workplace {Workplace}, Marriage status {MarriageStatus} {addition}";
         }
-        public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, bool marriageStatus, int x)
+        public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, bool marriageStatus, int x, Random rnd)
         {
-            Random rnd = new Random();
+            
             var person = new Adult(
                                    names[rnd.Next(0, names.Count() - 1)],
                                    surnames[rnd.Next(0, surnames.Count() - 1)],
@@ -162,14 +162,14 @@ namespace Model
         //    return pair;
         //}
 
-        public static Adult GetPair(List<string> names, List<string> names2, List<string> surnames, List<string> workplaces, bool marrigeStatus, int genderType)
+        public static Adult GetPair(List<string> names, List<string> names2, List<string> surnames, List<string> workplaces, bool marrigeStatus, int genderType, random rnd)
         {
             
             //List<Adult> pair = new List<Adult>();
-            Adult person = GetRandomAdult(names, surnames, workplaces, marrigeStatus, genderType);
+            Adult person = GetRandomAdult(names, surnames, workplaces, marrigeStatus, genderType, rnd);
             if (marrigeStatus==true)
             {
-                Adult person2 = GetRandomAdult(names2, surnames, workplaces, marrigeStatus, genderType);
+                Adult person2 = GetRandomAdult(names2, surnames, workplaces, marrigeStatus, genderType, rnd);
                 person.MarriagePartner = $"{person2.Name} {person2.Surname}";
             }
             return person;
