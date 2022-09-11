@@ -162,7 +162,7 @@ namespace Model
         //    return pair;
         //}
 
-        public static Adult GetPair(List<string> names, List<string> names2, List<string> surnames, List<string> workplaces, bool marrigeStatus, int genderType, random rnd)
+        public static Adult GetPair(List<string> names, List<string> names2, List<string> surnames, List<string> workplaces, bool marrigeStatus, int genderType, Random rnd)
         {
             
             //List<Adult> pair = new List<Adult>();

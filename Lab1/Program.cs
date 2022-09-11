@@ -53,21 +53,19 @@ namespace View
             };
            
             Console.WriteLine("Creating a list of 7 people");
-         
+            var rnd = new Random();
             for (int i = 0; i < 7; i++)
             {
-                var rnd = new Random();
                 int genderType = rnd.Next(0, 2);
                 bool marriageStatus = Convert.ToBoolean(rnd.Next(0,2));
-                var rnd2 = new Random();
                 if (genderType == 0)
                 {
 
-                    list1.Add(Adult.GetPair(maleNames, femaleNames, surnames, workplaces, marriageStatus, genderType, rnd2));
+                    list1.Add(Adult.GetPair(maleNames, femaleNames, surnames, workplaces, marriageStatus, genderType, rnd));
                 }
                 else if (genderType == 1)
                 {
-                    list1.Add(Adult.GetPair(femaleNames, maleNames, surnames, workplaces, marriageStatus, genderType, rnd2));
+                    list1.Add(Adult.GetPair(femaleNames, maleNames, surnames, workplaces, marriageStatus, genderType, rnd));
                 }
 
 
