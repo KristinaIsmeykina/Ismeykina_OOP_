@@ -76,19 +76,7 @@ namespace Model
         public string MarriagePartner
         {
             get => _marriagePartner;
-            set
-            {
-                if (_marriageStatus == true)
-                {
-                    _marriagePartner = value;
-
-                }
-                else
-                {
-                    //throw new Exception("not married");
-                    Console.WriteLine("not maried");
-                }
-            }
+            set => _marriagePartner = value;
         }
 
         /// <summary>
