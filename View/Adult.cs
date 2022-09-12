@@ -41,10 +41,18 @@ namespace Model
         {
             get => _minAge;
         }
+
+        /// <summary>
+        /// Максимальный возраст взрослого
+        /// </summary>
         protected override int MaxAge
         {
             get => _maxAge;
         }
+
+        /// <summary>
+        /// Паспорт
+        /// </summary>
         public string Passport
         {
             get => _passport;
@@ -52,12 +60,19 @@ namespace Model
             set => _passport = value;
         }
 
+        /// <summary>
+        /// Состояние в браке
+        /// </summary>
         public bool MarriageStatus
         {
             get => _marriageStatus;
 
             set => _marriageStatus = value;
         }
+
+        /// <summary>
+        /// Партнер 
+        /// </summary>
         public string MarriagePartner
         {
             get => _marriagePartner;
@@ -76,6 +91,9 @@ namespace Model
             }
         }
 
+        /// <summary>
+        /// Место работы 
+        /// </summary>
         public string Workplace
         {
             get => _workplace;
@@ -84,7 +102,7 @@ namespace Model
         }
 
         /// <summary>
-        /// конструктор
+        /// Конструктор класса Adult
         /// </summary>
         /// <param name="name"></param>
         /// <param name="surname"></param>
@@ -103,17 +121,32 @@ namespace Model
             MarriageStatus = marriageStatus;
             MarriagePartner = marriagePartner;
         }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns></returns>
         public override string Info()
         {
             string addition = null;
             if (MarriageStatus == true)
             {
-                addition = $"Marriage partner {MarriagePartner}";
-                Console.WriteLine(MarriagePartner);
+                addition = $", Marriage partner: {MarriagePartner}";
             }
-            return $"{base.InfoPerson}, Passport {Passport}, " +
-                   $"Workplace {Workplace}, Marriage status {MarriageStatus} {addition}";
+            return $"{base.InfoPerson}, Passport: {Passport}, " +
+                   $"Workplace: {Workplace}, Marriage status: {MarriageStatus} {addition}";
         }
+
+        /// <summary>
+        /// Создает рандомного взрослого
+        /// </summary>
+        /// <param name="names"></param>
+        /// <param name="surnames"></param>
+        /// <param name="workplaces"></param>
+        /// <param name="marriageStatus"></param>
+        /// <param name="x"></param>
+        /// <param name="rnd"></param>
+        /// <returns></returns>
         public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, bool marriageStatus, int x, Random rnd)
         {
             
@@ -125,56 +158,36 @@ namespace Model
                                    rnd.Next(1000, 5000).ToString(),
                                    workplaces[rnd.Next(0, workplaces.Count() - 1)],
                                    marriageStatus );
-            //Console.WriteLine($"get_random_end{person.MarriagePartner}");
             return person;
         }
-        //public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, bool marriageStatus, Random rnd, int x, string str)
-        //{
-        //    var person = new Adult(
-        //                           names[rnd.Next(0, names.Count() - 1)],
-        //                           surnames[rnd.Next(0, surnames.Count() - 1)],
-        //                           rnd.Next(_minAge, _maxAge),
-        //                           (GenderPerson)x,
-        //                           rnd.Next(1000, 5000).ToString(),
-        //                           workplaces[rnd.Next(0, workplaces.Count() - 1)],
-        //                           marriageStatus,
-        //                           str);
-        //    //Console.WriteLine($"get_random_end{person.MarriagePartner}");
-        //    return person;
-        //}
-        //public static List<Adult> GetAPair(List<string> names, List<string> surnames, List<string> workplaces)
-        //{
-        //    var rnd = new Random();
-        //    List<Adult> pair = new List<Adult>();
-        //    pair.Add(GetRandomAdult(names, surnames, workplaces, true));
-
-        //    var person = new Adult($"{pair[0].Name} {pair[0].Surname}",
-        //                           rnd.Next(1000, 9999).ToString(),
-        //                           workplaces[rnd.Next(0, workplaces.Count() - 1)],
-        //                           true,
-
-        //                           names[rnd.Next(0, names.Count() - 1)],
-        //                           pair[0].Surname,
-        //                           pair[0].Age + rnd.Next(0, 8),
-        //                           (Gender)rnd.Next(0, 2));
-        //    pair[0].MarriagePartner = $"{person.Name} {person.Surname}";
-        //    pair.Add(person);
-        //    return pair;
-        //}
-
+      
+        /// <summary>
+        /// Создает пару для взрослого
+        /// </summary>
+        /// <param name="names"></param>
+        /// <param name="names2"></param>
+        /// <param name="surnames"></param>
+        /// <param name="workplaces"></param>
+        /// <param name="marrigeStatus"></param>
+        /// <param name="genderType"></param>
+        /// <param name="rnd"></param>
+        /// <returns>Взрослого человека</returns>
         public static Adult GetPair(List<string> names, List<string> names2, List<string> surnames, List<string> workplaces, bool marrigeStatus, int genderType, Random rnd)
         {
             
-            //List<Adult> pair = new List<Adult>();
             Adult person = GetRandomAdult(names, surnames, workplaces, marrigeStatus, genderType, rnd);
             if (marrigeStatus==true)
             {
                 Adult person2 = GetRandomAdult(names2, surnames, workplaces, marrigeStatus, genderType, rnd);
-                person.MarriagePartner = $"{person2.Name} {person2.Surname}";
+                person.MarriagePartner = $"{person2.Name} {person.Surname}";
             }
             return person;
         }
 
+        /// <summary>
+        /// Уникальный метод для взрослого
+        /// </summary>
+        /// <returns></returns>
         public string GoToWork()
         {
             return $"{this.Name} went to work to {this.Workplace}";

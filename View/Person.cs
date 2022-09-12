@@ -111,7 +111,7 @@ namespace Model
         public GenderPerson Gender { get; set; }
 
         /// <summary>
-        /// Создает экземпляр класса Person
+        /// Коструктор класса Person
         /// </summary>
         /// <param name="name"> Имя</param>
         /// <param name="surname"> Фамилия </param>
@@ -177,6 +177,6 @@ namespace Model
         /// <summary>
         /// Получает информацию о человеке
         /// </summary>
-        public string InfoPerson => $"Имя- {Name} Фамилия- {Surname} Возраст- {Age} Пол-{Gender}";
+        public string InfoPerson => $"Name: {Name}, Surname: {Surname}, Age: {Age}, Gender: {Gender}";
     }
 }

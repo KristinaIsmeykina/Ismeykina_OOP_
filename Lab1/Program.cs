@@ -47,14 +47,12 @@ namespace View
             };
 
             var list1 = new PersonList();
-            PersonList[] lists =
-             {
-                list1
-            };
+            
            
             Console.WriteLine("Creating a list of 7 people");
             var rnd = new Random();
-            for (int i = 0; i < 7; i++)
+            int randomNumber = rnd.Next(1, 4);
+            for (int i = 0; i < randomNumber; i++)
             {
                 int genderType = rnd.Next(0, 2);
                 bool marriageStatus = Convert.ToBoolean(rnd.Next(0,2));
@@ -69,6 +67,11 @@ namespace View
                 }
 
 
+            }
+            for (int i=0; i<7-randomNumber; i++)
+            {
+                
+                list1.Add(Child.GetChildWithParrent(maleNames, surnames, facilities,rnd));
             }
         
             for (int i = 0; i < list1.Length(); i++)
