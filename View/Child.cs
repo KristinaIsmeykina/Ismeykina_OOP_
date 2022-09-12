@@ -74,13 +74,13 @@ namespace Model
         /// <param name="facilities"></param>
         /// <param name="rnd"></param>
         /// <returns></returns>
-        public static Child GetRandomChild(List<string> names, List<string> surnames, List<string> facilities, Random rnd)
+        public static Child GetRandomChild(List<string> names, List<string> surnames, List<string> facilities, int gender, Random rnd)
         {
             var person = new Child(
                                   names[rnd.Next(0, names.Count() - 1)],
                                   surnames[rnd.Next(0, surnames.Count() - 1)],
                                   rnd.Next(_minAge, _maxAge),
-                                  (GenderPerson)rnd.Next(0, 2),
+                                  (GenderPerson)gender,
                                  facilities[rnd.Next(0, facilities.Count() - 1)]);
                                  
             return person;
@@ -94,9 +94,9 @@ namespace Model
         /// <param name="facilities"></param>
         /// <param name="rnd"></param>
         /// <returns></returns>
-        public static Child GetChildWithParrent(List<string> names, List<string> surnames, List<string> facilities, Random rnd)
+        public static Child GetChildWithParrent(List<string> names, List<string> names2, List<string> surnames, List<string> facilities, int gender, Random rnd)
         {
-            Child person = GetRandomChild(names, surnames, facilities, rnd);
+            Child person = GetRandomChild(names, surnames, facilities,gender, rnd);
             int numberAdult = rnd.Next(0, 3);
             switch(numberAdult)
             {
@@ -106,7 +106,7 @@ namespace Model
                     break;
                 case 2:
                     string name1 = names[rnd.Next(0, names.Count() - 1)];
-                    string name2 = names[rnd.Next(0, names.Count() - 1)];
+                    string name2 = names2[rnd.Next(0, names2.Count() - 1)];
                     person.FirstParent = $"{name1} {person.Surname}";
                     person.SecondParent = $"{name2} {person.Surname}";
                     break;

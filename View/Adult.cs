@@ -147,14 +147,14 @@ namespace Model
         /// <param name="x"></param>
         /// <param name="rnd"></param>
         /// <returns></returns>
-        public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, bool marriageStatus, int x, Random rnd)
+        public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, bool marriageStatus, int genderType, Random rnd)
         {
             
             var person = new Adult(
                                    names[rnd.Next(0, names.Count() - 1)],
                                    surnames[rnd.Next(0, surnames.Count() - 1)],
                                    rnd.Next(_minAge, _maxAge),
-                                   (GenderPerson)x,
+                                   (GenderPerson)genderType,
                                    rnd.Next(1000, 5000).ToString(),
                                    workplaces[rnd.Next(0, workplaces.Count() - 1)],
                                    marriageStatus );

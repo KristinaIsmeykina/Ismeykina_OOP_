@@ -52,6 +52,7 @@ namespace View
             Console.WriteLine("Creating a list of 7 people");
             var rnd = new Random();
             int randomNumber = rnd.Next(1, 4);
+
             for (int i = 0; i < randomNumber; i++)
             {
                 int genderType = rnd.Next(0, 2);
@@ -68,10 +69,20 @@ namespace View
 
 
             }
+   
             for (int i=0; i<7-randomNumber; i++)
             {
-                
-                list1.Add(Child.GetChildWithParrent(maleNames, surnames, facilities,rnd));
+                int genderType = rnd.Next(0, 2);
+                bool marriageStatus = Convert.ToBoolean(rnd.Next(0, 2));
+                if (genderType == 0)
+                {
+
+                    list1.Add(Child.GetChildWithParrent(maleNames,femaleNames, surnames, facilities,genderType, rnd));
+                }
+                else if (genderType == 1)
+                {
+                    list1.Add(Child.GetChildWithParrent(femaleNames,maleNames, surnames, facilities, genderType, rnd));
+                }
             }
         
             for (int i = 0; i < list1.Length(); i++)
