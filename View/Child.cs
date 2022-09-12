@@ -138,5 +138,9 @@ namespace Model
 
             return $"{base.InfoPerson}, Facility: {Facility}, Parents: " + addition;
         }
+        public string PlayGame()
+        {
+            return $"{this.Name} likes to play chess";
+        }
     }
 }

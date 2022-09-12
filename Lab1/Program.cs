@@ -79,8 +79,24 @@ namespace View
                 Console.WriteLine(list1.GetPersonByIndex(i).Info());
                 Console.WriteLine("");
             }
+            Console.WriteLine("");
+            var fourthPerson = list1.GetPersonByIndex(3);
+            Console.WriteLine("4th person in the list is of the following object type:");
+            Console.WriteLine($"{fourthPerson.GetType()}");
+            Console.WriteLine($"{fourthPerson.Info()}");
+
+            switch (fourthPerson)
+            {
+                case Child fourthChild:
+                    Console.WriteLine(fourthChild.PlayGame());
+                    break;
+                case Adult fourthAdult:
+                    Console.WriteLine(fourthAdult.GoToWork());
+                    break;
+            }
             Console.ReadKey();
             Console.WriteLine("");
+
         }
     }
 }
