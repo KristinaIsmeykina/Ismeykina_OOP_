@@ -55,6 +55,7 @@ namespace View
 
             for (int i = 0; i < randomNumber; i++)
             {
+                //TODO: Оптимизировать по коду
                 int genderType = rnd.Next(0, 2);
                 bool marriageStatus = Convert.ToBoolean(rnd.Next(0,2));
                 if (genderType == 0)
@@ -72,6 +73,7 @@ namespace View
    
             for (int i=0; i<7-randomNumber; i++)
             {
+                //TODO: Оптимизировать по коду
                 int genderType = rnd.Next(0, 2);
                 bool marriageStatus = Convert.ToBoolean(rnd.Next(0, 2));
                 if (genderType == 0)

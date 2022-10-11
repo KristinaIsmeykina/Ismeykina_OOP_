@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    //TODO: RSDN
     /// <summary>
     /// Класс Person
     /// </summary>
     public abstract class Person
     {
-       
-
-
         /// <summary>
         /// Свойство получения минимального возраста человека
         /// </summary>
@@ -81,7 +79,6 @@ namespace Model
             }
             if (_name != null && ValidName(inputValue)!= ValidName(_name))
             {
-                //TODO: Некорректное сообщение
                 throw new ArgumentException("Name and Surname must be in the same language");
             }
             
@@ -110,6 +107,7 @@ namespace Model
         /// </summary>
         public GenderPerson Gender { get; set; }
 
+        //TODO: Не имеет смысл делать public.
         /// <summary>
         /// Коструктор класса Person
         /// </summary>
@@ -125,6 +123,7 @@ namespace Model
             Gender = gender;
         }
 
+        //TODO: Не имеет смысл делать public.
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>
@@ -141,6 +140,7 @@ namespace Model
         {
             Regex regexRUS = new Regex(@"^[А-Яа-я]+\-?([А-Яа-я]+)?$");
             Regex regexENG = new Regex(@"^[A-Za-z]+\-?([A-Za-z]+)?$");
+            //BUG:
             if (regexRUS.IsMatch(input))
             {
                 this._lang = "Rus";

@@ -58,6 +58,7 @@ namespace Model
         /// <param name="surname"></param>
         /// <param name="age"></param>
         /// <param name="gender"></param>
+        //TODO: RSDN
         public Child( string name, string surname, int age,  GenderPerson gender, string facility, string firstParent = null, string secondParent = null)
             : base(name, surname, age, gender)
         {
@@ -74,6 +75,7 @@ namespace Model
         /// <param name="facilities"></param>
         /// <param name="rnd"></param>
         /// <returns></returns>
+        //TODO: RSDN
         public static Child GetRandomChild(List<string> names, List<string> surnames, List<string> facilities, int gender, Random rnd)
         {
             var person = new Child(
@@ -86,6 +88,7 @@ namespace Model
             return person;
         }
 
+        //TODO: Несоответствие XML комментариев коду
         /// <summary>
         /// Присваивает родителей для ребенка
         /// </summary>
