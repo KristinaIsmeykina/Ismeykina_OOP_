@@ -78,7 +78,6 @@ namespace Model
             }
             if (_name != null && ValidName(inputValue)!= ValidName(_name))
             {
-                //TODO: Некорректное сообщение
                 throw new ArgumentException("Name and Surname must be in the same language");
             }
             
@@ -138,6 +137,7 @@ namespace Model
         {
             Regex regexRUS = new Regex(@"^[А-Яа-я]+\-?([А-Яа-я]+)?$");
             Regex regexENG = new Regex(@"^[A-Za-z]+\-?([A-Za-z]+)?$");
+            //BUG: ошибка в алгоритме
             if (regexRUS.IsMatch(input))
             {
                 this._lang = "Rus";

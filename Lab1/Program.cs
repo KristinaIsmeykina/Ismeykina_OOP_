@@ -89,26 +89,22 @@ namespace View
         static Person ReadPerson()
         {
             var personRead = new Person();
-            //TODO: RSDN
             Action actionReadName = () =>
             {
                 personRead.Name = Console.ReadLine();
             };
             ActionHandler(actionReadName, "Enter name of person");
-            //TODO: RSDN
             Action actionReadSurname = () =>
             {
                 personRead.Surname = Console.ReadLine();
             };
             ActionHandler(actionReadSurname, "Enter surname of person");
-            //TODO: RSDN
             Action actionReadAge = () =>
             {
                 personRead.Age = int.Parse(Console.ReadLine());
             };
             ActionHandler(actionReadAge, $"Enter age of person: value must be in range:" +
                 $" {Person.MinAge} - {Person.MaxAge} ");
-            //TODO: RSDN
             Action actionReadGender = () =>
             {
                int personGender= Convert.ToInt32(Console.ReadLine());
