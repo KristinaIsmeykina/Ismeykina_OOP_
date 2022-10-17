@@ -5,7 +5,7 @@ using Model;
 
 namespace View
 {
-
+    //TODO: RSDN
     public class Program
     {
         public static void Main(string[] args)

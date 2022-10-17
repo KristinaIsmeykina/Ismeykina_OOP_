@@ -2,6 +2,7 @@
 
 namespace Model
 {
+    //TODO: RSDN
     public class Parallelepiped : FigureBase
     {
         /// <summary>
@@ -23,8 +24,10 @@ namespace Model
         /// Угол между первой и второй сторонной параллелепипеда
         /// </summary>
         private double _angle;
+        //TODO: XML
         private const int MaxAngle = 180;
         private const int MinAngle = 0;
+        //TODO: XML
         private double Height
         {
             get => _height;
@@ -126,6 +129,7 @@ namespace Model
             const int maxLength = 100;
             const int minLength = 0;
             var rnd = new Random();
+            //TODO: зачем?
             var parallelepiped = new Parallelepiped(rnd.Next(minLength, maxLength) / 1.00,
                 rnd.Next(minLength, maxLength) / 1.00,
                 rnd.Next(minLength, maxLength) / 1.00,

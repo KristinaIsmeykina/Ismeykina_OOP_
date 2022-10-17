@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    //TODO: XML
     public class Sphere: FigureBase
     {
         /// <summary>
@@ -58,6 +59,7 @@ namespace Model
             const int maxLength = 100;
             const int minLength = 0;
             var rnd = new Random();
+            //TODO:
             var sphere = new Sphere(rnd.Next(minLength, maxLength) /1.00); 
             return sphere;
         }

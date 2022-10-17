@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    //TODO: XML
     public class Pyramid : FigureBase
     {
 
@@ -126,7 +127,6 @@ namespace Model
         /// <summary>
         /// <inheritdoc />
         /// </summary>
-        /// <returns></returns>
         public override double GetVolume()
         {
             int added = 1;
@@ -147,10 +147,11 @@ namespace Model
                                      $"L2: {SecondSide}; " +
                                      $"Angle: {Angle}";
 
+        //TODO: Несоответствие XML комментариям
         /// <summary>
         /// Конструктор 
         /// </summary>
-        /// <param name="height"></param>
+        /// <param name="height">//TODO: XML</param>
         /// <param name="firstSide"></param>
         /// <param name="secondSide"></param>
         /// <param name="angle"></param>
@@ -177,6 +178,7 @@ namespace Model
             const int minLength = 0;
             const int maxCornersNumbers = 4;
             var rnd = new Random();
+            //TODO:
             var pyramid = new Pyramid(rnd.Next(minLength, maxLength) / 1.00,
                 rnd.Next(MinCornersNumber, maxCornersNumbers + 1),
                 rnd.Next(minLength, maxLength) / 1.00,

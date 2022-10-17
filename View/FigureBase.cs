@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    //TODO: RSDN
     public abstract class FigureBase
     {
         /// <summary>
