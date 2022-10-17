@@ -57,31 +57,22 @@ namespace View
             {
                 int genderType = rnd.Next(0, 2);
                 bool marriageStatus = Convert.ToBoolean(rnd.Next(0,2));
-                if (genderType == 0)
-                {
+                List<string> firstName = genderType == 0 ? (maleNames) : femaleNames;
+                List<string> secondName = genderType == 0 ? (femaleNames) : maleNames;
 
-                    list1.Add(Adult.GetPair(maleNames, femaleNames, surnames, workplaces, marriageStatus, genderType, rnd));
-                }
-                else if (genderType == 1)
-                {
-                    list1.Add(Adult.GetPair(femaleNames, maleNames, surnames, workplaces, marriageStatus, genderType, rnd));
-                }
-
-
+                list1.Add(Adult.GetPair(firstName, secondName, surnames, workplaces, marriageStatus, genderType, rnd));
+ 
             }
    
             for (int i=0; i<7-randomNumber; i++)
             {
                 int genderType = rnd.Next(0, 2);
-                if (genderType == 0)
-                {
+                List<string> firstName = genderType == 0 ? (maleNames) : femaleNames;
+                List<string> secondName = genderType == 0 ? (femaleNames) : maleNames;
 
-                    list1.Add(Child.GetChildWithParrent(maleNames,femaleNames, surnames, facilities,genderType, rnd));
-                }
-                else if (genderType == 1)
-                {
-                    list1.Add(Child.GetChildWithParrent(femaleNames,maleNames, surnames, facilities, genderType, rnd));
-                }
+               
+                    list1.Add(Child.GetChildWithParrent(firstName, secondName, surnames, facilities,genderType, rnd));
+           
             }
         
             for (int i = 0; i < list1.Length(); i++)

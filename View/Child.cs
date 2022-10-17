@@ -69,9 +69,9 @@ namespace Model
         /// <summary>
         /// Создание рандомного ребенка
         /// </summary>
-        /// <param name="names"></param>
-        /// <param name="surnames"></param>
-        /// <param name="facilities"></param>
+        /// <param name="names">список имен</param>
+        /// <param name="surnames">список фамилий</param>
+        /// <param name="facilities">список учрежедний</param>
         /// <param name="rnd"></param>
         /// <returns></returns>
         public static Child GetRandomChild(List<string> names, List<string> surnames, List<string> facilities, int gender, Random rnd)
@@ -87,11 +87,13 @@ namespace Model
         }
 
         /// <summary>
-        /// Присваивает родителей для ребенка
+        /// Присваивает
         /// </summary>
         /// <param name="names"></param>
+        /// <param name="names2"></param>
         /// <param name="surnames"></param>
         /// <param name="facilities"></param>
+        /// <param name="gender"></param>
         /// <param name="rnd"></param>
         /// <returns></returns>
         public static Child GetChildWithParrent(List<string> names, List<string> names2, List<string> surnames, List<string> facilities, int gender, Random rnd)
