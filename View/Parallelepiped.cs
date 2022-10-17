@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Parallelepiped
+    public class Parallelepiped:FigureBase
     {
         /// <summary>
         /// Высота
@@ -57,6 +57,6 @@ namespace Model
             
         }
 
-        public override double Volume => Area * _height;
+        public override double GetVolume() => Area * _height;
     }
 }

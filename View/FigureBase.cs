@@ -6,8 +6,19 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class FigureBase
+    public abstract class FigureBase
     {
-        protected static double
+        protected static void CheckValue(double value)
+        {
+            if (value <= 0)
+            {
+                throw new ArgumentOutOfRangeException(
+                    $"The value must be greater than 0");
+            }
+        }
+
+        protected abstract double GetVolume();
+        protected abstract string Info { get; }
+
     }
 }
