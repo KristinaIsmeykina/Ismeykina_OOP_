@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FigureBase.cs" />
     <Compile Include="GenderPerson.cs" />
+    <Compile Include="Parallelepiped.cs" />
     <Compile Include="PersonList.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
