@@ -9,12 +9,12 @@ namespace Model
     public class Sphere: FigureBase
     {
         /// <summary>
-        /// Sphere radius
+        /// Радиус сферы
         /// </summary>
         private double _radius;
 
         /// <summary>
-        /// Sphere radius's property
+        /// Свйоство - радиус сферы
         /// </summary>
         private double Radius
         {
@@ -30,7 +30,7 @@ namespace Model
         ///  <inheritdoc />
         /// </summary>
         /// <returns></returns>
-        protected override double GetVolume()
+        public override double GetVolume()
         {
             return 4 * Math.PI * Math.Pow(Radius, 3) / 3;
         }
@@ -38,10 +38,10 @@ namespace Model
         /// <summary>
         /// <inheritdoc />
         /// </summary>
-        protected override string Info => $"Sphere R: {Radius}";
+        public override string Info => $"Sphere R: {Radius}";
 
         /// <summary>
-        /// Sphere's instance constructor
+        /// Конструктор
         /// </summary>
         /// <param name="radius"></param>
         public Sphere(double radius)
@@ -49,10 +49,16 @@ namespace Model
             Radius = radius;
         }
 
+        /// <summary>
+        /// Создание сферы
+        /// </summary>
+        /// <returns></returns>
         public static Sphere GetRandomSphere()
         {
+            const int maxLength = 100;
+            const int minLength = 0;
             var rnd = new Random();
-            var sphere = new Sphere(rnd.Next(0,100)/1.00); 
+            var sphere = new Sphere(rnd.Next(minLength, maxLength) /1.00); 
             return sphere;
         }
     }

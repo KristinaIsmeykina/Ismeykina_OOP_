@@ -34,6 +34,10 @@ namespace Model
                 _height = value;
             }
         }
+
+        /// <summary>
+        /// Свойство - первоя сторона
+        /// </summary>
         private double FirstSide
         {
             get => _firstSide;
@@ -43,6 +47,10 @@ namespace Model
                 _firstSide = value;
             }
         }
+
+        /// <summary>
+        /// Свойство - вторая сторона
+        /// </summary>
         private double SecondSide
         {
             get => _secondSide;
@@ -52,6 +60,10 @@ namespace Model
                 _secondSide = value;
             }
         }
+
+        /// <summary>
+        /// Свойство -  угол
+        /// </summary>
         private double Angle
         {
             get => _angle;
@@ -67,6 +79,13 @@ namespace Model
             }
         }
 
+        /// <summary>
+        /// Конструктор паралелепипида
+        /// </summary>
+        /// <param name="height"></param>
+        /// <param name="firstSide"></param>
+        /// <param name="secondSide"></param>
+        /// <param name="angle"></param>
         public Parallelepiped(double height,
                               double firstSide,
                               double secondSide,
@@ -79,21 +98,37 @@ namespace Model
 
         }
 
-        protected override double GetVolume()
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
+        /// <returns></returns>
+        public override double GetVolume()
         {
             double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180);
             return baseArea * Height;
         }
-        protected override string Info => $"Parallelepiped H: {Height}; " +
+
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
+        public override string Info => $"Parallelepiped H: {Height}; " +
                                        $"L1: {FirstSide}; " +
                                        $"L2: {SecondSide}; " +
                                        $"Angle: {Angle}";
+
+
+        /// <summary>
+        /// Генеарция паралелепипида
+        /// </summary>
+        /// <returns></returns>
         public static Parallelepiped GetRandomParallelepiped()
         {
+            const int maxLength = 100;
+            const int minLength = 0;
             var rnd = new Random();
-            var parallelepiped = new Parallelepiped(rnd.Next(0, 1000) / 1.00,
-                rnd.Next(0, 1000) / 1.00,
-                rnd.Next(0, 1000) / 1.00,
+            var parallelepiped = new Parallelepiped(rnd.Next(minLength, maxLength) / 1.00,
+                rnd.Next(minLength, maxLength) / 1.00,
+                rnd.Next(minLength, maxLength) / 1.00,
                 rnd.Next(MinAngle, MaxAngle) / 1.00);
             return parallelepiped;
         }

@@ -5,13 +5,12 @@ using Model;
 
 namespace View
 {
-   
+
     public class Program
     {
         public static void Main(string[] args)
         {
-            Console.OutputEncoding = Encoding.Unicode;
-            Console.InputEncoding = Encoding.Unicode;
+         
 
             var figureList = new List<FigureBase>();
             var rnd = new Random();
@@ -38,9 +37,10 @@ namespace View
             foreach (var figure in figureList)
             {
                 Console.WriteLine(figure.Info);
-                Console.WriteLine(figure.GetV);
+                Console.WriteLine(figure.GetVolume());
             }
-
+            Console.ReadKey();
 
         }
     }
+}

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Pyramid: FigureBase
+    public class Pyramid : FigureBase
     {
 
         /// <summary>
@@ -28,8 +28,20 @@ namespace Model
         /// Угол между первой и второй сторонной пирамиды
         /// </summary>
         private double _angle;
+
+        /// <summary>
+        /// Максимальный угол
+        /// </summary>
         private const int MaxAngle = 180;
+
+        /// <summary>
+        /// Минимальный угол
+        /// </summary>
         private const int MinAngle = 0;
+
+        /// <summary>
+        /// Свойство -  высота пирамиды
+        /// </summary>
         private double Height
         {
             get => _height;
@@ -39,6 +51,10 @@ namespace Model
                 _height = value;
             }
         }
+
+        /// <summary>
+        /// Свойство - Длина первой стороны пирамиды
+        /// </summary>
         private double FirstSide
         {
             get => _firstSide;
@@ -48,6 +64,10 @@ namespace Model
                 _firstSide = value;
             }
         }
+
+        /// <summary>
+        /// Свойство -  длина второй высоты пирамиды
+        /// </summary>
         private double SecondSide
         {
             get => _secondSide;
@@ -57,6 +77,10 @@ namespace Model
                 _secondSide = value;
             }
         }
+
+        /// <summary>
+        /// Свойство - Угол
+        /// </summary>
         private double Angle
         {
             get => _angle;
@@ -72,11 +96,18 @@ namespace Model
             }
         }
         /// <summary>
-        /// Max number of corners of the base of the pyramid
+        /// Минимальное число углов основания пирамиды
         /// </summary>
         private const int MinCornersNumber = 3;
 
+        /// <summary>
+        /// Количество углов основания
+        /// </summary>
         private int _numberOfCorners;
+
+        /// <summary>
+        /// Свойство - количество углов основания
+        /// </summary>
         private int NumberOfCorners
         {
             get => _numberOfCorners;
@@ -91,41 +122,67 @@ namespace Model
                 _numberOfCorners = value;
             }
         }
-        protected override double GetVolume()
+
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
+        /// <returns></returns>
+        public override double GetVolume()
         {
             int added = 1;
-            if (NumberOfCorners==3)
+            if (NumberOfCorners == 3)
             {
                 added = 2;
             }
-            double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180)/added;
+            double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180) / added;
             return baseArea * Height;
         }
-       
-        protected override string Info => $"Pyramid H: {Height}; " +
+
+        /// <summary>
+        /// <inheritdoc />
+        /// </summary>
+        public override string Info => $"Pyramid Corners:{NumberOfCorners}; " +
+                                     $"H: {Height}; " +
                                      $"L1: {FirstSide}; " +
                                      $"L2: {SecondSide}; " +
                                      $"Angle: {Angle}";
 
-        public Pyramid(double height,
+        /// <summary>
+        /// Конструктор 
+        /// </summary>
+        /// <param name="height"></param>
+        /// <param name="firstSide"></param>
+        /// <param name="secondSide"></param>
+        /// <param name="angle"></param>
+        public Pyramid(double height, int numberOfCorners,
                              double firstSide,
                              double secondSide,
                              double angle)
         {
             Height = height;
+            NumberOfCorners = numberOfCorners;
             FirstSide = firstSide;
             SecondSide = secondSide;
             Angle = angle;
 
         }
+
+        /// <summary>
+        /// Генерация пирамиды
+        /// </summary>
+        /// <returns></returns>
         public static Pyramid GetRandomPyramid()
         {
+            const int maxLength = 100;
+            const int minLength = 0;
+            const int maxCornersNumbers = 4;
             var rnd = new Random();
-            var pyramid = new Pyramid(rnd.Next(0, 1000) / 1.00,
-                rnd.Next(0, 1000) / 1.00,
-                rnd.Next(0, 1000) / 1.00,
+            var pyramid = new Pyramid(rnd.Next(minLength, maxLength) / 1.00,
+                rnd.Next(MinCornersNumber, maxCornersNumbers + 1),
+                rnd.Next(minLength, maxLength) / 1.00,
+                rnd.Next(minLength, maxLength) / 1.00,
                 rnd.Next(MinAngle, MaxAngle) / 1.00);
             return pyramid;
         }
-         
+    }    
 }
