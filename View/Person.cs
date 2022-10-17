@@ -71,16 +71,11 @@ namespace Model
             {
                 throw new ArgumentException("Value must not be empty");
             }
-            if (ValidName(inputValue) == "Other")
+            if (ValidName(inputValue)==false)
             {
                 throw new ArgumentException("Use only latin or cyrilic");
 
             }
-            if (_name != null && ValidName(inputValue)!= ValidName(_name))
-            {
-                throw new ArgumentException("Name and Surname must be in the same language");
-            }
-            
             return ChangeFirstLetter(inputValue); 
             
         }
@@ -133,25 +128,24 @@ namespace Model
         /// </summary>
         /// <param name="input">строка для проверки</param>
         /// <returns>строковую переменную</returns>
-        private string ValidName(string input)
+        private bool ValidName(string input)
         {
             Regex regexRUS = new Regex(@"^[А-Яа-я]+\-?([А-Яа-я]+)?$");
             Regex regexENG = new Regex(@"^[A-Za-z]+\-?([A-Za-z]+)?$");
             //BUG: ошибка в алгоритме
-            if (regexRUS.IsMatch(input))
+            if (regexRUS.IsMatch(input) && (this._lang == null || this._lang == "Rus"))
             {
                 this._lang = "Rus";
+                return regexRUS.IsMatch(input);
             }
 
-            if (regexENG.IsMatch(input))
+            if (regexENG.IsMatch(input) && (this._lang == null || this._lang == "Eng"))
             {
                 this._lang = "Eng";
+                return regexENG.IsMatch(input);
             }
-            else
-            {
-                this._lang = "Other";
-            }
-            return _lang;
+           
+            return false;
         }
 
         /// <summary>
