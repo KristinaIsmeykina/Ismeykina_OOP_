@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    //TODO: XML
+    /// <summary>
+    /// 
+    /// </summary>
     public class Sphere: FigureBase
     {
         /// <summary>
