@@ -5,9 +5,11 @@ using Model;
 
 namespace View
 {
+    //TODO: XML
    
     public class Program
     {
+        //TODO: XML
         public static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
