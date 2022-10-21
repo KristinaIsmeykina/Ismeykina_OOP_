@@ -2,7 +2,6 @@
 
 namespace Model
 {
-    //TODO: RSDN
     /// <summary>
     /// Класс Parallelepiped
     /// </summary>
@@ -27,8 +26,7 @@ namespace Model
         /// Угол между первой и второй сторонной параллелепипеда
         /// </summary>
         private double _angle;
-
-        //TODO: XML
+        
         /// <summary>
         /// Максимальный угол
         /// </summary>
@@ -38,7 +36,6 @@ namespace Model
         /// Минимальный угол
         /// </summary>
         private const int MinAngle = 0;
-        //TODO: XML
 
         /// <summary>
         /// Высота
@@ -144,7 +141,7 @@ namespace Model
             const int maxLength = 100;
             const int minLength = 0;
             var rnd = new Random();
-            //TODO: зачем?
+            //TODO: дублирование получения числа в диапазоне
             var parallelepiped = new Parallelepiped(rnd.NextDouble() * maxLength + minLength,
                 rnd.NextDouble() * maxLength + minLength,
                 rnd.NextDouble() * maxLength + minLength,

@@ -10,9 +10,9 @@ namespace View
     /// </summary>
     public class Program
     {
+        //TODO: XML
         public static void Main(string[] args)
         {
-         
 
             var figureList = new List<FigureBase>();
             var rnd = new Random();
