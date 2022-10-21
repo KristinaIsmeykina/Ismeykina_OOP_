@@ -9,7 +9,7 @@ namespace Model
     /// <summary>
     /// Класс Adult
     /// </summary>
-    public class Adult : Person
+    public class Adult : PersonBase
     {
         /// <summary>
         /// Паспортные данные
@@ -40,13 +40,17 @@ namespace Model
         /// Максимальный возраст взрослого
         /// </summary>
         private const int _maxAge = 120;
+
+        /// <summary>
+        /// Переопредление свойства минимальный возраст взрослого
+        /// </summary>
         protected override int MinAge
         {
             get => _minAge;
         }
 
         /// <summary>
-        /// Максимальный возраст взрослого
+        /// Переопредление свойства максимальный возраст взрослого
         /// </summary>
         protected override int MaxAge
         {
@@ -92,6 +96,7 @@ namespace Model
             set => _workplace = value;
         }
 
+        //TODO: XML
         /// <summary>
         /// Конструктор класса Adult
         /// </summary>
@@ -138,6 +143,7 @@ namespace Model
         /// <param name="genderType">пол</param>
         /// <param name="rnd">объект класса рандом</param>
         /// <returns></returns>
+        //TODO: RSDN
         public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, bool marriageStatus, int genderType, Random rnd)
         {
             
@@ -163,10 +169,13 @@ namespace Model
         /// <param name="genderType">пол</param>
         /// <param name="rnd">объект класса </param>
         /// <returns>Взрослого человека</returns>
+        //TODO: RSDN
         public static Adult GetPair(List<string> names, List<string> names2, List<string> surnames, List<string> workplaces, bool marrigeStatus, int genderType, Random rnd)
         {
             
             Adult person = GetRandomAdult(names, surnames, workplaces, marrigeStatus, genderType, rnd);
+            
+            //TODO: условные операторы и bool
             if (marrigeStatus==true)
             {
                 Adult person2 = GetRandomAdult(names2, surnames, workplaces, marrigeStatus, genderType, rnd);

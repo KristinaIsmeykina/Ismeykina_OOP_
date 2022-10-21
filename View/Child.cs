@@ -9,7 +9,7 @@ namespace Model
     /// <summary>
     /// Класс Child
     /// </summary>
-    public class Child:Person
+    public class Child:PersonBase
     {
         
         /// <summary>
@@ -63,6 +63,7 @@ namespace Model
         /// <param name="facility">учреждение</param>
         /// <param name="firstParent">первый родитель</param>
         /// <param name="secondParent">втрой родитель</param>
+        //TODO: RSDN
         public Child( string name, string surname, int age,  GenderPerson gender, string facility, string firstParent = null, string secondParent = null)
             : base(name, surname, age, gender)
         {
@@ -79,6 +80,7 @@ namespace Model
         /// <param name="facilities">список учрежедний</param>
         /// <param name="rnd">объект класса рандом</param>
         /// <returns></returns>
+        //TODO: RSDN
         public static Child GetRandomChild(List<string> names, List<string> surnames, List<string> facilities, int gender, Random rnd)
         {
             var person = new Child(
@@ -91,6 +93,7 @@ namespace Model
             return person;
         }
 
+        //TODO: Несоответствие XML комментариев коду
         /// <summary>
         /// Присваивает ребенку родителя
         /// </summary>
