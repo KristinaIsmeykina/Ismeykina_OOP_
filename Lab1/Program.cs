@@ -5,9 +5,11 @@ using Model;
 
 namespace View
 {
+    //TODO: XML
 
     public class Program
     {
+        //TODO: XML
         public static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
@@ -59,7 +61,7 @@ namespace View
                 bool marriageStatus = Convert.ToBoolean(rnd.Next(0,2));
                 List<string> firstName = genderType == 0 ? (maleNames) : femaleNames;
                 List<string> secondName = genderType == 0 ? (femaleNames) : maleNames;
-
+                //TODO: RSDN
                 list1.Add(Adult.GetPair(firstName, secondName, surnames, workplaces, marriageStatus, genderType, rnd));
  
             }
@@ -70,7 +72,7 @@ namespace View
                 List<string> firstName = genderType == 0 ? (maleNames) : femaleNames;
                 List<string> secondName = genderType == 0 ? (femaleNames) : maleNames;
 
-               
+               //TODO: RSDN
                     list1.Add(Child.GetChildWithParrent(firstName, secondName, surnames, facilities,genderType, rnd));
            
             }

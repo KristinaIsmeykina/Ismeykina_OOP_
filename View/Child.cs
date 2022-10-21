@@ -73,6 +73,7 @@ namespace Model
             Facility = facility;
         }
 
+        //TODO: RSDN
         /// <summary>
         /// Создание рандомного ребенка
         /// </summary>
@@ -81,9 +82,10 @@ namespace Model
         /// <param name="facilities">список учрежедний</param>
         /// <param name="rnd">объект класса рандом</param>
         /// <returns></returns>
-        //TODO: RSDN
-        public static Child GetRandomChild(List<string> names, List<string> surnames,
-            List<string> facilities, int gender, Random rnd)
+        //TODO: Несоответствие XML комментариев коду
+        public static Child GetRandomChild(List<string> names, 
+            List<string> surnames, List<string> facilities,
+            int gender, Random rnd)
         {
             var person = new Child(
                                   names[rnd.Next(0, names.Count() - 1)],
@@ -94,8 +96,8 @@ namespace Model
                                  
             return person;
         }
-
-        //TODO: Несоответствие XML комментариев коду
+        
+        //TODO: RSDN
         /// <summary>
         /// Присваивает ребенку родителя
         /// </summary>
@@ -151,6 +153,8 @@ namespace Model
 
             return $"{base.InfoPerson}, Facility: {Facility}, Parents: " + addition;
         }
+
+        //TODO: XML
         public string PlayGame()
         {
             return $"{this.Name} likes to play chess";

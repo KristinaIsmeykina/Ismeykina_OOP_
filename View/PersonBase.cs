@@ -106,8 +106,7 @@ namespace Model
         /// Свойство для получения и установки пола персоны
         /// </summary>
         public GenderPerson Gender { get; set; }
-
-        //TODO: Не имеет смысл делать public.
+        
         /// <summary>
         /// Коструктор класса Person
         /// </summary>
@@ -122,8 +121,7 @@ namespace Model
             Age = age;
             Gender = gender;
         }
-
-        //TODO: Не имеет смысл делать public.
+        
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>

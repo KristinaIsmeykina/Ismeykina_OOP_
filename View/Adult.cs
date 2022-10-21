@@ -96,7 +96,7 @@ namespace Model
             set => _workplace = value;
         }
 
-        //TODO: XML
+        //TODO: RSDN
         /// <summary>
         /// Конструктор класса Adult
         /// </summary>
@@ -177,7 +177,6 @@ namespace Model
             
             Adult person = GetRandomAdult(names, surnames, workplaces, marrigeStatus, genderType, rnd);
             
-            //TODO: условные операторы и bool
             if (marrigeStatus)
             {
                 Adult person2 = GetRandomAdult(names2, surnames, workplaces, marrigeStatus, genderType, rnd);
