@@ -10,13 +10,13 @@ namespace Model
         /// <summary>
         /// Список из персон
         /// </summary>
-        private Person[] _personList = new Person[0];
+        private PersonBase[] _personList = new PersonBase[0];
 
         /// <summary>
         /// Добавляет человека в список 
         /// </summary>
         /// <param name="person"> экземпляр</param>
-        public void Add(Person person)
+        public void Add(PersonBase person)
         {
             int count = _personList.Length;
             Array.Resize(ref _personList, count + 1);
@@ -49,9 +49,9 @@ namespace Model
             int count = _personList.Length;
 
             CheckValidIndex(index);
-            Person[] tmpPersonList = _personList;
+            PersonBase[] tmpPersonList = _personList;
             int tmpIndex = 0;
-            _personList = new Person[count - 1];
+            _personList = new PersonBase[count - 1];
             for (int i = 0; i < count; i++)
             {
                 if (i != index)
@@ -81,7 +81,7 @@ namespace Model
         /// </summary>
         /// <param name="person"></param>
         /// <returns>индекс</returns>
-        public int GetIndexOfPerson(Person person)
+        public int GetIndexOfPerson(PersonBase person)
         {
             return Array.IndexOf(_personList, person);
         }
@@ -91,7 +91,7 @@ namespace Model
         /// </summary>
         /// <param name="index"> индекс человека</param>
         /// <returns> персона</returns>
-        public Person GetPersonByIndex(int index)
+        public PersonBase GetPersonByIndex(int index)
         {
             CheckValidIndex(index);
             return _personList[index];
