@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    /// <summary>
+    /// Класс Child
+    /// </summary>
     public class Child:Person
     {
         
@@ -53,11 +56,13 @@ namespace Model
         /// <summary>
         /// Конструктор для класса Child
         /// </summary>
-        /// <param name="facility"></param>
-        /// <param name="name"></param>
-        /// <param name="surname"></param>
-        /// <param name="age"></param>
-        /// <param name="gender"></param>
+        /// <param name="name">имя</param>
+        /// <param name="surname">фамилия</param>
+        /// <param name="age">возраст</param>
+        /// <param name="gender">пол</param>
+        /// <param name="facility">учреждение</param>
+        /// <param name="firstParent">первый родитель</param>
+        /// <param name="secondParent">втрой родитель</param>
         public Child( string name, string surname, int age,  GenderPerson gender, string facility, string firstParent = null, string secondParent = null)
             : base(name, surname, age, gender)
         {
@@ -72,7 +77,7 @@ namespace Model
         /// <param name="names">список имен</param>
         /// <param name="surnames">список фамилий</param>
         /// <param name="facilities">список учрежедний</param>
-        /// <param name="rnd"></param>
+        /// <param name="rnd">объект класса рандом</param>
         /// <returns></returns>
         public static Child GetRandomChild(List<string> names, List<string> surnames, List<string> facilities, int gender, Random rnd)
         {
@@ -87,14 +92,14 @@ namespace Model
         }
 
         /// <summary>
-        /// Присваивает
+        /// Присваивает ребенку родителя
         /// </summary>
-        /// <param name="names"></param>
-        /// <param name="names2"></param>
-        /// <param name="surnames"></param>
-        /// <param name="facilities"></param>
-        /// <param name="gender"></param>
-        /// <param name="rnd"></param>
+        /// <param name="names">список имен</param>
+        /// <param name="names2">список имен</param>
+        /// <param name="surnames">списокфамилий</param>
+        /// <param name="facilities">список учреждений</param>
+        /// <param name="gender">пол</param>
+        /// <param name="rnd">объект класса рандом</param>
         /// <returns></returns>
         public static Child GetChildWithParrent(List<string> names, List<string> names2, List<string> surnames, List<string> facilities, int gender, Random rnd)
         {

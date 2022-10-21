@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    /// <summary>
+    /// Класс Adult
+    /// </summary>
     public class Adult : Person
     {
         /// <summary>
@@ -92,14 +95,14 @@ namespace Model
         /// <summary>
         /// Конструктор класса Adult
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="surname"></param>
-        /// <param name="age"></param>
-        /// <param name="gender"></param>
-        /// <param name="passport"></param>
-        /// <param name="workplace"></param>
-        /// <param name="marriageStatus"></param>
-        /// <param name="marriagePartner"></param>
+        /// <param name="name">имя</param>
+        /// <param name="surname">фамилия</param>
+        /// <param name="age">возраст</param>
+        /// <param name="gender">пол</param>
+        /// <param name="passport">паспорт</param>
+        /// <param name="workplace">место работы</param>
+        /// <param name="marriageStatus">состояние в браке</param>
+        /// <param name="marriagePartner">партнер</param>
         public Adult(string name, string surname, int age, GenderPerson gender, string passport, string workplace, bool marriageStatus,
                 string marriagePartner=null)
                 : base(name, surname, age, gender)
@@ -128,12 +131,12 @@ namespace Model
         /// <summary>
         /// Создает рандомного взрослого
         /// </summary>
-        /// <param name="names"></param>
-        /// <param name="surnames"></param>
-        /// <param name="workplaces"></param>
-        /// <param name="marriageStatus"></param>
-        /// <param name="x"></param>
-        /// <param name="rnd"></param>
+        /// <param name="names">список имен</param>
+        /// <param name="surnames">список фамилий</param>
+        /// <param name="workplaces">список учреждений</param>
+        /// <param name="marriageStatus">состояние в браке</param>
+        /// <param name="genderType">пол</param>
+        /// <param name="rnd">объект класса рандом</param>
         /// <returns></returns>
         public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, bool marriageStatus, int genderType, Random rnd)
         {
@@ -152,13 +155,13 @@ namespace Model
         /// <summary>
         /// Создает пару для взрослого
         /// </summary>
-        /// <param name="names"></param>
-        /// <param name="names2"></param>
-        /// <param name="surnames"></param>
-        /// <param name="workplaces"></param>
-        /// <param name="marrigeStatus"></param>
-        /// <param name="genderType"></param>
-        /// <param name="rnd"></param>
+        /// <param name="names">список имен</param>
+        /// <param name="names2">список имен</param>
+        /// <param name="surnames">фамилия</param>
+        /// <param name="workplaces">место работы</param>
+        /// <param name="marrigeStatus">статус в браке</param>
+        /// <param name="genderType">пол</param>
+        /// <param name="rnd">объект класса </param>
         /// <returns>Взрослого человека</returns>
         public static Adult GetPair(List<string> names, List<string> names2, List<string> surnames, List<string> workplaces, bool marrigeStatus, int genderType, Random rnd)
         {
