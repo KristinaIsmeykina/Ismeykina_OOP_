@@ -67,17 +67,26 @@ namespace Model
         /// <returns></returns>
         private string CheckValue(string inputValue)
         {
+            
             if (String.IsNullOrEmpty(inputValue))
             {
                 throw new ArgumentException("Value must not be empty");
             }
-            if (ValidName(inputValue)==false)
+            if (ValidName(inputValue) == "Other")
             {
                 throw new ArgumentException("Use only latin or cyrilic");
 
             }
-            return ChangeFirstLetter(inputValue); 
+            if ( _name != null && _name != "Unknown" && ValidName(inputValue) != ValidName(_name) )
+            {
+                //TODO: Некорректное сообщение
+              
+                throw new ArgumentException("Name and Surname must be in the same language");
+                
+            }
             
+            return ChangeFirstLetter(inputValue);
+
         }
         
         /// <summary>
@@ -122,30 +131,31 @@ namespace Model
         public Person() : this("Unknown", "Unknown", 1, GenderPerson.Unknown)
         { }
 
+
         /// <summary>
         /// Проверяет, содержит ли строка только русские или 
         /// только английские символы
         /// </summary>
         /// <param name="input">строка для проверки</param>
         /// <returns>строковую переменную</returns>
-        private bool ValidName(string input)
+        private string ValidName(string input)
         {
             Regex regexRUS = new Regex(@"^[А-Яа-я]+\-?([А-Яа-я]+)?$");
             Regex regexENG = new Regex(@"^[A-Za-z]+\-?([A-Za-z]+)?$");
-            //BUG: ошибка в алгоритме
-            if (regexRUS.IsMatch(input) && (this._lang == null || this._lang == "Rus"))
+            if (regexRUS.IsMatch(input))
             {
                 this._lang = "Rus";
-                return regexRUS.IsMatch(input);
             }
 
-            if (regexENG.IsMatch(input) && (this._lang == null || this._lang == "Eng"))
+            else if (regexENG.IsMatch(input))
             {
                 this._lang = "Eng";
-                return regexENG.IsMatch(input);
             }
-           
-            return false;
+            else
+            {
+               this._lang = "Other";
+            }
+            return _lang;
         }
 
         /// <summary>
@@ -179,4 +189,7 @@ namespace Model
         /// </summary>
         public string Info => $"{Name} {Surname} {Age} {Gender}";
     }
+
+
+
 }
