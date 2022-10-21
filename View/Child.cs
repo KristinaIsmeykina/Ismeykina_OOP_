@@ -64,7 +64,8 @@ namespace Model
         /// <param name="firstParent">первый родитель</param>
         /// <param name="secondParent">втрой родитель</param>
         //TODO: RSDN
-        public Child( string name, string surname, int age,  GenderPerson gender, string facility, string firstParent = null, string secondParent = null)
+        public Child( string name, string surname, int age,  GenderPerson gender, string facility,
+            string firstParent = null, string secondParent = null)
             : base(name, surname, age, gender)
         {
             FirstParent = firstParent;
@@ -81,7 +82,8 @@ namespace Model
         /// <param name="rnd">объект класса рандом</param>
         /// <returns></returns>
         //TODO: RSDN
-        public static Child GetRandomChild(List<string> names, List<string> surnames, List<string> facilities, int gender, Random rnd)
+        public static Child GetRandomChild(List<string> names, List<string> surnames,
+            List<string> facilities, int gender, Random rnd)
         {
             var person = new Child(
                                   names[rnd.Next(0, names.Count() - 1)],
@@ -104,7 +106,8 @@ namespace Model
         /// <param name="gender">пол</param>
         /// <param name="rnd">объект класса рандом</param>
         /// <returns></returns>
-        public static Child GetChildWithParrent(List<string> names, List<string> names2, List<string> surnames, List<string> facilities, int gender, Random rnd)
+        public static Child GetChildWithParrent(List<string> names, List<string> names2, 
+            List<string> surnames, List<string> facilities, int gender, Random rnd)
         {
             Child person = GetRandomChild(names, surnames, facilities,gender, rnd);
             int numberAdult = rnd.Next(0, 3);

@@ -144,7 +144,8 @@ namespace Model
         /// <param name="rnd">объект класса рандом</param>
         /// <returns></returns>
         //TODO: RSDN
-        public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, bool marriageStatus, int genderType, Random rnd)
+        public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, 
+            bool marriageStatus, int genderType, Random rnd)
         {
             
             var person = new Adult(
@@ -170,13 +171,14 @@ namespace Model
         /// <param name="rnd">объект класса </param>
         /// <returns>Взрослого человека</returns>
         //TODO: RSDN
-        public static Adult GetPair(List<string> names, List<string> names2, List<string> surnames, List<string> workplaces, bool marrigeStatus, int genderType, Random rnd)
+        public static Adult GetPair(List<string> names, List<string> names2, List<string> surnames, 
+            List<string> workplaces, bool marrigeStatus, int genderType, Random rnd)
         {
             
             Adult person = GetRandomAdult(names, surnames, workplaces, marrigeStatus, genderType, rnd);
             
             //TODO: условные операторы и bool
-            if (marrigeStatus==true)
+            if (marrigeStatus)
             {
                 Adult person2 = GetRandomAdult(names2, surnames, workplaces, marrigeStatus, genderType, rnd);
                 person.MarriagePartner = $"{person2.Name} {person.Surname}";
