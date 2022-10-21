@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    //TODO: XML
+    /// <summary>
+    /// Класс Pyramid
+    /// </summary>
     public class Pyramid : FigureBase
     {
 
@@ -151,10 +153,10 @@ namespace Model
         /// <summary>
         /// Конструктор 
         /// </summary>
-        /// <param name="height">//TODO: XML</param>
-        /// <param name="firstSide"></param>
-        /// <param name="secondSide"></param>
-        /// <param name="angle"></param>
+        /// <param name="height">высота</param>
+        /// <param name="firstSide">длина первой стороны</param>
+        /// <param name="secondSide">длина второй стороны</param>
+        /// <param name="angle">угол</param>
         public Pyramid(double height, int numberOfCorners,
                              double firstSide,
                              double secondSide,
@@ -179,11 +181,11 @@ namespace Model
             const int maxCornersNumbers = 4;
             var rnd = new Random();
             //TODO:
-            var pyramid = new Pyramid(rnd.Next(minLength, maxLength) / 1.00,
+            var pyramid = new Pyramid(rnd.NextDouble() * maxLength + minLength,
                 rnd.Next(MinCornersNumber, maxCornersNumbers + 1),
-                rnd.Next(minLength, maxLength) / 1.00,
-                rnd.Next(minLength, maxLength) / 1.00,
-                rnd.Next(MinAngle, MaxAngle) / 1.00);
+                rnd.NextDouble() * maxLength + minLength,
+                rnd.NextDouble() * maxLength + minLength,
+                rnd.NextDouble() * MaxAngle + MinAngle);
             return pyramid;
         }
     }    

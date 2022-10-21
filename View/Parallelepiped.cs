@@ -24,10 +24,22 @@ namespace Model
         /// Угол между первой и второй сторонной параллелепипеда
         /// </summary>
         private double _angle;
+
         //TODO: XML
+        /// <summary>
+        /// Максимальный угол
+        /// </summary>
         private const int MaxAngle = 180;
+
+        /// <summary>
+        /// Минимальный угол
+        /// </summary>
         private const int MinAngle = 0;
         //TODO: XML
+
+        /// <summary>
+        /// Высота
+        /// </summary>
         private double Height
         {
             get => _height;
@@ -130,10 +142,10 @@ namespace Model
             const int minLength = 0;
             var rnd = new Random();
             //TODO: зачем?
-            var parallelepiped = new Parallelepiped(rnd.Next(minLength, maxLength) / 1.00,
-                rnd.Next(minLength, maxLength) / 1.00,
-                rnd.Next(minLength, maxLength) / 1.00,
-                rnd.Next(MinAngle, MaxAngle) / 1.00);
+            var parallelepiped = new Parallelepiped(rnd.NextDouble() * maxLength + minLength,
+                rnd.NextDouble() * maxLength + minLength,
+                rnd.NextDouble() * maxLength + minLength,
+                rnd.NextDouble() * MaxAngle + MinAngle);
             return parallelepiped;
         }
     }
