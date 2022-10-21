@@ -3,6 +3,9 @@
 namespace Model
 {
     //TODO: RSDN
+    /// <summary>
+    /// Класс Parallelepiped
+    /// </summary>
     public class Parallelepiped : FigureBase
     {
         /// <summary>
