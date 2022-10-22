@@ -137,7 +137,7 @@ namespace Model
                 added = 2;
             }
             double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180) / added;
-            return baseArea * Height;
+            return Math.Round(baseArea * Height,3);
         }
 
         /// <summary>
@@ -149,18 +149,19 @@ namespace Model
                                      $"L2: {SecondSide}; " +
                                      $"Angle: {Angle}";
 
-        //TODO: Несоответствие XML комментариям
         /// <summary>
-        /// Конструктор 
+        /// Конструктор для Pyramid
         /// </summary>
         /// <param name="height">высота</param>
+        /// <param name="numberOfCorners">количесво углов у осования</param>
         /// <param name="firstSide">длина первой стороны</param>
         /// <param name="secondSide">длина второй стороны</param>
-        /// <param name="angle">угол</param>
-        public Pyramid(double height, int numberOfCorners,
-                             double firstSide,
-                             double secondSide,
-                             double angle)
+        /// <param name="angle">угол между второй и первой стороной</param>
+        public Pyramid(double height, 
+                       int numberOfCorners,
+                       double firstSide,
+                       double secondSide,
+                       double angle)
         {
             Height = height;
             NumberOfCorners = numberOfCorners;
@@ -179,13 +180,13 @@ namespace Model
             const int maxLength = 100;
             const int minLength = 0;
             const int maxCornersNumbers = 4;
-            var rnd = new Random();
-            //TODO: дублирование получения числа в диапазоне
-            var pyramid = new Pyramid(rnd.NextDouble() * maxLength + minLength,
-                rnd.Next(MinCornersNumber, maxCornersNumbers + 1),
-                rnd.NextDouble() * maxLength + minLength,
-                rnd.NextDouble() * maxLength + minLength,
-                rnd.NextDouble() * MaxAngle + MinAngle);
+            var random = new Random();
+            //TODO: дублирование получения числа в диапазоне/сделано
+            var pyramid = new Pyramid(GetValue(minLength, maxLength),
+                                      random.Next(MinCornersNumber, maxCornersNumbers + 1),
+                                      GetValue(minLength, maxLength),
+                                      GetValue(minLength, maxLength),
+                                      GetValue(MinAngle, MaxAngle));
             return pyramid;
         }
     }    

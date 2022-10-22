@@ -34,5 +34,18 @@ namespace Model
         /// Свойство - информация об объекте
         /// </summary>
         public abstract string Info { get; }
+
+        /// <summary>
+        /// Получает рандомное число из диапазона
+        /// </summary>
+        /// <param name="firstNumber"> левая граница</param>
+        /// <param name="secondNumber">правая граница</param>
+        /// <returns> рандомное число</returns>
+        protected static double GetValue(int firstNumber, int secondNumber)
+        {
+            var random = new Random();
+            double result = Math.Round(random.NextDouble() * secondNumber + firstNumber, 3);
+            return result;
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace Model
         /// <returns></returns>
         public override double GetVolume()
         {
-            return 4 * Math.PI * Math.Pow(Radius, 3) / 3;
+            return Math.Round(4 * Math.PI * Math.Pow(Radius, 3) / 3,3);
         }
 
         /// <summary>
@@ -61,8 +61,8 @@ namespace Model
             const int maxLength = 100;
             const int minLength = 0;
             var rnd = new Random();
-            //TODO: дублирование получения числа в диапазоне
-            var sphere = new Sphere(rnd.NextDouble() * maxLength + minLength); 
+            //TODO: дублирование получения числа в диапазоне /сделано
+            var sphere = new Sphere(GetValue(minLength, maxLength)); 
             return sphere;
         }
     }

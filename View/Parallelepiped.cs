@@ -28,7 +28,7 @@ namespace Model
         /// </summary>
         private double _angle;
 
-        //TODO: XML
+        //TODO: XML/сделано
         /// <summary>
         /// Максимальный угол
         /// </summary>
@@ -38,7 +38,8 @@ namespace Model
         /// Минимальный угол
         /// </summary>
         private const int MinAngle = 0;
-        //TODO: XML
+        
+        //TODO: XML/сделано
 
         /// <summary>
         /// Высота
@@ -123,7 +124,7 @@ namespace Model
         public override double GetVolume()
         {
             double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180);
-            return baseArea * Height;
+            return Math.Round(baseArea * Height,3);
         }
 
         /// <summary>
@@ -136,19 +137,18 @@ namespace Model
 
 
         /// <summary>
-        /// Генеарция паралелепипида
+        /// Генерация паралелепипида
         /// </summary>
         /// <returns></returns>
         public static Parallelepiped GetRandomParallelepiped()
         {
             const int maxLength = 100;
             const int minLength = 0;
-            var rnd = new Random();
             //TODO: зачем?
-            var parallelepiped = new Parallelepiped(rnd.NextDouble() * maxLength + minLength,
-                rnd.NextDouble() * maxLength + minLength,
-                rnd.NextDouble() * maxLength + minLength,
-                rnd.NextDouble() * MaxAngle + MinAngle);
+            var parallelepiped = new Parallelepiped(GetValue(minLength, maxLength),
+                                                    GetValue(minLength, maxLength),
+                                                    GetValue(minLength, maxLength),
+                                                    GetValue(MinAngle, MaxAngle));
             return parallelepiped;
         }
     }
