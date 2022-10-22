@@ -10,6 +10,10 @@ namespace View
     /// </summary>
     public class Program
     {
+        /// <summary>
+        /// Точка входа
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
          

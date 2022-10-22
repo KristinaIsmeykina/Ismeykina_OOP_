@@ -2,7 +2,7 @@
 
 namespace Model
 {
-    //TODO: RSDN
+    //TODO: RSDN/сделано
     /// <summary>
     /// Класс Parallelepiped
     /// </summary>
