@@ -61,7 +61,7 @@ namespace Model
             const int maxLength = 100;
             const int minLength = 0;
             var rnd = new Random();
-            //TODO:
+            //TODO: дублирование получения числа в диапазоне
             var sphere = new Sphere(rnd.NextDouble() * maxLength + minLength); 
             return sphere;
         }

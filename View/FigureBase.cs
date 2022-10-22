@@ -34,6 +34,5 @@ namespace Model
         /// Свойство - информация об объекте
         /// </summary>
         public abstract string Info { get; }
-
     }
 }
