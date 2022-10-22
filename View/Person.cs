@@ -79,7 +79,7 @@ namespace Model
             }
             if ( _name != null && _name != "Unknown" && ValidName(inputValue) != ValidName(_name) )
             {
-                //TODO: Некорректное сообщение
+                
               
                 throw new ArgumentException("Name and Surname must be in the same language");
                 

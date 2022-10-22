@@ -5,11 +5,16 @@ using Model;
 
 namespace View
 {
-    //TODO: XML
+    /// <summary>
+    /// Класс Program
+    /// </summary>
    
     public class Program
     {
-        //TODO: XML
+        /// <summary>
+        /// Точка входа
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
