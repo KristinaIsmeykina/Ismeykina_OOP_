@@ -63,40 +63,44 @@ namespace Model
         /// <param name="facility">учреждение</param>
         /// <param name="firstParent">первый родитель</param>
         /// <param name="secondParent">втрой родитель</param>
-        //TODO: RSDN
-        public Child( string name, string surname, int age,  GenderPerson gender, string facility,
-            string firstParent = null, string secondParent = null)
-            : base(name, surname, age, gender)
+        //TODO: RSDN /сделано
+        public Child( string name, string surname, int age,  
+                      GenderPerson gender, string facility,
+                      string firstParent = null, string secondParent = null)
+                      : base(name, surname, age, gender)
         {
             FirstParent = firstParent;
             SecondParent = secondParent;
             Facility = facility;
         }
+       
 
-        //TODO: RSDN
+
+
         /// <summary>
-        /// Создание рандомного ребенка
+        /// Создание рандомного объекта класса Child
         /// </summary>
         /// <param name="names">список имен</param>
         /// <param name="surnames">список фамилий</param>
-        /// <param name="facilities">список учрежедний</param>
-        /// <param name="rnd">объект класса рандом</param>
-        /// <returns></returns>
-        //TODO: Несоответствие XML комментариев коду
+        /// <param name="facilities">список учреждений</param>
+        /// <param name="gender">пол</param>
+        /// <param name="random">объект класса Random</param>
+        /// <returns>объект класса Child</returns>
         public static Child GetRandomChild(List<string> names, 
-            List<string> surnames, List<string> facilities,
-            int gender, Random rnd)
+                                           List<string> surnames,
+                                           List<string> facilities,
+                                           int gender, Random random)
         {
             var person = new Child(
-                                  names[rnd.Next(0, names.Count() - 1)],
-                                  surnames[rnd.Next(0, surnames.Count() - 1)],
-                                  rnd.Next(_minAge, _maxAge),
+                                  names[random.Next(0, names.Count() - 1)],
+                                  surnames[random.Next(0, surnames.Count() - 1)],
+                                  random.Next(_minAge, _maxAge),
                                   (GenderPerson)gender,
-                                 facilities[rnd.Next(0, facilities.Count() - 1)]);
+                                  facilities[random.Next(0, facilities.Count() - 1)]);
                                  
             return person;
         }
-        
+
         //TODO: RSDN
         /// <summary>
         /// Присваивает ребенку родителя
@@ -106,22 +110,23 @@ namespace Model
         /// <param name="surnames">списокфамилий</param>
         /// <param name="facilities">список учреждений</param>
         /// <param name="gender">пол</param>
-        /// <param name="rnd">объект класса рандом</param>
-        /// <returns></returns>
+        /// <param name="random">объект класса рандом</param>
+        /// <returns>объект класса Child</returns>
         public static Child GetChildWithParrent(List<string> names, List<string> names2, 
-            List<string> surnames, List<string> facilities, int gender, Random rnd)
+                                                List<string> surnames, List<string> facilities,
+                                                int gender, Random random)
         {
-            Child person = GetRandomChild(names, surnames, facilities,gender, rnd);
-            int numberAdult = rnd.Next(0, 3);
+            Child person = GetRandomChild(names, surnames, facilities,gender, random);
+            int numberAdult = random.Next(0, 3);
             switch(numberAdult)
             {
                 case 1:
-                    string name = names[rnd.Next(0, names.Count() - 1)];
+                    string name = names[random.Next(0, names.Count() - 1)];
                     person.FirstParent = $"{name} {person.Surname}";
                     break;
                 case 2:
-                    string name1 = names[rnd.Next(0, names.Count() - 1)];
-                    string name2 = names2[rnd.Next(0, names2.Count() - 1)];
+                    string name1 = names[random.Next(0, names.Count() - 1)];
+                    string name2 = names2[random.Next(0, names2.Count() - 1)];
                     person.FirstParent = $"{name1} {person.Surname}";
                     person.SecondParent = $"{name2} {person.Surname}";
                     break;
@@ -154,7 +159,10 @@ namespace Model
             return $"{base.InfoPerson}, Facility: {Facility}, Parents: " + addition;
         }
 
-        //TODO: XML
+        /// <summary>
+        /// Уникальный метод для Child
+        /// </summary>
+        /// <returns></returns>
         public string PlayGame()
         {
             return $"{this.Name} likes to play chess";

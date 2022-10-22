@@ -96,7 +96,7 @@ namespace Model
             set => _workplace = value;
         }
 
-        //TODO: RSDN
+        //TODO: RSDN /сделано
         /// <summary>
         /// Конструктор класса Adult
         /// </summary>
@@ -108,9 +108,10 @@ namespace Model
         /// <param name="workplace">место работы</param>
         /// <param name="marriageStatus">состояние в браке</param>
         /// <param name="marriagePartner">партнер</param>
-        public Adult(string name, string surname, int age, GenderPerson gender, string passport, string workplace, bool marriageStatus,
-                string marriagePartner=null)
-                : base(name, surname, age, gender)
+        public Adult(string name, string surname, int age, GenderPerson gender,
+                     string passport, string workplace, bool marriageStatus,
+                     string marriagePartner=null)
+                    : base(name, surname, age, gender)
         {
             Passport = passport;
             Workplace = workplace;
@@ -130,7 +131,8 @@ namespace Model
                 addition = $", Marriage partner: {MarriagePartner}";
             }
             return $"{base.InfoPerson}, Passport: {Passport}, " +
-                   $"Workplace: {Workplace}, Marriage status: {MarriageStatus} {addition}";
+                   $"Workplace: {Workplace}," +
+                   $" Marriage status: {MarriageStatus} {addition}";
         }
 
         /// <summary>
@@ -141,24 +143,25 @@ namespace Model
         /// <param name="workplaces">список учреждений</param>
         /// <param name="marriageStatus">состояние в браке</param>
         /// <param name="genderType">пол</param>
-        /// <param name="rnd">объект класса рандом</param>
-        /// <returns></returns>
-        //TODO: RSDN
-        public static Adult GetRandomAdult(List<string> names, List<string> surnames, List<string> workplaces, 
-            bool marriageStatus, int genderType, Random rnd)
+        /// <param name="random">объект класса рандом</param>
+        /// <returns>объект класса Adult</returns>
+        //TODO: RSDN /сделано
+        public static Adult GetRandomAdult(List<string> names, List<string> surnames,
+                                           List<string> workplaces, bool marriageStatus,
+                                           int genderType, Random random)
         {
             
             var person = new Adult(
-                                   names[rnd.Next(0, names.Count() - 1)],
-                                   surnames[rnd.Next(0, surnames.Count() - 1)],
-                                   rnd.Next(_minAge, _maxAge),
+                                   names[random.Next(0, names.Count() - 1)],
+                                   surnames[random.Next(0, surnames.Count() - 1)],
+                                   random.Next(_minAge, _maxAge),
                                    (GenderPerson)genderType,
-                                   rnd.Next(1000, 5000).ToString(),
-                                   workplaces[rnd.Next(0, workplaces.Count() - 1)],
+                                   random.Next(1000, 5000).ToString(),
+                                   workplaces[random.Next(0, workplaces.Count() - 1)],
                                    marriageStatus );
             return person;
         }
-      
+
         /// <summary>
         /// Создает пару для взрослого
         /// </summary>
@@ -168,18 +171,21 @@ namespace Model
         /// <param name="workplaces">место работы</param>
         /// <param name="marrigeStatus">статус в браке</param>
         /// <param name="genderType">пол</param>
-        /// <param name="rnd">объект класса </param>
-        /// <returns>Взрослого человека</returns>
+        /// <param name="random">объект класса </param>
+        /// <returns>Объект класса Adult</returns>
         //TODO: RSDN
-        public static Adult GetPair(List<string> names, List<string> names2, List<string> surnames, 
-            List<string> workplaces, bool marrigeStatus, int genderType, Random rnd)
+        public static Adult GetPair(List<string> names, List<string> names2, 
+                                    List<string> surnames,  List<string> workplaces, 
+                                    bool marrigeStatus, int genderType, Random random)
         {
             
-            Adult person = GetRandomAdult(names, surnames, workplaces, marrigeStatus, genderType, rnd);
+            Adult person = GetRandomAdult(names, surnames, workplaces,
+                                          marrigeStatus, genderType, random);
             
             if (marrigeStatus)
             {
-                Adult person2 = GetRandomAdult(names2, surnames, workplaces, marrigeStatus, genderType, rnd);
+                Adult person2 = GetRandomAdult(names2, surnames, workplaces,
+                                               marrigeStatus, genderType, random);
                 person.MarriagePartner = $"{person2.Name} {person.Surname}";
             }
             return person;

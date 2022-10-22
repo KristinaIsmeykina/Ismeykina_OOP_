@@ -5,11 +5,16 @@ using Model;
 
 namespace View
 {
-    //TODO: XML
+    /// <summary>
+    /// Класс Program
+    /// </summary>
 
     public class Program
     {
-        //TODO: XML
+        /// <summary>
+        /// Точка входа
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.Unicode;
@@ -52,28 +57,34 @@ namespace View
             
            
             Console.WriteLine("Creating a list of 7 people");
-            var rnd = new Random();
-            int randomNumber = rnd.Next(1, 4);
+            var random = new Random();
+            int randomNumber = random.Next(1, 4);
 
             for (int i = 0; i < randomNumber; i++)
             {
-                int genderType = rnd.Next(0, 2);
-                bool marriageStatus = Convert.ToBoolean(rnd.Next(0,2));
-                List<string> firstName = genderType == 0 ? (maleNames) : femaleNames;
-                List<string> secondName = genderType == 0 ? (femaleNames) : maleNames;
-                //TODO: RSDN
-                list1.Add(Adult.GetPair(firstName, secondName, surnames, workplaces, marriageStatus, genderType, rnd));
+                int genderType = random.Next(0, 2);
+                bool marriageStatus = Convert.ToBoolean(random.Next(0,2));
+                List<string> firstName = genderType == 0 ?
+                    (maleNames) : femaleNames;
+                List<string> secondName = genderType == 0 ? 
+                    (femaleNames) : maleNames;
+                //TODO: RSDN/сделано
+                list1.Add(Adult.GetPair(firstName, secondName, surnames, workplaces,
+                                        marriageStatus, genderType, random));
  
             }
    
             for (int i=0; i<7-randomNumber; i++)
             {
-                int genderType = rnd.Next(0, 2);
-                List<string> firstName = genderType == 0 ? (maleNames) : femaleNames;
-                List<string> secondName = genderType == 0 ? (femaleNames) : maleNames;
+                int genderType = random.Next(0, 2);
+                List<string> firstName = genderType == 0 ?
+                    (maleNames) : femaleNames;
+                List<string> secondName = genderType == 0 ?
+                    (femaleNames) : maleNames;
 
-               //TODO: RSDN
-                    list1.Add(Child.GetChildWithParrent(firstName, secondName, surnames, facilities,genderType, rnd));
+               //TODO: RSDN/сделано
+               list1.Add(Child.GetChildWithParrent(firstName, secondName, surnames,
+                                                   facilities,genderType, random));
            
             }
         
