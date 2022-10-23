@@ -1,7 +1,7 @@
 ﻿
 namespace View
 {
-    partial class UserControl1
+    partial class SphereUserControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -39,7 +39,7 @@ namespace View
             // 
             this.groupBox2.Controls.Add(this.RadiusLabel);
             this.groupBox2.Controls.Add(this.RadiusTextBox);
-            this.groupBox2.Location = new System.Drawing.Point(30, 15);
+            this.groupBox2.Location = new System.Drawing.Point(25, 14);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(243, 136);
             this.groupBox2.TabIndex = 2;
@@ -62,12 +62,12 @@ namespace View
             this.RadiusTextBox.Size = new System.Drawing.Size(100, 22);
             this.RadiusTextBox.TabIndex = 0;
             // 
-            // UserControl1
+            // SphereUserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox2);
-            this.Name = "UserControl1";
+            this.Name = "SphereUserControl1";
             this.Size = new System.Drawing.Size(303, 166);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

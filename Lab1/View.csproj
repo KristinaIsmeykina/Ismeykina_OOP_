@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{748EA105-E28C-4CFC-9C69-E717AA584EEE}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>View</RootNamespace>
     <AssemblyName>View</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,9 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Co.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,13 +60,25 @@
     <Compile Include="InputForm.Designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="ParallelepipedUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="ParallelepipedUserControl.Designer.cs">
+      <DependentUpon>ParallelepipedUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PyramidUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PyramidUserControl.Designer.cs">
+      <DependentUpon>PyramidUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SphereUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SphereUserControl.Designer.cs">
+      <DependentUpon>SphereUserControl.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -85,8 +97,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="ParallelepipedUserControl.resx">
+      <DependentUpon>ParallelepipedUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PyramidUserControl.resx">
+      <DependentUpon>PyramidUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SphereUserControl.resx">
+      <DependentUpon>SphereUserControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

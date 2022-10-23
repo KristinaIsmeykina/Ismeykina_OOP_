@@ -12,15 +12,13 @@ namespace View
 {
     public partial class InputForm : Form
     {
+        /// <summary>
+        /// Current checked RadioButton
+        /// </summary>
+        private RadioButton CheckedRadioButton { get; set; }
         public InputForm()
         {
             InitializeComponent();
-            if (radioButton1.Checked)
-            {
-                RadiusLabel.Visible = true;
-                RadiusTextBox.Visible = true;
-
-            }
         }
 
         private void OkButton_Click(object sender, EventArgs e)
@@ -28,9 +26,22 @@ namespace View
 
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+
+        private void ParallelepipedRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            this.parallelepipedUserControl.Visible = ParallelepipedRadioButton.Checked;
+
+        }
+
+        private void PyramidRadioButton_CheckedChanged(object sender, EventArgs e)
         {
 
+            this.pyramidUserControl.Visible = PyramidRadioButton.Checked;
+        }
+
+        private void SphereRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            this.sphereUserControl.Visible = SphereRadioButton.Checked;
         }
     }
 }

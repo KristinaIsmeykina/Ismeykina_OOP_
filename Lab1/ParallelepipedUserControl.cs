@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class MainForm : Form
+    public partial class ParallelepipedUserControl : UserControl
     {
-        public MainForm()
+        public  ParallelepipedUserControl()
         {
             InitializeComponent();
-        }
-
-        private void AddButton_Click(object sender, EventArgs e)
-        {
-            var newInputForm = new InputForm();
-
-            newInputForm.Owner = this;
-
-            newInputForm.Show();
         }
     }
 }

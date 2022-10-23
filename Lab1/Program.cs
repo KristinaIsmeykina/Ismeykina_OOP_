@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Model;
+using System.Windows.Forms;
 
 namespace View
 {
@@ -11,41 +12,47 @@ namespace View
     public class Program
     {
         /// <summary>
-        /// Точка входа
+        /// The main entry point for the application.
         /// </summary>
-        /// <param name="args"></param>
+        [STAThread]
         public static void Main(string[] args)
         {
-         
-
-            var figureList = new List<FigureBase>();
-            var rnd = new Random();
-
-            for (var i = 0; i < 10; i++)
+       
             {
-                var option = rnd.Next(3);
-                switch (option)
-                {
-                    case 0:
-                        figureList.Add(Sphere.GetRandomSphere());
-                        break;
-                    case 1:
-                        figureList.Add(Pyramid.GetRandomPyramid());
-                        break;
-                    case 2:
-                        figureList.Add(Parallelepiped.GetRandomParallelepiped());
-                        break;
-                    default:
-                        Console.WriteLine("Unknown chose of figure");
-                        break;
-                }
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new MainForm());
             }
-            foreach (var figure in figureList)
-            {
-                Console.WriteLine(figure.Info);
-                Console.WriteLine(figure.GetVolume());
-            }
-            Console.ReadKey();
+
+
+            //var figureList = new List<FigureBase>();
+            //var rnd = new Random();
+
+            //for (var i = 0; i < 10; i++)
+            //{
+            //    var option = rnd.Next(3);
+            //    switch (option)
+            //    {
+            //        case 0:
+            //            figureList.Add(Sphere.GetRandomSphere());
+            //            break;
+            //        case 1:
+            //            figureList.Add(Pyramid.GetRandomPyramid());
+            //            break;
+            //        case 2:
+            //            figureList.Add(Parallelepiped.GetRandomParallelepiped());
+            //            break;
+            //        default:
+            //            Console.WriteLine("Unknown chose of figure");
+            //            break;
+            //    }
+            //}
+            //foreach (var figure in figureList)
+            //{
+            //    Console.WriteLine(figure.Info);
+            //    Console.WriteLine(figure.GetVolume());
+            //}
+            //Console.ReadKey();
 
         }
     }
