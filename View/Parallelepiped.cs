@@ -44,7 +44,7 @@ namespace Model
         /// <summary>
         /// Высота
         /// </summary>
-        private double Height
+        public double Height
         {
             get => _height;
             set
@@ -57,7 +57,7 @@ namespace Model
         /// <summary>
         /// Свойство - первоя сторона
         /// </summary>
-        private double FirstSide
+        public double FirstSide
         {
             get => _firstSide;
             set
@@ -70,7 +70,7 @@ namespace Model
         /// <summary>
         /// Свойство - вторая сторона
         /// </summary>
-        private double SecondSide
+        public double SecondSide
         {
             get => _secondSide;
             set
@@ -83,7 +83,7 @@ namespace Model
         /// <summary>
         /// Свойство -  угол
         /// </summary>
-        private double Angle
+        public double Angle
         {
             get => _angle;
             set

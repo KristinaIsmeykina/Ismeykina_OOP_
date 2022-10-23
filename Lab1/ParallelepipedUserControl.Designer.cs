@@ -32,7 +32,7 @@ namespace View
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.AngleOfSidesTextBox = new System.Windows.Forms.TextBox();
             this.AngleLabel = new System.Windows.Forms.Label();
-            this.SecondTextBox = new System.Windows.Forms.TextBox();
+            this.SecondSideTextBox = new System.Windows.Forms.TextBox();
             this.SecondLabel = new System.Windows.Forms.Label();
             this.FirstSideTextBox = new System.Windows.Forms.TextBox();
             this.FirstLabel = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@ namespace View
             // 
             this.groupBox2.Controls.Add(this.AngleOfSidesTextBox);
             this.groupBox2.Controls.Add(this.AngleLabel);
-            this.groupBox2.Controls.Add(this.SecondTextBox);
+            this.groupBox2.Controls.Add(this.SecondSideTextBox);
             this.groupBox2.Controls.Add(this.SecondLabel);
             this.groupBox2.Controls.Add(this.FirstSideTextBox);
             this.groupBox2.Controls.Add(this.FirstLabel);
@@ -74,12 +74,12 @@ namespace View
             this.AngleLabel.TabIndex = 6;
             this.AngleLabel.Text = "Angle of sides";
             // 
-            // SecondTextBox
+            // SecondSideTextBox
             // 
-            this.SecondTextBox.Location = new System.Drawing.Point(167, 119);
-            this.SecondTextBox.Name = "SecondTextBox";
-            this.SecondTextBox.Size = new System.Drawing.Size(100, 22);
-            this.SecondTextBox.TabIndex = 5;
+            this.SecondSideTextBox.Location = new System.Drawing.Point(167, 119);
+            this.SecondSideTextBox.Name = "SecondSideTextBox";
+            this.SecondSideTextBox.Size = new System.Drawing.Size(100, 22);
+            this.SecondSideTextBox.TabIndex = 5;
             // 
             // SecondLabel
             // 
@@ -140,7 +140,7 @@ namespace View
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox AngleOfSidesTextBox;
         private System.Windows.Forms.Label AngleLabel;
-        private System.Windows.Forms.TextBox SecondTextBox;
+        private System.Windows.Forms.TextBox SecondSideTextBox;
         private System.Windows.Forms.Label SecondLabel;
         private System.Windows.Forms.TextBox FirstSideTextBox;
         private System.Windows.Forms.Label FirstLabel;
