@@ -13,6 +13,7 @@ namespace View
 {
     public partial class InputForm : Form
     {
+       
         /// <summary>
         /// Figure
         /// </summary>
@@ -33,10 +34,11 @@ namespace View
         {
            
 
-            //if (CheckedRadioButton.Equals(ParallelepipedRadioButton))
-            //{
-            //    FigureBase = ParallelepipedUserControl.GetParallelepiped();
-            //}
+            if (CheckedRadioButton.Equals(ParallelepipedRadioButton))
+            {
+                var newParallelepiped = new Parallelepiped();
+                FigureBase =  ParallelepipedUserControl.GetParallelepiped();
+            }
 
         }
 

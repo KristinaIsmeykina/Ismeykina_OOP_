@@ -143,7 +143,7 @@ namespace View
             // 
             // pyramidUserControl
             // 
-            this.pyramidUserControl.Location = new System.Drawing.Point(412, 37);
+            this.pyramidUserControl.Location = new System.Drawing.Point(421, 55);
             this.pyramidUserControl.Name = "pyramidUserControl";
             this.pyramidUserControl.Size = new System.Drawing.Size(340, 341);
             this.pyramidUserControl.TabIndex = 5;
