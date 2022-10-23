@@ -22,8 +22,8 @@ namespace View
         /// </summary>
         private RadioButton CheckedRadioButton { get; set; }
 
-        private List<RadioButton> radioButtons = new List<RadioButton> { ParallelepipedRadioButton }
-        ;
+        //private List<RadioButton> radioButtons = new List<RadioButton> { ParallelepipedRadioButton }
+        //;
 
         public InputForm()
         {
@@ -33,10 +33,10 @@ namespace View
         {
            
 
-            if (CheckedRadioButton.Equals(ParallelepipedRadioButton))
-            {
-                FigureBase = ParallelepipedUserControl.GetParallelepiped();
-            }
+            //if (CheckedRadioButton.Equals(ParallelepipedRadioButton))
+            //{
+            //    FigureBase = ParallelepipedUserControl.GetParallelepiped();
+            //}
 
         }
 
