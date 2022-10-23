@@ -118,6 +118,11 @@ namespace Model
         }
 
         /// <summary>
+        /// Конструктор паралелепипида по умолчанию
+        /// </summary>
+        public Parallelepiped() { }
+
+        /// <summary>
         /// <inheritdoc />
         /// </summary>
         /// <returns></returns>

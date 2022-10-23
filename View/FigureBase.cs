@@ -47,5 +47,7 @@ namespace Model
             double result = Math.Round(random.NextDouble() * secondNumber + firstNumber, 3);
             return result;
         }
+
+        public FigureBase() { }
     }
 }

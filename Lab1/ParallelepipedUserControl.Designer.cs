@@ -30,26 +30,26 @@ namespace View
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.AngleOfSidesTextBox = new System.Windows.Forms.TextBox();
             this.AngleLabel = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.SecondTextBox = new System.Windows.Forms.TextBox();
             this.SecondLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.FirstSideTextBox = new System.Windows.Forms.TextBox();
             this.FirstLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.HeightTextBox = new System.Windows.Forms.TextBox();
             this.HeightLabel = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.AngleOfSidesTextBox);
             this.groupBox2.Controls.Add(this.AngleLabel);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.SecondTextBox);
             this.groupBox2.Controls.Add(this.SecondLabel);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.FirstSideTextBox);
             this.groupBox2.Controls.Add(this.FirstLabel);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.HeightTextBox);
             this.groupBox2.Controls.Add(this.HeightLabel);
             this.groupBox2.Location = new System.Drawing.Point(23, 16);
             this.groupBox2.Name = "groupBox2";
@@ -58,12 +58,12 @@ namespace View
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Parameters";
             // 
-            // textBox4
+            // AngleOfSidesTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(167, 167);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 7;
+            this.AngleOfSidesTextBox.Location = new System.Drawing.Point(167, 167);
+            this.AngleOfSidesTextBox.Name = "AngleOfSidesTextBox";
+            this.AngleOfSidesTextBox.Size = new System.Drawing.Size(100, 22);
+            this.AngleOfSidesTextBox.TabIndex = 7;
             // 
             // AngleLabel
             // 
@@ -74,12 +74,12 @@ namespace View
             this.AngleLabel.TabIndex = 6;
             this.AngleLabel.Text = "Angle of sides";
             // 
-            // textBox3
+            // SecondTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(167, 119);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 5;
+            this.SecondTextBox.Location = new System.Drawing.Point(167, 119);
+            this.SecondTextBox.Name = "SecondTextBox";
+            this.SecondTextBox.Size = new System.Drawing.Size(100, 22);
+            this.SecondTextBox.TabIndex = 5;
             // 
             // SecondLabel
             // 
@@ -90,12 +90,12 @@ namespace View
             this.SecondLabel.TabIndex = 4;
             this.SecondLabel.Text = "Second side\'s length";
             // 
-            // textBox2
+            // FirstSideTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(167, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 3;
+            this.FirstSideTextBox.Location = new System.Drawing.Point(167, 78);
+            this.FirstSideTextBox.Name = "FirstSideTextBox";
+            this.FirstSideTextBox.Size = new System.Drawing.Size(100, 22);
+            this.FirstSideTextBox.TabIndex = 3;
             // 
             // FirstLabel
             // 
@@ -106,12 +106,12 @@ namespace View
             this.FirstLabel.TabIndex = 2;
             this.FirstLabel.Text = "First side\'s length";
             // 
-            // textBox1
+            // HeightTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(167, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 1;
+            this.HeightTextBox.Location = new System.Drawing.Point(167, 34);
+            this.HeightTextBox.Name = "HeightTextBox";
+            this.HeightTextBox.Size = new System.Drawing.Size(100, 22);
+            this.HeightTextBox.TabIndex = 1;
             // 
             // HeightLabel
             // 
@@ -138,13 +138,13 @@ namespace View
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox AngleOfSidesTextBox;
         private System.Windows.Forms.Label AngleLabel;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox SecondTextBox;
         private System.Windows.Forms.Label SecondLabel;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox FirstSideTextBox;
         private System.Windows.Forms.Label FirstLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox HeightTextBox;
         private System.Windows.Forms.Label HeightLabel;
     }
 }
