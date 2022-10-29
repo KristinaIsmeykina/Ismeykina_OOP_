@@ -17,26 +17,22 @@ namespace View
         /// <summary>
         /// Figures list field's property
         /// </summary>
-        
+        public BindingList<FigureBase> newlist = new BindingList<FigureBase>();
         public MainForm()
         {
             InitializeComponent();
-            //dataGridView1.DataSource = newlist;
+            dataGridView1.DataSource = newlist;
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
             var newInputForm = new InputForm();
-
-            newInputForm.Owner = this;
-            newInputForm.Show();
+            newInputForm.ShowDialog();
            
             if (newInputForm.DialogResult == DialogResult.OK)
                 
             {
-
-                dataGridView1.DataSource = newInputForm.newlist;
-                MessageBox.Show(" hjgj");
+                newlist.Add(newInputForm.FigureBase);
 
             }
         }

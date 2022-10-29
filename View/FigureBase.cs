@@ -48,6 +48,5 @@ namespace Model
             return result;
         }
 
-        public FigureBase() { }
     }
 }

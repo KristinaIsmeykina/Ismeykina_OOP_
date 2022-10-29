@@ -131,15 +131,15 @@ namespace View
             this.OkButton.UseVisualStyleBackColor = true;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
-            // CancelButton
-            // 
-            this.CancelButton.Location = new System.Drawing.Point(260, 348);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(92, 23);
-            this.CancelButton.TabIndex = 3;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            //// CancelButton
+            //// 
+            //this.CancelButton.Location = new System.Drawing.Point(260, 348);
+            //this.CancelButton.Name = "CancelButton";
+            //this.CancelButton.Size = new System.Drawing.Size(92, 23);
+            //this.CancelButton.TabIndex = 3;
+            //this.CancelButton.Text = "Cancel";
+            //this.CancelButton.UseVisualStyleBackColor = true;
+            //this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // pyramidUserControl
             // 
@@ -169,7 +169,7 @@ namespace View
             this.ClientSize = new System.Drawing.Size(800, 671);
             this.Controls.Add(this.pyramidUserControl);
             this.Controls.Add(this.parallelepipedUserControl);
-            this.Controls.Add(this.CancelButton);
+            //this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.sphereUserControl);
@@ -190,7 +190,7 @@ namespace View
         private System.Windows.Forms.RadioButton PyramidRadioButton;
         private System.Windows.Forms.RadioButton ParallelepipedRadioButton;
         private System.Windows.Forms.Button OkButton;
-        private System.Windows.Forms.Button CancelButton;
+        //private System.Windows.Forms.Button CancelButton;
         private SphereUserControl SphereUserControl1;
         private System.Windows.Forms.GroupBox SphereGroupBox;
         private System.Windows.Forms.Label RadiusLabel;

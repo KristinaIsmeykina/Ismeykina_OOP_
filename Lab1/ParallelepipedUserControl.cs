@@ -20,46 +20,19 @@ namespace View
         public  Parallelepiped GetParallelepiped()
         {
             var newParallelepiped = new Parallelepiped();
-            Action actionReadHeight = () =>
-            {
-                newParallelepiped.Height = Convert.ToDouble(HeightTextBox.Text);
-            };
-            ActionHandler(actionReadHeight);
-            Action actionReadFirstSide = () =>
-            {
-                newParallelepiped.FirstSide = Convert.ToDouble(FirstSideTextBox.Text);
-            };
-            ActionHandler(actionReadFirstSide);
-            Action actionReadSecondSide = () =>
-            {
-                newParallelepiped.SecondSide = Convert.ToDouble(SecondSideTextBox.Text);
-            };
-            ActionHandler(actionReadSecondSide);
-            Action actionReadAngle = () =>
-            {
-                newParallelepiped.Angle = Convert.ToDouble(AngleOfSidesTextBox.Text);
-            };
-            ActionHandler(actionReadAngle);
 
+            newParallelepiped.Height = Convert.ToDouble(HeightTextBox.Text);
+
+            newParallelepiped.FirstSide = Convert.ToDouble(FirstSideTextBox.Text);
+
+            newParallelepiped.SecondSide = Convert.ToDouble(SecondSideTextBox.Text);
+
+            newParallelepiped.Angle = Convert.ToDouble(AngleOfSidesTextBox.Text);
             return newParallelepiped;
 
 
         }
 
-
-        private static void ActionHandler(Action action)
-        {
-            
-                try
-                {
-                    action.Invoke();
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("Error");
-                }
-            
-        }
 
 
     }

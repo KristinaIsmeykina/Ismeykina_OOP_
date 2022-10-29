@@ -13,11 +13,11 @@ namespace View
 {
     public partial class InputForm : Form
     {
-        public BindingList<FigureBase> newlist;
+      
         /// <summary>
         /// Figure
         /// </summary>
-        private FigureBase FigureBase { get; set; }
+        public FigureBase FigureBase { get; set; }
         /// <summary>
         /// Current checked RadioButton
         /// </summary>
@@ -32,16 +32,23 @@ namespace View
         }
         private void OkButton_Click(object sender, EventArgs e)
         {
-           
 
-            if (CheckedRadioButton.Equals(ParallelepipedRadioButton))
+            try
             {
-                
-                var newForm = new ParallelepipedUserControl();
-                FigureBase =  newForm.GetParallelepiped();
-                newlist.Add(FigureBase);
-            }
+                if (CheckedRadioButton.Equals(ParallelepipedRadioButton))
+                {
 
+                    var newForm = new ParallelepipedUserControl();
+                    FigureBase = newForm.GetParallelepiped();
+                }
+
+            }
+           
+            catch (Exception )
+            {
+                MessageBox.Show("Error");
+            }
+            DialogResult = DialogResult.OK;
         }
 
 
