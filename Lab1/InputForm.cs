@@ -30,14 +30,15 @@ namespace View
         {
             InitializeComponent();
         }
+        public List <FigureBase> = new List<FigureBase>();
         private void OkButton_Click(object sender, EventArgs e)
         {
            
 
             if (CheckedRadioButton.Equals(ParallelepipedRadioButton))
             {
-                var newParallelepiped = new Parallelepiped();
-                FigureBase =  ParallelepipedUserControl.GetParallelepiped();
+                var newForm = new ParallelepipedUserControl();
+                FigureBase =  newForm.GetParallelepiped();
             }
 
         }

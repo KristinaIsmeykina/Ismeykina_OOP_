@@ -31,10 +31,12 @@ namespace View
             newInputForm.Owner = this;
 
             newInputForm.Show();
+            //var n = new Par
             _figureList = new BindingList<FigureBase>()
            {
-               new Parallelepiped(){Height =25}
-
+               //new Parallelepiped(){Height =25}
+               
+              
            };
             dataGridView1.DataSource = _figureList;
         }
