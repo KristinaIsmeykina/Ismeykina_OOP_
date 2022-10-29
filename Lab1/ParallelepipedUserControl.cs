@@ -49,26 +49,16 @@ namespace View
 
         private static void ActionHandler(Action action)
         {
-            while (true)
-            {
+            
                 try
                 {
                     action.Invoke();
-                    return;
                 }
                 catch (Exception e)
                 {
-                    if (e is ArgumentException || e is FormatException)
-                    {
-                        Console.WriteLine(e.Message);
-                        Console.WriteLine("Try again!");
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    MessageBox.Show("Error");
                 }
-            }
+            
         }
 
 

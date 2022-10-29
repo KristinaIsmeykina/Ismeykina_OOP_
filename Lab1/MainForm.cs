@@ -17,11 +17,11 @@ namespace View
         /// <summary>
         /// Figures list field's property
         /// </summary>
-        private BindingList<FigureBase> _figureList ;
+        
         public MainForm()
         {
             InitializeComponent();
-            dataGridView1.DataSource = _figureList;
+            //dataGridView1.DataSource = newlist;
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -29,16 +29,16 @@ namespace View
             var newInputForm = new InputForm();
 
             newInputForm.Owner = this;
-
             newInputForm.Show();
-            //var n = new Par
-            _figureList = new BindingList<FigureBase>()
-           {
-               //new Parallelepiped(){Height =25}
-               
-              
-           };
-            dataGridView1.DataSource = _figureList;
+           
+            if (newInputForm.DialogResult == DialogResult.OK)
+                
+            {
+
+                dataGridView1.DataSource = newInputForm.newlist;
+                MessageBox.Show(" hjgj");
+
+            }
         }
     }
 }

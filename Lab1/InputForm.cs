@@ -13,7 +13,7 @@ namespace View
 {
     public partial class InputForm : Form
     {
-       
+        public BindingList<FigureBase> newlist;
         /// <summary>
         /// Figure
         /// </summary>
@@ -30,15 +30,16 @@ namespace View
         {
             InitializeComponent();
         }
-        public List <FigureBase> = new List<FigureBase>();
         private void OkButton_Click(object sender, EventArgs e)
         {
            
 
             if (CheckedRadioButton.Equals(ParallelepipedRadioButton))
             {
+                
                 var newForm = new ParallelepipedUserControl();
                 FigureBase =  newForm.GetParallelepiped();
+                newlist.Add(FigureBase);
             }
 
         }
