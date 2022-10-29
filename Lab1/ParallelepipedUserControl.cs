@@ -21,13 +21,21 @@ namespace View
         {
             var newParallelepiped = new Parallelepiped();
 
-            newParallelepiped.Height = Convert.ToDouble(HeightTextBox.Text);
+            //newParallelepiped.Height = Convert.ToDouble(HeightTextBox.Text);
 
-            newParallelepiped.FirstSide = Convert.ToDouble(FirstSideTextBox.Text);
+            //newParallelepiped.FirstSide = Convert.ToDouble(FirstSideTextBox.Text);
 
-            newParallelepiped.SecondSide = Convert.ToDouble(SecondSideTextBox.Text);
+            //newParallelepiped.SecondSide = Convert.ToDouble(SecondSideTextBox.Text);
 
-            newParallelepiped.Angle = Convert.ToDouble(AngleOfSidesTextBox.Text);
+            //newParallelepiped.Angle = Convert.ToDouble(AngleOfSidesTextBox.Text);
+
+            newParallelepiped.Height = 123;
+
+            newParallelepiped.FirstSide = 125;
+
+            newParallelepiped.SecondSide = 12;
+
+            newParallelepiped.Angle = 120;
             return newParallelepiped;
 
 

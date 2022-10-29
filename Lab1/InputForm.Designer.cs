@@ -29,7 +29,7 @@ namespace View
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SelectFigureGroupBox = new System.Windows.Forms.GroupBox();
             this.SphereRadioButton = new System.Windows.Forms.RadioButton();
             this.PyramidRadioButton = new System.Windows.Forms.RadioButton();
             this.ParallelepipedRadioButton = new System.Windows.Forms.RadioButton();
@@ -37,26 +37,25 @@ namespace View
             this.RadiusLabel = new System.Windows.Forms.Label();
             this.RadiusTextBox = new System.Windows.Forms.TextBox();
             this.OkButton = new System.Windows.Forms.Button();
-            this.CancelButton = new System.Windows.Forms.Button();
             this.pyramidUserControl = new View.PyramidUserControl();
             this.parallelepipedUserControl = new View.ParallelepipedUserControl();
             this.sphereUserControl = new View.SphereUserControl();
-            this.groupBox1.SuspendLayout();
+            this.SelectFigureGroupBox.SuspendLayout();
             this.SphereGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // SelectFigureGroupBox
             // 
-            this.groupBox1.Controls.Add(this.SphereRadioButton);
-            this.groupBox1.Controls.Add(this.PyramidRadioButton);
-            this.groupBox1.Controls.Add(this.ParallelepipedRadioButton);
-            this.groupBox1.Controls.Add(this.SphereGroupBox);
-            this.groupBox1.Location = new System.Drawing.Point(50, 55);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 148);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Select figure";
+            this.SelectFigureGroupBox.Controls.Add(this.SphereRadioButton);
+            this.SelectFigureGroupBox.Controls.Add(this.PyramidRadioButton);
+            this.SelectFigureGroupBox.Controls.Add(this.ParallelepipedRadioButton);
+            this.SelectFigureGroupBox.Controls.Add(this.SphereGroupBox);
+            this.SelectFigureGroupBox.Location = new System.Drawing.Point(50, 55);
+            this.SelectFigureGroupBox.Name = "SelectFigureGroupBox";
+            this.SelectFigureGroupBox.Size = new System.Drawing.Size(200, 148);
+            this.SelectFigureGroupBox.TabIndex = 0;
+            this.SelectFigureGroupBox.TabStop = false;
+            this.SelectFigureGroupBox.Text = "Select figure";
             // 
             // SphereRadioButton
             // 
@@ -67,20 +66,16 @@ namespace View
             this.SphereRadioButton.TabIndex = 2;
             this.SphereRadioButton.Text = "Sphere";
             this.SphereRadioButton.UseVisualStyleBackColor = true;
-            this.SphereRadioButton.CheckedChanged += new System.EventHandler(this.SphereRadioButton_CheckedChanged);
             // 
             // PyramidRadioButton
             // 
             this.PyramidRadioButton.AutoSize = true;
-            this.PyramidRadioButton.Checked = true;
             this.PyramidRadioButton.Location = new System.Drawing.Point(7, 60);
             this.PyramidRadioButton.Name = "PyramidRadioButton";
             this.PyramidRadioButton.Size = new System.Drawing.Size(80, 21);
             this.PyramidRadioButton.TabIndex = 1;
-            this.PyramidRadioButton.TabStop = true;
             this.PyramidRadioButton.Text = "Pyramid";
             this.PyramidRadioButton.UseVisualStyleBackColor = true;
-            this.PyramidRadioButton.CheckedChanged += new System.EventHandler(this.PyramidRadioButton_CheckedChanged);
             // 
             // ParallelepipedRadioButton
             // 
@@ -91,7 +86,6 @@ namespace View
             this.ParallelepipedRadioButton.TabIndex = 0;
             this.ParallelepipedRadioButton.Text = "Parallelepiped";
             this.ParallelepipedRadioButton.UseVisualStyleBackColor = true;
-            this.ParallelepipedRadioButton.CheckedChanged += new System.EventHandler(this.ParallelepipedRadioButton_CheckedChanged);
             // 
             // SphereGroupBox
             // 
@@ -131,16 +125,6 @@ namespace View
             this.OkButton.UseVisualStyleBackColor = true;
             this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
-            //// CancelButton
-            //// 
-            //this.CancelButton.Location = new System.Drawing.Point(260, 348);
-            //this.CancelButton.Name = "CancelButton";
-            //this.CancelButton.Size = new System.Drawing.Size(92, 23);
-            //this.CancelButton.TabIndex = 3;
-            //this.CancelButton.Text = "Cancel";
-            //this.CancelButton.UseVisualStyleBackColor = true;
-            //this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
             // pyramidUserControl
             // 
             this.pyramidUserControl.Location = new System.Drawing.Point(421, 55);
@@ -169,14 +153,13 @@ namespace View
             this.ClientSize = new System.Drawing.Size(800, 671);
             this.Controls.Add(this.pyramidUserControl);
             this.Controls.Add(this.parallelepipedUserControl);
-            //this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.SelectFigureGroupBox);
             this.Controls.Add(this.sphereUserControl);
             this.Name = "InputForm";
             this.Text = "InputForm";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.SelectFigureGroupBox.ResumeLayout(false);
+            this.SelectFigureGroupBox.PerformLayout();
             this.SphereGroupBox.ResumeLayout(false);
             this.SphereGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -185,7 +168,7 @@ namespace View
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox SelectFigureGroupBox;
         private System.Windows.Forms.RadioButton SphereRadioButton;
         private System.Windows.Forms.RadioButton PyramidRadioButton;
         private System.Windows.Forms.RadioButton ParallelepipedRadioButton;

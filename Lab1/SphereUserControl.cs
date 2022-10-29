@@ -17,22 +17,14 @@ namespace View
         {
             InitializeComponent();
         }
-        //public Sphere GetSphere()
-        //{
-        //    var newSphere = new Sphere();
-        //    var actions = new List<Action>()
-        //    {
-        //        () =>
-        //        {
-        //            newSphere.Radius = Convert.ToDouble(RadiusTextBox.Text);
-        //        }
-        //    };
+        public Sphere GetSphere()
+        {
+            var newSphere = new Sphere();
 
-        //    foreach (var action in actions)
-        //    {
-        //        action.Invoke();
-        //    }
-        //    return newSphere;
-        //}
+             newSphere.Radius = Convert.ToDouble(RadiusTextBox.Text);
+            
+            return newSphere;
+
+        }
     }
 }

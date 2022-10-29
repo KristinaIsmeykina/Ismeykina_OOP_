@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,23 @@ namespace View
         public PyramidUserControl()
         {
             InitializeComponent();
+        }
+        
+        public Pyramid GetPyramid()
+        {
+            var newPyramid = new Pyramid();
+
+            newPyramid.Height = Convert.ToDouble(HeightTextBox.Text);
+
+            newPyramid.FirstSide = Convert.ToDouble(FirstSideTextBox.Text);
+
+            newPyramid.SecondSide = Convert.ToDouble(SecondSideTextBox.Text);
+
+            newPyramid.Angle = Convert.ToDouble(AngleOfSidesTextBox.Text);
+            newPyramid.NumberOfCorners = Convert.ToInt32(NumberOfCornersTextBox.Text);
+            return newPyramid;
+
+
         }
     }
 }

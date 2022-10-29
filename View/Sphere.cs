@@ -19,7 +19,7 @@ namespace Model
         /// <summary>
         /// Свйоство - радиус сферы
         /// </summary>
-        private double Radius
+        public double Radius
         {
             get => _radius;
             set
@@ -52,6 +52,7 @@ namespace Model
             Radius = radius;
         }
 
+        public Sphere() { Radius=1}
         /// <summary>
         /// Создание сферы
         /// </summary>

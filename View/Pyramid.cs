@@ -45,7 +45,7 @@ namespace Model
         /// <summary>
         /// Свойство -  высота пирамиды
         /// </summary>
-        private double Height
+        public double Height
         {
             get => _height;
             set
@@ -58,7 +58,7 @@ namespace Model
         /// <summary>
         /// Свойство - Длина первой стороны пирамиды
         /// </summary>
-        private double FirstSide
+        public double FirstSide
         {
             get => _firstSide;
             set
@@ -71,7 +71,7 @@ namespace Model
         /// <summary>
         /// Свойство -  длина второй высоты пирамиды
         /// </summary>
-        private double SecondSide
+        public double SecondSide
         {
             get => _secondSide;
             set
@@ -84,7 +84,7 @@ namespace Model
         /// <summary>
         /// Свойство - Угол
         /// </summary>
-        private double Angle
+        public double Angle
         {
             get => _angle;
             set
@@ -111,7 +111,7 @@ namespace Model
         /// <summary>
         /// Свойство - количество углов основания
         /// </summary>
-        private int NumberOfCorners
+        public int NumberOfCorners
         {
             get => _numberOfCorners;
             set
@@ -170,6 +170,9 @@ namespace Model
             Angle = angle;
 
         }
+
+
+        public Pyramid() { }
 
         /// <summary>
         /// Генерация пирамиды
