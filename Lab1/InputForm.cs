@@ -71,12 +71,6 @@ namespace View
             {
                 MessageBox.Show(a.Message);
             }
-            //if (CheckedRadioButton.Equals(SphereRadioButton))
-            //{
-            //    var newForm = new SphereUserControl();
-            //    r = newForm.GetSphere();
-            //}
-            //MessageBox.Show(r.ToString());
 
         }
         private void RadioButton_CheckedChanged(object sender, EventArgs e)

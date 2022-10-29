@@ -21,7 +21,7 @@ namespace View
         {
             var newSphere = new Sphere();
 
-             newSphere.Radius = Convert.ToDouble(RadiusTextBox.Text);
+            newSphere.Radius = Convert.ToDouble(RadiusTextBox.Text);
             
             return newSphere;
 

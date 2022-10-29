@@ -52,7 +52,7 @@ namespace Model
             Radius = radius;
         }
 
-        public Sphere() { Radius=1}
+        public Sphere() :this (1){ }
         /// <summary>
         /// Создание сферы
         /// </summary>
