@@ -129,7 +129,7 @@ namespace Model
         /// <summary>
         /// <inheritdoc />
         /// </summary>
-        public override double GetVolume()
+        public double GetVolume()
         {
             int added = 1;
             if (NumberOfCorners == 3)
@@ -139,7 +139,7 @@ namespace Model
             double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180) / added;
             return Math.Round(baseArea * Height,3);
         }
-
+        public override double Volume => GetVolume();
         /// <summary>
         /// <inheritdoc />
         /// </summary>

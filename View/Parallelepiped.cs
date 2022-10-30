@@ -126,12 +126,13 @@ namespace Model
         /// <inheritdoc />
         /// </summary>
         /// <returns></returns>
-        public override double GetVolume()
+        public  double GetVolume()
         {
             double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180);
-            return Math.Round(baseArea * Height,3);
+             return Math.Round(baseArea * Height,3);
         }
 
+        public override double Volume => GetVolume();
         /// <summary>
         /// <inheritdoc />
         /// </summary>

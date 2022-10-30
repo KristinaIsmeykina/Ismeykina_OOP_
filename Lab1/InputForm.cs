@@ -92,5 +92,29 @@ namespace View
         {
             Close();
         }
+
+        private void AddRandomFigureButton_Click(object sender, EventArgs e)
+        {
+            var random = new Random();
+            var option = random.Next(3);
+            switch (option)
+            {
+                case 0:
+                    FigureBase=Sphere.GetRandomSphere();
+                    break;
+                case 1:
+                    FigureBase=Pyramid.GetRandomPyramid();
+                    break;
+                case 2:
+                    FigureBase=Parallelepiped.GetRandomParallelepiped();
+                    break;
+                default:
+                    FigureBase= Parallelepiped.GetRandomParallelepiped();
+                    break;
+            }
+            DialogResult = DialogResult.OK;
+        }
+
+
     }
 }

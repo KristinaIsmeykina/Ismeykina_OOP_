@@ -25,10 +25,10 @@ namespace Model
         }
 
         /// <summary>
-        /// Метод расчитывающий объем
+        /// Свойство - Объем
         /// </summary>
         /// <returns>Объем</returns>
-        public abstract double GetVolume();
+        public abstract double Volume { get; }
 
         /// <summary>
         /// Свойство - информация об объекте

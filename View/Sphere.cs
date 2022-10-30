@@ -33,11 +33,11 @@ namespace Model
         ///  <inheritdoc />
         /// </summary>
         /// <returns></returns>
-        public override double GetVolume()
+        public  double GetVolume()
         {
             return Math.Round(4 * Math.PI * Math.Pow(Radius, 3) / 3,3);
         }
-
+        public override double Volume => GetVolume();
         /// <summary>
         /// <inheritdoc />
         /// </summary>
