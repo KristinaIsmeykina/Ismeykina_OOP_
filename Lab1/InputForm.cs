@@ -50,19 +50,19 @@ namespace View
 
                 if (CheckedRadioButton.Equals(ParallelepipedRadioButton))
                 {
-                    var newForm = new ParallelepipedUserControl();
+                    var newForm = (ParallelepipedUserControl)_radioButtonToUserControl[ParallelepipedRadioButton];
                     FigureBase = newForm.GetParallelepiped();
                 }
                 if (CheckedRadioButton.Equals(PyramidRadioButton))
                 {
 
-                    var newForm = new PyramidUserControl();
+                    var newForm = (PyramidUserControl)_radioButtonToUserControl[PyramidRadioButton];
                     FigureBase = newForm.GetPyramid();
                 }
                 if (CheckedRadioButton.Equals(SphereRadioButton))
                 {
 
-                    var newForm = new SphereUserControl();
+                    var newForm = (SphereUserControl)_radioButtonToUserControl[SphereRadioButton];
                     FigureBase = newForm.GetSphere();
                 }
                 DialogResult = DialogResult.OK;
