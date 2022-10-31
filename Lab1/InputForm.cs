@@ -15,17 +15,17 @@ namespace View
     {
         public double r;
         /// <summary>
-        /// Figure
+        /// Свойство- фигура
         /// </summary>
         public FigureBase FigureBase { get; set; }
        
         /// <summary>
-        /// Current checked RadioButton
+        /// Свойство- выбранный radiobutton
         /// </summary>
         private RadioButton CheckedRadioButton { get; set; }
 
         /// <summary>
-        /// Dictionary of RadioButton to it's UserControl
+        /// Словарь radiobutton- usercontrol
         /// </summary>
         private readonly Dictionary<RadioButton, UserControl> _radioButtonToUserControl;
         public InputForm()
@@ -41,6 +41,7 @@ namespace View
                 {ParallelepipedRadioButton, parallelepipedUserControl}
             };
         }
+
         private void OkButton_Click(object sender, EventArgs e)
         {
 

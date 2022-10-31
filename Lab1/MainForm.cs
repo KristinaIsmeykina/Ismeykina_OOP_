@@ -16,7 +16,13 @@ namespace View
     public partial class MainForm : Form
     {
         /// <summary>
-        /// Figures list field's property
+        /// Словарь с именем фигиры и ее типом
+        /// </summary>
+        private readonly Dictionary<string, Type> _figureTypes;
+
+        
+        /// <summary>
+        /// Список с фигурами
         /// </summary>
         private BindingList<FigureBase> _newList = new BindingList<FigureBase>();
         public MainForm()
@@ -27,8 +33,20 @@ namespace View
             checkedListBox.Items.Add(nameof(Pyramid));
             checkedListBox.Items.Add(nameof(Parallelepiped));
 
+            _figureTypes = new Dictionary<string, Type>()
+        {
+            { nameof(Sphere), typeof(Sphere) },
+            { nameof(Pyramid), typeof(Pyramid) },
+            { nameof(Parallelepiped), typeof(Parallelepiped) }
+        };
         }
+        
 
+        /// <summary>
+        /// Добавление новой фигуры
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddButton_Click(object sender, EventArgs e)
         {
             var newInputForm = new InputForm();
@@ -42,6 +60,11 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// Удаление выбранной фигуры
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedCells.Count != 0)
@@ -53,14 +76,18 @@ namespace View
                         as FigureBase);
                 }
             }
-
         }
 
+        /// <summary>
+        /// Загрузить фигуры из файла
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog
             {
-                Filter = "FiguresVolume (*.fvlm)|*.fvlm"
+                Filter = "FiguresVolume (*.json)|*.json"
             };
             openFileDialog.ShowDialog();
             var path = openFileDialog.FileName;
@@ -90,11 +117,16 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// Сохранить фигуры в файл
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var saveFileDialog = new SaveFileDialog
             {
-                Filter = "FiguresVolume (*.fvlm)|*.fvlm"
+                Filter = "FiguresVolume (*.json)|*.json"
             };
 
             saveFileDialog.ShowDialog();
@@ -104,24 +136,28 @@ namespace View
             var xmlSerializer =
                 new XmlSerializer(typeof(BindingList<FigureBase>));
 
-
-
+            if (string.IsNullOrEmpty(path))
+            {
+                return;
+            }
 
             using (var fileWriter = new FileStream(path, FileMode.Create))
-            {
 
                 xmlSerializer.Serialize(fileWriter, dataGridView1.DataSource);
-            }
 
         }
 
+        /// <summary>
+        /// Поиск по фигурам
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FilterButton_Click(object sender, EventArgs e)
         {
             try
             {
                double  firstNumber = Convert.ToDouble(ToTextBox.Text);
                double secondNumber = Convert.ToDouble(FromTextBox.Text);
-                MessageBox.Show("норм");
             }
             catch (Exception a)
             {
@@ -138,7 +174,7 @@ namespace View
                 foreach (var checkedFigure in
                          checkedListBox.CheckedItems)
                 {
-                    if (figure.GetType().Equals(checkedFigure.ToString()))
+                    if (figure.GetType().Equals(_figureTypes[checkedFigure.ToString()]))
                     {
                         typeFilteredList.Add(figure);
                     }
@@ -158,11 +194,16 @@ namespace View
 
         }
 
+        /// <summary>
+        /// Обновление 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ResetButton_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = _newList;
-
-            //RefreshTextBoxes();
         }
+
+     
     }
 }

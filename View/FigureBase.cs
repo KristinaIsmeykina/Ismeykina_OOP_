@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Model
 {
+
     /// <summary>
     /// Абстрактный класс Фигура
-    /// </summary>
+    ///</summary>
+    [XmlInclude(typeof(Sphere))]
+    [XmlInclude(typeof(Pyramid))]
+    [XmlInclude(typeof(Parallelepiped))]
     public abstract class FigureBase
     {
         /// <summary>
