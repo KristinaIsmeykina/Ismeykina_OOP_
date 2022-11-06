@@ -30,7 +30,6 @@ namespace View
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.NumberOfCornersTextBox = new System.Windows.Forms.TextBox();
             this.NumberLabel = new System.Windows.Forms.Label();
             this.AngleOfSidesTextBox = new System.Windows.Forms.TextBox();
             this.AngleLabel = new System.Windows.Forms.Label();
@@ -40,12 +39,13 @@ namespace View
             this.FirstLabel = new System.Windows.Forms.Label();
             this.HeightTextBox = new System.Windows.Forms.TextBox();
             this.HeightLabel = new System.Windows.Forms.Label();
+            this.NumberOfCornersComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.NumberOfCornersTextBox);
+            this.groupBox2.Controls.Add(this.NumberOfCornersComboBox);
             this.groupBox2.Controls.Add(this.NumberLabel);
             this.groupBox2.Controls.Add(this.AngleOfSidesTextBox);
             this.groupBox2.Controls.Add(this.AngleLabel);
@@ -62,13 +62,6 @@ namespace View
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Parameters";
             // 
-            // NumberOfCornersTextBox
-            // 
-            this.NumberOfCornersTextBox.Location = new System.Drawing.Point(167, 213);
-            this.NumberOfCornersTextBox.Name = "NumberOfCornersTextBox";
-            this.NumberOfCornersTextBox.Size = new System.Drawing.Size(100, 22);
-            this.NumberOfCornersTextBox.TabIndex = 9;
-            // 
             // NumberLabel
             // 
             this.NumberLabel.AutoSize = true;
@@ -82,7 +75,7 @@ namespace View
             // 
             this.AngleOfSidesTextBox.Location = new System.Drawing.Point(167, 167);
             this.AngleOfSidesTextBox.Name = "AngleOfSidesTextBox";
-            this.AngleOfSidesTextBox.Size = new System.Drawing.Size(100, 22);
+            this.AngleOfSidesTextBox.Size = new System.Drawing.Size(120, 22);
             this.AngleOfSidesTextBox.TabIndex = 7;
             // 
             // AngleLabel
@@ -98,7 +91,7 @@ namespace View
             // 
             this.SecondSideTextBox.Location = new System.Drawing.Point(167, 119);
             this.SecondSideTextBox.Name = "SecondSideTextBox";
-            this.SecondSideTextBox.Size = new System.Drawing.Size(100, 22);
+            this.SecondSideTextBox.Size = new System.Drawing.Size(120, 22);
             this.SecondSideTextBox.TabIndex = 5;
             // 
             // SecondLabel
@@ -114,7 +107,7 @@ namespace View
             // 
             this.FirstSideTextBox.Location = new System.Drawing.Point(167, 78);
             this.FirstSideTextBox.Name = "FirstSideTextBox";
-            this.FirstSideTextBox.Size = new System.Drawing.Size(100, 22);
+            this.FirstSideTextBox.Size = new System.Drawing.Size(120, 22);
             this.FirstSideTextBox.TabIndex = 3;
             // 
             // FirstLabel
@@ -130,7 +123,7 @@ namespace View
             // 
             this.HeightTextBox.Location = new System.Drawing.Point(167, 34);
             this.HeightTextBox.Name = "HeightTextBox";
-            this.HeightTextBox.Size = new System.Drawing.Size(100, 22);
+            this.HeightTextBox.Size = new System.Drawing.Size(120, 22);
             this.HeightTextBox.TabIndex = 1;
             // 
             // HeightLabel
@@ -141,6 +134,17 @@ namespace View
             this.HeightLabel.Size = new System.Drawing.Size(49, 17);
             this.HeightLabel.TabIndex = 0;
             this.HeightLabel.Text = "Height";
+            // 
+            // NumberOfCornersComboBox
+            // 
+            this.NumberOfCornersComboBox.FormattingEnabled = true;
+            this.NumberOfCornersComboBox.Items.AddRange(new object[] {
+            "2",
+            "3"});
+            this.NumberOfCornersComboBox.Location = new System.Drawing.Point(167, 213);
+            this.NumberOfCornersComboBox.Name = "NumberOfCornersComboBox";
+            this.NumberOfCornersComboBox.Size = new System.Drawing.Size(121, 24);
+            this.NumberOfCornersComboBox.TabIndex = 9;
             // 
             // PyramidUserControl
             // 
@@ -158,7 +162,6 @@ namespace View
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox NumberOfCornersTextBox;
         private System.Windows.Forms.Label NumberLabel;
         private System.Windows.Forms.TextBox AngleOfSidesTextBox;
         private System.Windows.Forms.Label AngleLabel;
@@ -168,5 +171,6 @@ namespace View
         private System.Windows.Forms.Label FirstLabel;
         private System.Windows.Forms.TextBox HeightTextBox;
         private System.Windows.Forms.Label HeightLabel;
+        private System.Windows.Forms.ComboBox NumberOfCornersComboBox;
     }
 }

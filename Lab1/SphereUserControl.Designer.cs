@@ -59,15 +59,15 @@ namespace View
             // 
             this.RadiusTextBox.Location = new System.Drawing.Point(94, 37);
             this.RadiusTextBox.Name = "RadiusTextBox";
-            this.RadiusTextBox.Size = new System.Drawing.Size(100, 22);
+            this.RadiusTextBox.Size = new System.Drawing.Size(128, 22);
             this.RadiusTextBox.TabIndex = 0;
             // 
-            // SphereUserControl1
+            // SphereUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox2);
-            this.Name = "SphereUserControl1";
+            this.Name = "SphereUserControl";
             this.Size = new System.Drawing.Size(303, 166);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

@@ -72,12 +72,10 @@ namespace View
             // PyramidRadioButton
             // 
             this.PyramidRadioButton.AutoSize = true;
-            this.PyramidRadioButton.Checked = true;
             this.PyramidRadioButton.Location = new System.Drawing.Point(7, 60);
             this.PyramidRadioButton.Name = "PyramidRadioButton";
             this.PyramidRadioButton.Size = new System.Drawing.Size(80, 21);
             this.PyramidRadioButton.TabIndex = 1;
-            this.PyramidRadioButton.TabStop = true;
             this.PyramidRadioButton.Text = "Pyramid";
             this.PyramidRadioButton.UseVisualStyleBackColor = true;
             // 

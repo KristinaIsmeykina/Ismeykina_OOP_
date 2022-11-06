@@ -29,7 +29,7 @@ namespace View
             newPyramid.SecondSide = Convert.ToDouble(SecondSideTextBox.Text);
 
             newPyramid.Angle = Convert.ToDouble(AngleOfSidesTextBox.Text);
-            newPyramid.NumberOfCorners = Convert.ToInt32(NumberOfCornersTextBox.Text);
+            newPyramid.NumberOfCorners = Convert.ToInt32(NumberOfCornersComboBox.Text);
             return newPyramid;
 
 
