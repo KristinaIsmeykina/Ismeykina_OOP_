@@ -19,15 +19,14 @@ namespace View
         }
         public  Parallelepiped GetParallelepiped()
         {
-            var newParallelepiped = new Parallelepiped();
+            var newParallelepiped = new Parallelepiped
+            {
+                Height = Convert.ToDouble(HeightTextBox.Text),
+                FirstSide = Convert.ToDouble(FirstSideTextBox.Text),
+                SecondSide = Convert.ToDouble(SecondSideTextBox.Text),
+                Angle = Convert.ToDouble(AngleOfSidesTextBox.Text)
+            };
 
-            newParallelepiped.Height = Convert.ToDouble(HeightTextBox.Text);
-
-            newParallelepiped.FirstSide = Convert.ToDouble(FirstSideTextBox.Text);
-
-            newParallelepiped.SecondSide = Convert.ToDouble(SecondSideTextBox.Text);
-
-            newParallelepiped.Angle = Convert.ToDouble(AngleOfSidesTextBox.Text);
             return newParallelepiped;
 
 

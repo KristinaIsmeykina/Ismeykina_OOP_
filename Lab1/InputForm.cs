@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace View
 {
+    //TODO: XML
     public partial class InputForm : Form
     {
+        //TODO: Не используется
         public double r;
         /// <summary>
         /// Свойство- фигура
@@ -28,6 +30,8 @@ namespace View
         /// Словарь radiobutton- usercontrol
         /// </summary>
         private readonly Dictionary<RadioButton, UserControl> _radioButtonToUserControl;
+
+
         public InputForm()
         {
             InitializeComponent();
@@ -47,7 +51,7 @@ namespace View
 
             try
             {
-
+                //TODO: Переделать с полиморфизмом
                 if (CheckedRadioButton.Equals(ParallelepipedRadioButton))
                 {
                     var newForm = (ParallelepipedUserControl)_radioButtonToUserControl[ParallelepipedRadioButton];
@@ -61,7 +65,6 @@ namespace View
                 }
                 if (CheckedRadioButton.Equals(SphereRadioButton))
                 {
-
                     var newForm = (SphereUserControl)_radioButtonToUserControl[SphereRadioButton];
                     FigureBase = newForm.GetSphere();
                 }
@@ -74,9 +77,10 @@ namespace View
             }
 
         }
+        //TODO: XML
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-
+            //TODO: RSDN
             var Sn = SelectFigureGroupBox.Controls.OfType<RadioButton>().ToList();
 
             foreach (RadioButton i in Sn)
@@ -89,11 +93,15 @@ namespace View
                 }
             }
         }
+
+        //TODO: XML
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        //TODO: XML
+        //TODO: директивы условной компиляции
         private void AddRandomFigureButton_Click(object sender, EventArgs e)
         {
             var random = new Random();
