@@ -11,13 +11,23 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class ParallelepipedUserControl : UserControl
+    /// <summary>
+    /// Класс Parallelepiped UserControl
+    /// </summary>
+    public partial class ParallelepipedUserControl : FigureBaseUserControl
     {
+        /// <summary>
+        /// Конструктор класса Parallelepiped UserControl
+        /// </summary>
         public ParallelepipedUserControl()
         {
             InitializeComponent();
         }
-        public  Parallelepiped GetParallelepiped()
+        /// <summary>
+        ///< inheritdoc />
+        /// </summary>
+        /// <returns></returns>
+        public override FigureBase GetFigur()
         {
             var newParallelepiped = new Parallelepiped
             {
@@ -28,11 +38,7 @@ namespace View
             };
 
             return newParallelepiped;
-
-
         }
-
-
 
     }
 }

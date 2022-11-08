@@ -13,6 +13,9 @@ using System.Xml.Serialization;
 
 namespace View
 {
+    /// <summary>
+    /// Главная форма программы
+    /// </summary>
     public partial class MainForm : Form
     {
         /// <summary>
@@ -25,6 +28,10 @@ namespace View
         /// Список с фигурами
         /// </summary>
         private BindingList<FigureBase> _newList = new BindingList<FigureBase>();
+
+        /// <summary>
+        /// Конструктор главной формы
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -78,17 +85,17 @@ namespace View
             }
         }
 
-        //TODO: RSDN
+        //TODO: RSDN ++
         /// <summary>
         /// Загрузить фигуры из файла
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog
             {
-                Filter = "FiguresVolume (*.json)|*.json"
+                Filter = "FiguresVolume (*.xml)|*.xml"
             };
             openFileDialog.ShowDialog();
             var path = openFileDialog.FileName;
@@ -123,7 +130,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var saveFileDialog = new SaveFileDialog
             {
@@ -142,10 +149,13 @@ namespace View
                 return;
             }
 
-            //TODO: RSDN
+            //TODO: RSDN ++
             using (var fileWriter = new FileStream(path, FileMode.Create))
-
+            {
                 xmlSerializer.Serialize(fileWriter, dataGridView1.DataSource);
+            }
+
+                
 
         }
 
@@ -156,17 +166,6 @@ namespace View
         /// <param name="e"></param>
         private void FilterButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //TODO: Не нужные переменные
-               double  firstNumber = Convert.ToDouble(ToTextBox.Text);
-               double secondNumber = Convert.ToDouble(FromTextBox.Text);
-            }
-            catch (Exception a)
-            {
-                MessageBox.Show(a.Message);
-            }
-            
             if (Convert.ToDouble(ToTextBox.Text) < Convert.ToDouble(FromTextBox.Text))
             {
                 MessageBox.Show(@"Wrong range");

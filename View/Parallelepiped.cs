@@ -118,7 +118,7 @@ namespace Model
         }
 
         /// <summary>
-        /// Конструктор паралелепипида по умолчанию
+        /// Конструктор по умолчанию
         /// </summary>
         public Parallelepiped() { }
 
@@ -132,7 +132,11 @@ namespace Model
              return Math.Round(baseArea * Height,3);
         }
 
+        /// <summary>
+        ///  <inheritdoc />
+        /// </summary>
         public override double Volume => GetVolume();
+
         /// <summary>
         /// <inheritdoc />
         /// </summary>

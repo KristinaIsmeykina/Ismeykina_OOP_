@@ -139,7 +139,12 @@ namespace Model
             double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180) / added;
             return Math.Round(baseArea * Height,3);
         }
+
+        /// <summary>
+        /// < inheritdoc />
+        /// </summary>
         public override double Volume => GetVolume();
+
         /// <summary>
         /// <inheritdoc />
         /// </summary>
@@ -171,7 +176,9 @@ namespace Model
 
         }
 
-
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
         public Pyramid() { }
 
         /// <summary>

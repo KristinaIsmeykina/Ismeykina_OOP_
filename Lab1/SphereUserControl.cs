@@ -11,20 +11,31 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public partial class SphereUserControl : UserControl
+    /// <summary>
+    /// Класс Sphere UserControl
+    /// </summary>
+    public partial class SphereUserControl : FigureBaseUserControl
     {
+        /// <summary>
+        /// Конструктор Sphere UserControl
+        /// </summary>
         public SphereUserControl()
         {
             InitializeComponent();
         }
-        public Sphere GetSphere()
+
+        /// <summary>
+        /// < inheritdoc />
+        /// </summary>
+        /// <returns></returns>
+        public override FigureBase GetFigur()
         {
-            var newSphere = new Sphere();
+            var newSphere = new Sphere
+            {
+                Radius = Convert.ToDouble(RadiusTextBox.Text)
+            };
 
-            newSphere.Radius = Convert.ToDouble(RadiusTextBox.Text);
-            
             return newSphere;
-
         }
     }
 }

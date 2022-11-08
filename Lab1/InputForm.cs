@@ -11,11 +11,13 @@ using System.Windows.Forms;
 
 namespace View
 {
-    //TODO: XML
+    //TODO: XML ++
+    /// <summary>
+    /// Форма для создания фигур
+    /// </summary>
     public partial class InputForm : Form
     {
-        //TODO: Не используется
-        public double r;
+        
         /// <summary>
         /// Свойство- фигура
         /// </summary>
@@ -32,6 +34,9 @@ namespace View
         private readonly Dictionary<RadioButton, UserControl> _radioButtonToUserControl;
 
 
+        /// <summary>
+        /// Конструктор InputForm
+        /// </summary>
         public InputForm()
         {
             InitializeComponent();
@@ -46,28 +51,27 @@ namespace View
             };
         }
 
+        /// <summary>
+        /// Событие при нажатии кнопки OK
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OkButton_Click(object sender, EventArgs e)
         {
 
             try
             {
-                //TODO: Переделать с полиморфизмом
-                if (CheckedRadioButton.Equals(ParallelepipedRadioButton))
-                {
-                    var newForm = (ParallelepipedUserControl)_radioButtonToUserControl[ParallelepipedRadioButton];
-                    FigureBase = newForm.GetParallelepiped();
-                }
-                if (CheckedRadioButton.Equals(PyramidRadioButton))
-                {
+                var radioButtonList = SelectFigureGroupBox.Controls.OfType<RadioButton>().ToList();
 
-                    var newForm = (PyramidUserControl)_radioButtonToUserControl[PyramidRadioButton];
-                    FigureBase = newForm.GetPyramid();
-                }
-                if (CheckedRadioButton.Equals(SphereRadioButton))
+                foreach (RadioButton value in radioButtonList)
                 {
-                    var newForm = (SphereUserControl)_radioButtonToUserControl[SphereRadioButton];
-                    FigureBase = newForm.GetSphere();
+                    if (CheckedRadioButton.Equals(value))
+                    {
+                        var newForm = (FigureBaseUserControl) _radioButtonToUserControl[value];
+                        FigureBase = newForm.GetFigur();
+                    }
                 }
+           
                 DialogResult = DialogResult.OK;
             }
 
@@ -77,24 +81,36 @@ namespace View
             }
 
         }
-        //TODO: XML
+
+        //TODO: XML++
+
+        /// <summary>
+        /// Событие при изменении radioButton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            //TODO: RSDN
-            var Sn = SelectFigureGroupBox.Controls.OfType<RadioButton>().ToList();
+            //TODO: RSDN  ++
+            var radioButtonList = SelectFigureGroupBox.Controls.OfType<RadioButton>().ToList();
 
-            foreach (RadioButton i in Sn)
+            foreach (RadioButton value in radioButtonList)
             {
-                _radioButtonToUserControl[i].Visible = i.Checked;
-                if (i.Checked)
+                _radioButtonToUserControl[value].Visible = value.Checked;
+                if (value.Checked)
                 {
-                    _radioButtonToUserControl[i].Visible = i.Checked;
-                    CheckedRadioButton = i;
+                    _radioButtonToUserControl[value].Visible = value.Checked;
+                    CheckedRadioButton = value;
                 }
             }
         }
 
-        //TODO: XML
+        //TODO: XML ++
+        /// <summary>
+        /// Закрытие формы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Close();
@@ -102,6 +118,11 @@ namespace View
 
         //TODO: XML
         //TODO: директивы условной компиляции
+        /// <summary>
+        /// Добавление рандомной фигуры
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddRandomFigureButton_Click(object sender, EventArgs e)
         {
             var random = new Random();

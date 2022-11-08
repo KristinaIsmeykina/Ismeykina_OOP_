@@ -37,7 +37,12 @@ namespace Model
         {
             return Math.Round(4 * Math.PI * Math.Pow(Radius, 3) / 3,3);
         }
+
+        /// <summary>
+        /// < inheritdoc />
+        /// </summary>
         public override double Volume => GetVolume();
+
         /// <summary>
         /// <inheritdoc />
         /// </summary>
@@ -52,7 +57,11 @@ namespace Model
             Radius = radius;
         }
 
-        public Sphere() :this (1){ }
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
+        public Sphere() { }
+
         /// <summary>
         /// Создание сферы
         /// </summary>
