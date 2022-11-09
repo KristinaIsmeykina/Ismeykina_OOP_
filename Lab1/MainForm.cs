@@ -134,7 +134,7 @@ namespace View
         {
             var saveFileDialog = new SaveFileDialog
             {
-                Filter = "FiguresVolume (*.json)|*.json"
+                Filter = "FiguresVolume (*.xml)|*.xml"
             };
 
             saveFileDialog.ShowDialog();
