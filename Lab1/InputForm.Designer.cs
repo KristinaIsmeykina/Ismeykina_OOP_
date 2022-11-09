@@ -145,6 +145,7 @@ namespace View
             this.AddRandomFigureButton.TabIndex = 8;
             this.AddRandomFigureButton.Text = "Add random figure";
             this.AddRandomFigureButton.UseVisualStyleBackColor = true;
+            this.AddRandomFigureButton.Visible = false;
             this.AddRandomFigureButton.Click += new System.EventHandler(this.AddRandomFigureButton_Click);
             // 
             // pyramidUserControl
@@ -175,7 +176,7 @@ namespace View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 671);
+            this.ClientSize = new System.Drawing.Size(761, 441);
             this.Controls.Add(this.AddRandomFigureButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.pyramidUserControl);
@@ -183,7 +184,10 @@ namespace View
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.SelectFigureGroupBox);
             this.Controls.Add(this.sphereUserControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "InputForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InputForm";
             this.SelectFigureGroupBox.ResumeLayout(false);
             this.SelectFigureGroupBox.PerformLayout();

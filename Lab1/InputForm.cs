@@ -40,6 +40,10 @@ namespace View
         public InputForm()
         {
             InitializeComponent();
+#if DEBUG
+            AddRandomFigureButton.Visible = true;
+#endif
+            
             PyramidRadioButton.Checked = true;
             CheckedRadioButton = PyramidRadioButton;
             SphereRadioButton.CheckedChanged += RadioButton_CheckedChanged;
@@ -119,7 +123,7 @@ namespace View
         }
 
         //TODO: XML
-        //TODO: директивы условной компиляции
+        //TODO: директивы условной компиляции ++
         /// <summary>
         /// Добавление рандомной фигуры
         /// </summary>
