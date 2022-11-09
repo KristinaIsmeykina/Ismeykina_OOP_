@@ -40,6 +40,8 @@ namespace View
         public InputForm()
         {
             InitializeComponent();
+            PyramidRadioButton.Checked = true;
+            CheckedRadioButton = PyramidRadioButton;
             SphereRadioButton.CheckedChanged += RadioButton_CheckedChanged;
             PyramidRadioButton.CheckedChanged += RadioButton_CheckedChanged;
             ParallelepipedRadioButton.CheckedChanged += RadioButton_CheckedChanged;
