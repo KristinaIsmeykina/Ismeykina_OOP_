@@ -65,7 +65,7 @@ namespace Model
         /// <summary>
         /// Создание сферы
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Объект класса Sphere</returns>
         public static Sphere GetRandomSphere()
         {
             const int maxLength = 100;

@@ -18,21 +18,6 @@ namespace View
             InitializeComponent();
         }
         
-        //public Pyramid GetPyramid()
-        //{
-        //    var newPyramid = new Pyramid();
-
-        //    newPyramid.Height = Convert.ToDouble(HeightTextBox.Text);
-
-        //    newPyramid.FirstSide = Convert.ToDouble(FirstSideTextBox.Text);
-
-        //    newPyramid.SecondSide = Convert.ToDouble(SecondSideTextBox.Text);
-
-        //    newPyramid.Angle = Convert.ToDouble(AngleOfSidesTextBox.Text);
-        //    newPyramid.NumberOfCorners = Convert.ToInt32(NumberOfCornersComboBox.Text);
-        //    return newPyramid;
-        //}
-
         public override FigureBase GetFigur()
         {
             var newPyramid = new Pyramid

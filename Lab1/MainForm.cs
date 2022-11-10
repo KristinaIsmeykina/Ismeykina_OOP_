@@ -47,12 +47,12 @@ namespace View
             { nameof(Parallelepiped), typeof(Parallelepiped) }
         };
         }
-        
+
 
         /// <summary>
         /// Добавление новой фигуры
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">AddButton</param>
         /// <param name="e"></param>
         private void AddButton_Click(object sender, EventArgs e)
         {
@@ -70,7 +70,7 @@ namespace View
         /// <summary>
         /// Удаление выбранной фигуры
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">RemoveButton</param>
         /// <param name="e"></param>
         private void RemoveButton_Click(object sender, EventArgs e)
         {
@@ -89,8 +89,8 @@ namespace View
         /// <summary>
         /// Загрузить фигуры из файла
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">OpenToolStripMenuItem</param>
+        /// <param name="e">Данные события</param>
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog
@@ -128,8 +128,8 @@ namespace View
         /// <summary>
         /// Сохранить фигуры в файл
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">SaveToolStripMenuItem</param>
+        /// <param name="e">Данные события</param>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var saveFileDialog = new SaveFileDialog
@@ -162,7 +162,7 @@ namespace View
         /// <summary>
         /// Поиск по фигурам
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">FilterButton</param>
         /// <param name="e"></param>
         private void FilterButton_Click(object sender, EventArgs e)
         {
@@ -199,11 +199,13 @@ namespace View
         /// <summary>
         /// Обновление 
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">ResetButton</param>
         /// <param name="e"></param>
         private void ResetButton_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = _newList;
+            FromTextBox.Text = "0";
+            ToTextBox.Text = "0";
         }
 
      

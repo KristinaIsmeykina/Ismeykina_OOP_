@@ -27,11 +27,11 @@ namespace Model
                 throw new ArgumentOutOfRangeException(
                     $"The value must be greater than 0");
             }
-            //if (double.IsNaN(value))
-            //{
-            //    throw new ArgumentOutOfRangeException(
-            //       $"The value must non null");
-            //}
+            if (double.IsNaN(value))
+            {
+                throw new ArgumentException(
+                   $"The value must not be NaN");
+            }
         }
 
         /// <summary>

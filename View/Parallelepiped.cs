@@ -149,7 +149,7 @@ namespace Model
         /// <summary>
         /// Генерация паралелепипида
         /// </summary>
-        /// <returns></returns>
+        /// <returns>объект класса Parallelepiped</returns>
         public static Parallelepiped GetRandomParallelepiped()
         {
             const int maxLength = 100;

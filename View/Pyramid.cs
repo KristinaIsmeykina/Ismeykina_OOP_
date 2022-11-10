@@ -184,7 +184,7 @@ namespace Model
         /// <summary>
         /// Генерация пирамиды
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Объект класса Pyramid</returns>
         public static Pyramid GetRandomPyramid()
         {
             const int maxLength = 100;

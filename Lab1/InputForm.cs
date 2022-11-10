@@ -31,7 +31,7 @@ namespace View
         /// <summary>
         /// Словарь radiobutton- usercontrol
         /// </summary>
-        private readonly Dictionary<RadioButton, UserControl> _radioButtonToUserControl;
+        private readonly Dictionary<RadioButton, FigureBaseUserControl> _radioButtonToUserControl;
 
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace View
             SphereRadioButton.CheckedChanged += RadioButton_CheckedChanged;
             PyramidRadioButton.CheckedChanged += RadioButton_CheckedChanged;
             ParallelepipedRadioButton.CheckedChanged += RadioButton_CheckedChanged;
-            _radioButtonToUserControl = new Dictionary<RadioButton, UserControl>()
+            _radioButtonToUserControl = new Dictionary<RadioButton, FigureBaseUserControl>()
             {
                 {SphereRadioButton, sphereUserControl},
                 {PyramidRadioButton, pyramidUserControl},
@@ -60,8 +60,8 @@ namespace View
         /// <summary>
         /// Событие при нажатии кнопки OK
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">OkButton</param>
+        /// <param name="e">Данные события</param>
         private void OkButton_Click(object sender, EventArgs e)
         {
 
@@ -73,7 +73,7 @@ namespace View
                 {
                     if (CheckedRadioButton.Equals(value))
                     {
-                        var newForm = (FigureBaseUserControl) _radioButtonToUserControl[value];
+                        var newForm = _radioButtonToUserControl[value];
                         FigureBase = newForm.GetFigur();
                     }
                 }
@@ -93,8 +93,8 @@ namespace View
         /// <summary>
         /// Событие при изменении radioButton
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">RadioButton</param>
+        /// <param name="e">данные события</param>
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             //TODO: RSDN  ++
@@ -115,8 +115,8 @@ namespace View
         /// <summary>
         /// Закрытие формы
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">CancelButton</param>
+        /// <param name="e">данные события</param>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Close();
@@ -127,7 +127,7 @@ namespace View
         /// <summary>
         /// Добавление рандомной фигуры
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">AddRandomFigureButton</param>
         /// <param name="e"></param>
         private void AddRandomFigureButton_Click(object sender, EventArgs e)
         {
@@ -143,9 +143,6 @@ namespace View
                     break;
                 case 2:
                     FigureBase=Parallelepiped.GetRandomParallelepiped();
-                    break;
-                default:
-                    FigureBase= Parallelepiped.GetRandomParallelepiped();
                     break;
             }
             DialogResult = DialogResult.OK;
