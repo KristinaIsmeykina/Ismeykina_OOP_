@@ -191,7 +191,6 @@ namespace Model
             const int minLength = 0;
             const int maxCornersNumbers = 4;
             var random = new Random();
-            //TODO: дублирование получения числа в диапазоне/сделано
             var pyramid = new Pyramid(GetValue(minLength, maxLength),
                                       random.Next(MinCornersNumber, maxCornersNumbers + 1),
                                       GetValue(minLength, maxLength),

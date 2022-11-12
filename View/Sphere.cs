@@ -70,8 +70,6 @@ namespace Model
         {
             const int maxLength = 100;
             const int minLength = 0;
-            var rnd = new Random();
-            //TODO: дублирование получения числа в диапазоне /сделано
             var sphere = new Sphere(GetValue(minLength, maxLength)); 
             return sphere;
         }

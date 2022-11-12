@@ -84,8 +84,7 @@ namespace View
                 }
             }
         }
-
-        //TODO: RSDN ++
+        
         /// <summary>
         /// Загрузить фигуры из файла
         /// </summary>
@@ -148,15 +147,11 @@ namespace View
             {
                 return;
             }
-
-            //TODO: RSDN ++
+            
             using (var fileWriter = new FileStream(path, FileMode.Create))
             {
                 xmlSerializer.Serialize(fileWriter, dataGridView1.DataSource);
             }
-
-                
-
         }
 
         /// <summary>

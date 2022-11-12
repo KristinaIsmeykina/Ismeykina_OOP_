@@ -16,6 +16,7 @@ namespace View
     /// </summary>
     public abstract partial class FigureBaseUserControl : UserControl
     {
+        //TODO: В свойство.
         /// <summary>
         /// Метод для получения фигуры
         /// </summary>

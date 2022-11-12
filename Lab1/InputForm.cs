@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace View
 {
-    //TODO: XML ++
     /// <summary>
     /// Форма для создания фигур
     /// </summary>
     public partial class InputForm : Form
     {
-        
+        //TODO: Нарушение инкапсуляции
         /// <summary>
         /// Свойство- фигура
         /// </summary>
         public FigureBase FigureBase { get; set; }
        
+        //TODO: Зачем тут свойство?
         /// <summary>
         /// Свойство- выбранный radiobutton
         /// </summary>
@@ -49,6 +49,7 @@ namespace View
             SphereRadioButton.CheckedChanged += RadioButton_CheckedChanged;
             PyramidRadioButton.CheckedChanged += RadioButton_CheckedChanged;
             ParallelepipedRadioButton.CheckedChanged += RadioButton_CheckedChanged;
+            //TODO: Почему это в конструкторе, а не сразу при инициализации
             _radioButtonToUserControl = new Dictionary<RadioButton, FigureBaseUserControl>()
             {
                 {SphereRadioButton, sphereUserControl},
@@ -87,9 +88,7 @@ namespace View
             }
 
         }
-
-        //TODO: XML++
-
+        
         /// <summary>
         /// Событие при изменении radioButton
         /// </summary>
@@ -97,7 +96,6 @@ namespace View
         /// <param name="e">данные события</param>
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            //TODO: RSDN  ++
             var radioButtonList = SelectFigureGroupBox.Controls.OfType<RadioButton>().ToList();
 
             foreach (RadioButton value in radioButtonList)
@@ -110,8 +108,7 @@ namespace View
                 }
             }
         }
-
-        //TODO: XML ++
+        
         /// <summary>
         /// Закрытие формы
         /// </summary>
@@ -121,9 +118,8 @@ namespace View
         {
             Close();
         }
-
-        //TODO: XML
-        //TODO: директивы условной компиляции ++
+        
+        //TODO: директивы условной компиляции
         /// <summary>
         /// Добавление рандомной фигуры
         /// </summary>
@@ -147,7 +143,5 @@ namespace View
             }
             DialogResult = DialogResult.OK;
         }
-
-
     }
 }
