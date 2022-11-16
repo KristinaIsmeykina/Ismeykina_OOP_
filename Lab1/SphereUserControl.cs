@@ -28,14 +28,17 @@ namespace View
         /// < inheritdoc />
         /// </summary>
         /// <returns></returns>
-        public override FigureBase GetFigur()
+        public override FigureBase GetFigur
         {
-            var newSphere = new Sphere
+            get
             {
-                Radius = Convert.ToDouble(RadiusTextBox.Text)
-            };
+                var newSphere = new Sphere
+                {
+                    Radius = Convert.ToDouble(RadiusTextBox.Text)
+                };
 
-            return newSphere;
+                return newSphere;
+            }
         }
     }
 }

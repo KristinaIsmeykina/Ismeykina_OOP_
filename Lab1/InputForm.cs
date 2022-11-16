@@ -20,7 +20,7 @@ namespace View
         /// <summary>
         /// Свойство- фигура
         /// </summary>
-        public FigureBase FigureBase { get; set; }
+        public FigureBase FigureBase { get; private set; }
        
         //TODO: Зачем тут свойство?
         /// <summary>
@@ -32,6 +32,7 @@ namespace View
         /// Словарь radiobutton- usercontrol
         /// </summary>
         private readonly Dictionary<RadioButton, FigureBaseUserControl> _radioButtonToUserControl;
+
 
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace View
                     if (CheckedRadioButton.Equals(value))
                     {
                         var newForm = _radioButtonToUserControl[value];
-                        FigureBase = newForm.GetFigur();
+                        FigureBase = newForm.GetFigur;
                     }
                 }
            
@@ -118,7 +119,7 @@ namespace View
         {
             Close();
         }
-        
+#if DEBUG
         //TODO: директивы условной компиляции
         /// <summary>
         /// Добавление рандомной фигуры
@@ -144,4 +145,5 @@ namespace View
             DialogResult = DialogResult.OK;
         }
     }
+#endif
 }

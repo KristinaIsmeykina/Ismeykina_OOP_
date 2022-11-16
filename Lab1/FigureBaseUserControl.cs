@@ -21,6 +21,6 @@ namespace View
         /// Метод для получения фигуры
         /// </summary>
         /// <returns></returns>
-        public abstract FigureBase GetFigur();
+        public abstract FigureBase GetFigur { get; }
     }
 }

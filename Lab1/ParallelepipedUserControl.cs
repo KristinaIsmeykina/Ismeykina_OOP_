@@ -27,18 +27,21 @@ namespace View
         ///< inheritdoc />
         /// </summary>
         /// <returns></returns>
-        public override FigureBase GetFigur()
+        public override FigureBase GetFigur
         {
-            var newParallelepiped = new Parallelepiped
+            get
             {
-                Height = Convert.ToDouble(HeightTextBox.Text),
-                FirstSide = Convert.ToDouble(FirstSideTextBox.Text),
-                SecondSide = Convert.ToDouble(SecondSideTextBox.Text),
-                Angle = Convert.ToDouble(AngleOfSidesTextBox.Text)
-            };
+                var newParallelepiped = new Parallelepiped()
+                {
+                    Height = Convert.ToDouble(HeightTextBox.Text),
+                    FirstSide = Convert.ToDouble(FirstSideTextBox.Text),
+                    SecondSide = Convert.ToDouble(SecondSideTextBox.Text),
+                    Angle = Convert.ToDouble(AngleOfSidesTextBox.Text)
+                };
 
-            return newParallelepiped;
+                return newParallelepiped;
+
+            }
         }
-
     }
 }

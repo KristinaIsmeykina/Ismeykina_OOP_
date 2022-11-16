@@ -119,7 +119,7 @@ namespace View
             // 
             // OkButton
             // 
-            this.OkButton.Location = new System.Drawing.Point(70, 343);
+            this.OkButton.Location = new System.Drawing.Point(57, 274);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(75, 28);
             this.OkButton.TabIndex = 2;
@@ -129,7 +129,7 @@ namespace View
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(163, 343);
+            this.CancelButton.Location = new System.Drawing.Point(150, 274);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 28);
             this.CancelButton.TabIndex = 7;
@@ -139,7 +139,7 @@ namespace View
             // 
             // AddRandomFigureButton
             // 
-            this.AddRandomFigureButton.Location = new System.Drawing.Point(70, 290);
+            this.AddRandomFigureButton.Location = new System.Drawing.Point(57, 222);
             this.AddRandomFigureButton.Name = "AddRandomFigureButton";
             this.AddRandomFigureButton.Size = new System.Drawing.Size(168, 28);
             this.AddRandomFigureButton.TabIndex = 8;
@@ -176,7 +176,7 @@ namespace View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 441);
+            this.ClientSize = new System.Drawing.Size(743, 314);
             this.Controls.Add(this.AddRandomFigureButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.pyramidUserControl);
@@ -213,6 +213,8 @@ namespace View
         private PyramidUserControl pyramidUserControl;
         private SphereUserControl sphereUserControl;
         private System.Windows.Forms.Button CancelButton;
+#if DEBUG
         private System.Windows.Forms.Button AddRandomFigureButton;
+#endif
     }
 }

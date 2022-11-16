@@ -17,21 +17,24 @@ namespace View
         {
             InitializeComponent();
         }
-        
-        public override FigureBase GetFigur()
+
+        public override FigureBase GetFigur
         {
-            var newPyramid = new Pyramid
+            get
             {
-                Height = Convert.ToDouble(HeightTextBox.Text),
+                var newPyramid = new Pyramid
+                {
+                    Height = Convert.ToDouble(HeightTextBox.Text),
 
-                FirstSide = Convert.ToDouble(FirstSideTextBox.Text),
+                    FirstSide = Convert.ToDouble(FirstSideTextBox.Text),
 
-                SecondSide = Convert.ToDouble(SecondSideTextBox.Text),
+                    SecondSide = Convert.ToDouble(SecondSideTextBox.Text),
 
-                Angle = Convert.ToDouble(AngleOfSidesTextBox.Text),
-                NumberOfCorners = Convert.ToInt32(NumberOfCornersComboBox.Text)
-            };
-            return newPyramid;
+                    Angle = Convert.ToDouble(AngleOfSidesTextBox.Text),
+                    NumberOfCorners = Convert.ToInt32(NumberOfCornersComboBox.Text)
+                };
+                return newPyramid;
+            }
         }
     }
 }
