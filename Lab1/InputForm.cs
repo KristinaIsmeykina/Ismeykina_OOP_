@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -21,12 +22,13 @@ namespace View
         /// Свойство- фигура
         /// </summary>
         public FigureBase FigureBase { get; private set; }
-       
+        public RadioButton CheckedRadioButton { get; set; }
+
         //TODO: Зачем тут свойство?
         /// <summary>
         /// Свойство- выбранный radiobutton
         /// </summary>
-        private RadioButton CheckedRadioButton { get; set; }
+
 
         /// <summary>
         /// Словарь radiobutton- usercontrol
@@ -43,6 +45,7 @@ namespace View
             InitializeComponent();
 #if DEBUG
             AddRandomFigureButton.Visible = true;
+
 #endif
             
             PyramidRadioButton.Checked = true;
@@ -77,11 +80,21 @@ namespace View
                     {
                         var newForm = _radioButtonToUserControl[value];
                         FigureBase = newForm.GetFigur;
+                        var context = new ValidationContext(newForm.GetFigur, null, null);
+                        IList<ValidationResult> errors = new List<ValidationResult>();
+                        if (!Validator.TryValidateObject(FigureBase,context, errors, true))
+                    {
+                        foreach(ValidationResult result in errors)
+                        {
+                            MessageBox.Show(result.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    
                     }
                 }
            
                 DialogResult = DialogResult.OK;
-            }
+               }
 
             catch (Exception a)
             {

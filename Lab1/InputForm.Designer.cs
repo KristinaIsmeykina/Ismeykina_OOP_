@@ -29,6 +29,7 @@ namespace View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SelectFigureGroupBox = new System.Windows.Forms.GroupBox();
             this.SphereRadioButton = new System.Windows.Forms.RadioButton();
             this.PyramidRadioButton = new System.Windows.Forms.RadioButton();
@@ -38,14 +39,14 @@ namespace View
             this.RadiusTextBox = new System.Windows.Forms.TextBox();
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-#if DEBUG
             this.AddRandomFigureButton = new System.Windows.Forms.Button();
-#endif
             this.pyramidUserControl = new View.PyramidUserControl();
             this.parallelepipedUserControl = new View.ParallelepipedUserControl();
             this.sphereUserControl = new View.SphereUserControl();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.SelectFigureGroupBox.SuspendLayout();
             this.SphereGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // SelectFigureGroupBox
@@ -139,7 +140,6 @@ namespace View
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-#if DEBUG
             // AddRandomFigureButton
             // 
             this.AddRandomFigureButton.Location = new System.Drawing.Point(57, 222);
@@ -150,7 +150,6 @@ namespace View
             this.AddRandomFigureButton.UseVisualStyleBackColor = true;
             this.AddRandomFigureButton.Visible = false;
             this.AddRandomFigureButton.Click += new System.EventHandler(this.AddRandomFigureButton_Click);
-#endif
             // 
             // pyramidUserControl
             // 
@@ -176,14 +175,16 @@ namespace View
             this.sphereUserControl.Size = new System.Drawing.Size(303, 166);
             this.sphereUserControl.TabIndex = 6;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 314);
-#if DEBUG
+            this.ClientSize = new System.Drawing.Size(771, 318);
             this.Controls.Add(this.AddRandomFigureButton);
-#endif
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.pyramidUserControl);
             this.Controls.Add(this.parallelepipedUserControl);
@@ -199,6 +200,7 @@ namespace View
             this.SelectFigureGroupBox.PerformLayout();
             this.SphereGroupBox.ResumeLayout(false);
             this.SphereGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,6 +223,7 @@ namespace View
         private System.Windows.Forms.Button CancelButton;
 #if DEBUG
         private System.Windows.Forms.Button AddRandomFigureButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
 #endif
     }
 }
