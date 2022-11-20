@@ -17,15 +17,21 @@ namespace View
     public partial class ParallelepipedUserControl : FigureBaseUserControl
     {
         /// <summary>
+        /// Свойство TextBox для валидации
+        /// </summary>
+        public bool IsValidTextBox { get; private set; }
+
+
+        /// <summary>
         /// Конструктор класса Parallelepiped UserControl
         /// </summary>
         public ParallelepipedUserControl()
         {
             InitializeComponent();
-            HeightTextBox.KeyPress += TextBox_KeyPress;
-            FirstSideTextBox.KeyPress += TextBox_KeyPress;
-            SecondSideTextBox.KeyPress += TextBox_KeyPress;
-            AngleOfSidesTextBox.KeyPress += TextBox_KeyPress;
+            HeightTextBox.TextChanged+=TextBox_TextChanged;
+            FirstSideTextBox.TextChanged += TextBox_TextChanged;
+            SecondSideTextBox.TextChanged += TextBox_TextChanged;
+            AngleOfSidesTextBox.TextChanged += TextBox_TextChanged;
         }
         /// <summary>
         ///< inheritdoc />
@@ -35,7 +41,6 @@ namespace View
         {
            
         get
-
             {
                     var newParallelepiped = new Parallelepiped()
                     {
@@ -48,35 +53,21 @@ namespace View
                     return newParallelepiped;
             }
         }
-        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
-            {
-                e.Handled = true;
-            }
 
-            if (e.KeyChar == ',' && (sender as TextBox).Text.IndexOf(',') > -1)
-            {
-                e.Handled = true;
-            }
+        /// <summary>
+        /// Событие при изменении TextBox
+        /// </summary>
+        /// <param name="sender">TextBox</param>
+        /// <param name="e">lданные события</param>
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            var textBox = (TextBox)sender;
+
+           IsValidTextBox = IsValidValue(textBox.Text, out var errorMsg);
+            errorProvider1.SetError(textBox, errorMsg);
         }
-        // private string CheckValue2(string value, string text)
-        //{
-        //    string stroka = "";
-        //    if (value <= 0)
-        //    {
-        //        stroka += "The value must be greater than 0";
-        //    }
-        //    return text += stroka;
-        //}
-        //private string CheckValueAll()
-        //{
-        //    string text = "";
-        //    text += CheckValue2(HeightTextBox.Text, "Поле высота");
-        //    text += CheckValue2(FirstSideTextBox.Text, "Поле первая сторона");
-        //    text += CheckValue2(SecondSideTextBox.Text, "Поле вторая высота");
-        //    text += CheckValue2(AngleOfSidesTextBox.Text, "Поле угол");
-        //    return text;
-        //}
+
+        
+        
     }
 }

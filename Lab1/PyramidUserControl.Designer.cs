@@ -29,7 +29,9 @@ namespace View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.NumberOfCornersComboBox = new System.Windows.Forms.ComboBox();
             this.NumberLabel = new System.Windows.Forms.Label();
             this.AngleOfSidesTextBox = new System.Windows.Forms.TextBox();
             this.AngleLabel = new System.Windows.Forms.Label();
@@ -39,8 +41,9 @@ namespace View
             this.FirstLabel = new System.Windows.Forms.Label();
             this.HeightTextBox = new System.Windows.Forms.TextBox();
             this.HeightLabel = new System.Windows.Forms.Label();
-            this.NumberOfCornersComboBox = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -57,10 +60,21 @@ namespace View
             this.groupBox2.Controls.Add(this.HeightLabel);
             this.groupBox2.Location = new System.Drawing.Point(18, 21);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(293, 253);
+            this.groupBox2.Size = new System.Drawing.Size(364, 264);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Parameters";
+            // 
+            // NumberOfCornersComboBox
+            // 
+            this.NumberOfCornersComboBox.FormattingEnabled = true;
+            this.NumberOfCornersComboBox.Items.AddRange(new object[] {
+            "3",
+            "4"});
+            this.NumberOfCornersComboBox.Location = new System.Drawing.Point(167, 213);
+            this.NumberOfCornersComboBox.Name = "NumberOfCornersComboBox";
+            this.NumberOfCornersComboBox.Size = new System.Drawing.Size(121, 24);
+            this.NumberOfCornersComboBox.TabIndex = 9;
             // 
             // NumberLabel
             // 
@@ -135,16 +149,9 @@ namespace View
             this.HeightLabel.TabIndex = 0;
             this.HeightLabel.Text = "Height";
             // 
-            // NumberOfCornersComboBox
+            // errorProvider1
             // 
-            this.NumberOfCornersComboBox.FormattingEnabled = true;
-            this.NumberOfCornersComboBox.Items.AddRange(new object[] {
-            "2",
-            "3"});
-            this.NumberOfCornersComboBox.Location = new System.Drawing.Point(167, 213);
-            this.NumberOfCornersComboBox.Name = "NumberOfCornersComboBox";
-            this.NumberOfCornersComboBox.Size = new System.Drawing.Size(121, 24);
-            this.NumberOfCornersComboBox.TabIndex = 9;
+            this.errorProvider1.ContainerControl = this;
             // 
             // PyramidUserControl
             // 
@@ -152,9 +159,10 @@ namespace View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox2);
             this.Name = "PyramidUserControl";
-            this.Size = new System.Drawing.Size(340, 341);
+            this.Size = new System.Drawing.Size(413, 326);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,5 +180,6 @@ namespace View
         private System.Windows.Forms.TextBox HeightTextBox;
         private System.Windows.Forms.Label HeightLabel;
         private System.Windows.Forms.ComboBox NumberOfCornersComboBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

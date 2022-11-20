@@ -17,11 +17,16 @@ namespace View
     public partial class SphereUserControl : FigureBaseUserControl
     {
         /// <summary>
+        /// Свойство TextBox для валидации
+        /// </summary>
+        public bool IsValidTextBox { get; private set; }
+        /// <summary>
         /// Конструктор Sphere UserControl
         /// </summary>
         public SphereUserControl()
         {
             InitializeComponent();
+            RadiusTextBox.TextChanged += TextBox_TextChanged;
         }
 
         /// <summary>
@@ -39,6 +44,19 @@ namespace View
 
                 return newSphere;
             }
+        }
+
+        /// <summary>
+        /// Событие при изменении TextBox
+        /// </summary>
+        /// <param name="sender">TextBox</param>
+        /// <param name="e">данные события</param>
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            var textBox = (TextBox)sender;
+
+            IsValidTextBox = IsValidValue(textBox.Text, out var errorMsg);
+            errorProvider1.SetError(textBox, errorMsg);
         }
     }
 }

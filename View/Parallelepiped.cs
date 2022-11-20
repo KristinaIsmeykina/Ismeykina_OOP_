@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace Model
 {
@@ -38,7 +37,6 @@ namespace Model
         /// </summary>
         private const int MinAngle = 0;
         
-        [Required]
         /// <summary>
         /// Высота
         /// </summary>
@@ -52,7 +50,6 @@ namespace Model
             }
         }
 
-        [Required]
         /// <summary>
         /// Свойство - первоя сторона
         /// </summary>
@@ -66,7 +63,6 @@ namespace Model
             }
         }
 
-        [Required]
         /// <summary>
         /// Свойство - вторая сторона
         /// </summary>
@@ -80,7 +76,6 @@ namespace Model
             }
         }
 
-        [Required]
         /// <summary>
         /// Свойство -  угол
         /// </summary>
@@ -92,7 +87,7 @@ namespace Model
                 if (value <= MinAngle || value >= MaxAngle)
                 {
                     throw new ArgumentOutOfRangeException(
-                        $"{value} must be greater than {MinAngle} " +
+                        $"Angle of sides must be greater than {MinAngle} " +
                                 $"or less than {MaxAngle}");
                 }
                 _angle = value;

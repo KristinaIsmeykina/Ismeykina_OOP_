@@ -29,6 +29,7 @@ namespace View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.AngleOfSidesTextBox = new System.Windows.Forms.TextBox();
             this.AngleLabel = new System.Windows.Forms.Label();
@@ -38,7 +39,9 @@ namespace View
             this.FirstLabel = new System.Windows.Forms.Label();
             this.HeightTextBox = new System.Windows.Forms.TextBox();
             this.HeightLabel = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -53,7 +56,7 @@ namespace View
             this.groupBox2.Controls.Add(this.HeightLabel);
             this.groupBox2.Location = new System.Drawing.Point(23, 16);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(281, 208);
+            this.groupBox2.Size = new System.Drawing.Size(348, 219);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Parameters";
@@ -122,15 +125,20 @@ namespace View
             this.HeightLabel.TabIndex = 0;
             this.HeightLabel.Text = "Height";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ParallelepipedUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox2);
             this.Name = "ParallelepipedUserControl";
-            this.Size = new System.Drawing.Size(334, 250);
+            this.Size = new System.Drawing.Size(374, 263);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -146,5 +154,6 @@ namespace View
         private System.Windows.Forms.Label FirstLabel;
         private System.Windows.Forms.TextBox HeightTextBox;
         private System.Windows.Forms.Label HeightLabel;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

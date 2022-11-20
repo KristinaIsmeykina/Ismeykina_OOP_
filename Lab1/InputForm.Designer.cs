@@ -40,10 +40,11 @@ namespace View
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.AddRandomFigureButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pyramidUserControl = new View.PyramidUserControl();
             this.parallelepipedUserControl = new View.ParallelepipedUserControl();
             this.sphereUserControl = new View.SphereUserControl();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pyramidUserControl1 = new View.PyramidUserControl();
             this.SelectFigureGroupBox.SuspendLayout();
             this.SphereGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -51,6 +52,7 @@ namespace View
             // 
             // SelectFigureGroupBox
             // 
+            this.SelectFigureGroupBox.Controls.Add(this.pyramidUserControl1);
             this.SelectFigureGroupBox.Controls.Add(this.SphereRadioButton);
             this.SelectFigureGroupBox.Controls.Add(this.PyramidRadioButton);
             this.SelectFigureGroupBox.Controls.Add(this.ParallelepipedRadioButton);
@@ -151,46 +153,50 @@ namespace View
             this.AddRandomFigureButton.Visible = false;
             this.AddRandomFigureButton.Click += new System.EventHandler(this.AddRandomFigureButton_Click);
             // 
-            // pyramidUserControl
-            // 
-            this.pyramidUserControl.Location = new System.Drawing.Point(421, 30);
-            this.pyramidUserControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pyramidUserControl.Name = "pyramidUserControl";
-            this.pyramidUserControl.Size = new System.Drawing.Size(340, 341);
-            this.pyramidUserControl.TabIndex = 5;
-            // 
-            // parallelepipedUserControl
-            // 
-            this.parallelepipedUserControl.Location = new System.Drawing.Point(421, 30);
-            this.parallelepipedUserControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.parallelepipedUserControl.Name = "parallelepipedUserControl";
-            this.parallelepipedUserControl.Size = new System.Drawing.Size(334, 303);
-            this.parallelepipedUserControl.TabIndex = 4;
-            // 
-            // sphereUserControl
-            // 
-            this.sphereUserControl.Location = new System.Drawing.Point(421, 37);
-            this.sphereUserControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sphereUserControl.Name = "sphereUserControl";
-            this.sphereUserControl.Size = new System.Drawing.Size(303, 166);
-            this.sphereUserControl.TabIndex = 6;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // pyramidUserControl
+            // 
+            this.pyramidUserControl.Location = new System.Drawing.Point(378, 12);
+            this.pyramidUserControl.Name = "pyramidUserControl";
+            this.pyramidUserControl.Size = new System.Drawing.Size(413, 326);
+            this.pyramidUserControl.TabIndex = 11;
+            // 
+            // parallelepipedUserControl
+            // 
+            this.parallelepipedUserControl.Location = new System.Drawing.Point(389, 26);
+            this.parallelepipedUserControl.Name = "parallelepipedUserControl";
+            this.parallelepipedUserControl.Size = new System.Drawing.Size(374, 263);
+            this.parallelepipedUserControl.TabIndex = 10;
+            // 
+            // sphereUserControl
+            // 
+            this.sphereUserControl.Location = new System.Drawing.Point(389, 37);
+            this.sphereUserControl.Name = "sphereUserControl";
+            this.sphereUserControl.Size = new System.Drawing.Size(327, 166);
+            this.sphereUserControl.TabIndex = 9;
+            // 
+            // pyramidUserControl1
+            // 
+            this.pyramidUserControl1.Location = new System.Drawing.Point(-52, 127);
+            this.pyramidUserControl1.Name = "pyramidUserControl1";
+            this.pyramidUserControl1.Size = new System.Drawing.Size(413, 326);
+            this.pyramidUserControl1.TabIndex = 10;
             // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 318);
-            this.Controls.Add(this.AddRandomFigureButton);
-            this.Controls.Add(this.CancelButton);
+            this.ClientSize = new System.Drawing.Size(813, 339);
             this.Controls.Add(this.pyramidUserControl);
             this.Controls.Add(this.parallelepipedUserControl);
+            this.Controls.Add(this.sphereUserControl);
+            this.Controls.Add(this.AddRandomFigureButton);
+            this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.SelectFigureGroupBox);
-            this.Controls.Add(this.sphereUserControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "InputForm";
@@ -217,13 +223,14 @@ namespace View
         private System.Windows.Forms.GroupBox SphereGroupBox;
         private System.Windows.Forms.Label RadiusLabel;
         private System.Windows.Forms.TextBox RadiusTextBox;
-        private ParallelepipedUserControl parallelepipedUserControl;
-        private PyramidUserControl pyramidUserControl;
-        private SphereUserControl sphereUserControl;
         private System.Windows.Forms.Button CancelButton;
 #if DEBUG
         private System.Windows.Forms.Button AddRandomFigureButton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private PyramidUserControl pyramidUserControl1;
+        private PyramidUserControl pyramidUserControl;
+        private ParallelepipedUserControl parallelepipedUserControl;
+        private SphereUserControl sphereUserControl;
 #endif
     }
 }

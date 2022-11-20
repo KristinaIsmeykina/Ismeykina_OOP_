@@ -92,7 +92,7 @@ namespace Model
                 if (value <= MinAngle || value >= MaxAngle)
                 {
                     throw new ArgumentOutOfRangeException(
-                        $"{value} must be greater than {MinAngle} " +
+                        $"Angle of sides must be greater than {MinAngle} " +
                                 $"or less than {MaxAngle}");
                 }
                 _angle = value;
@@ -119,7 +119,7 @@ namespace Model
                 if (value < MinCornersNumber)
                 {
                     throw new ArgumentOutOfRangeException(
-                        $"The value must be greater than {MinCornersNumber}");
+                        $"Number of corners must be greater than {MinCornersNumber}");
                 }
 
                 _numberOfCorners = value;

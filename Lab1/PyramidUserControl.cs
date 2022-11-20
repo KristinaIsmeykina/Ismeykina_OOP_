@@ -13,9 +13,22 @@ namespace View
 {
     public partial class PyramidUserControl : FigureBaseUserControl
     {
+        /// <summary>
+        /// Is valid TextBox auto-prop
+        /// </summary>
+        public bool IsValidTextBox { get; private set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public PyramidUserControl()
         {
             InitializeComponent();
+            HeightTextBox.TextChanged += TextBox_TextChanged;
+            FirstSideTextBox.TextChanged += TextBox_TextChanged;
+            SecondSideTextBox.TextChanged += TextBox_TextChanged;
+            AngleOfSidesTextBox.TextChanged += TextBox_TextChanged;
+            NumberOfCornersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         public override FigureBase GetFigur
@@ -35,6 +48,19 @@ namespace View
                 };
                 return newPyramid;
             }
+        }
+
+        /// <summary>
+        /// Событие при изменении TextBox
+        /// </summary>
+        /// <param name="sender"> </param>
+        /// <param name="e"></param>
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            var textBox = (TextBox)sender;
+
+            IsValidTextBox = IsValidValue(textBox.Text, out var errorMsg);
+            errorProvider1.SetError(textBox, errorMsg);
         }
     }
 }

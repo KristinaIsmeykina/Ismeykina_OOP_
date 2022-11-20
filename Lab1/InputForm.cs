@@ -17,18 +17,18 @@ namespace View
     /// </summary>
     public partial class InputForm : Form
     {
-        //TODO: Нарушение инкапсуляции
+        //TODO: Нарушение инкапсуляции ++
         /// <summary>
         /// Свойство- фигура
         /// </summary>
         public FigureBase FigureBase { get; private set; }
-        public RadioButton CheckedRadioButton { get; set; }
+
 
         //TODO: Зачем тут свойство?
         /// <summary>
         /// Свойство- выбранный radiobutton
         /// </summary>
-
+        public RadioButton CheckedRadioButton { get; set; }
 
         /// <summary>
         /// Словарь radiobutton- usercontrol
@@ -80,25 +80,23 @@ namespace View
                     {
                         var newForm = _radioButtonToUserControl[value];
                         FigureBase = newForm.GetFigur;
-                        var context = new ValidationContext(newForm.GetFigur, null, null);
-                        IList<ValidationResult> errors = new List<ValidationResult>();
-                        if (!Validator.TryValidateObject(FigureBase,context, errors, true))
-                    {
-                        foreach(ValidationResult result in errors)
-                        {
-                            MessageBox.Show(result.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                    
                     }
                 }
-           
-                DialogResult = DialogResult.OK;
-               }
 
-            catch (Exception a)
+                DialogResult = DialogResult.OK;
+            }
+            
+            catch (Exception ex)
             {
-                MessageBox.Show(a.Message);
+                if (ex is ArgumentException )
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                else
+                {
+                    MessageBox.Show("Some of parameters are missing or not valid");
+                }
+                
             }
 
         }
@@ -133,7 +131,7 @@ namespace View
             Close();
         }
 #if DEBUG
-        //TODO: директивы условной компиляции
+        //TODO: директивы условной компиляции ++
         /// <summary>
         /// Добавление рандомной фигуры
         /// </summary>
