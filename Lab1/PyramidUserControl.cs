@@ -13,11 +13,7 @@ namespace View
 {
     public partial class PyramidUserControl : FigureBaseUserControl
     {
-        /// <summary>
-        /// Is valid TextBox auto-prop
-        /// </summary>
-        public bool IsValidTextBox { get; private set; }
-
+        
         /// <summary>
         /// 
         /// </summary>
@@ -59,7 +55,7 @@ namespace View
         {
             var textBox = (TextBox)sender;
 
-            IsValidTextBox = IsValidValue(textBox.Text, out var errorMsg);
+            IsValidValue(textBox.Text, out var errorMsg);
             errorProvider1.SetError(textBox, errorMsg);
         }
     }

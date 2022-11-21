@@ -16,10 +16,7 @@ namespace View
     /// </summary>
     public partial class SphereUserControl : FigureBaseUserControl
     {
-        /// <summary>
-        /// Свойство TextBox для валидации
-        /// </summary>
-        public bool IsValidTextBox { get; private set; }
+        
         /// <summary>
         /// Конструктор Sphere UserControl
         /// </summary>
@@ -55,7 +52,7 @@ namespace View
         {
             var textBox = (TextBox)sender;
 
-            IsValidTextBox = IsValidValue(textBox.Text, out var errorMsg);
+            IsValidValue(textBox.Text, out var errorMsg);
             errorProvider1.SetError(textBox, errorMsg);
         }
     }

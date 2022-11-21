@@ -16,11 +16,7 @@ namespace View
     /// </summary>
     public partial class ParallelepipedUserControl : FigureBaseUserControl
     {
-        /// <summary>
-        /// Свойство TextBox для валидации
-        /// </summary>
-        public bool IsValidTextBox { get; private set; }
-
+        
 
         /// <summary>
         /// Конструктор класса Parallelepiped UserControl
@@ -63,7 +59,7 @@ namespace View
         {
             var textBox = (TextBox)sender;
 
-           IsValidTextBox = IsValidValue(textBox.Text, out var errorMsg);
+            IsValidValue(textBox.Text, out var errorMsg);
             errorProvider1.SetError(textBox, errorMsg);
         }
 
