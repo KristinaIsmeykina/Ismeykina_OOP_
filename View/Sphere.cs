@@ -29,19 +29,14 @@ namespace Model
             }
         }
 
-        /// <summary>
         ///  <inheritdoc />
-        /// </summary>
-        /// <returns></returns>
         public override double GetVolume()
         {
-            //TODO: Теряется точность.
-            return Math.Round(4 * Math.PI * Math.Pow(Radius, 3) / 3,3);
+            //TODO: Теряется точность ++.
+            return 4 * Math.PI * Math.Pow(Radius, 3) / 3;
         }
 
-        /// <summary>
         /// <inheritdoc />
-        /// </summary>
         public override string Info => $"Sphere R: {Radius}";
 
         /// <summary>

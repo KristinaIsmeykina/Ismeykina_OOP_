@@ -113,20 +113,15 @@ namespace Model
 
         }
 
-        /// <summary>
         /// <inheritdoc />
-        /// </summary>
-        /// <returns></returns>
         public override double GetVolume()
         {
             double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180);
-            //TODO: Теряется точность.
-            return Math.Round(baseArea * Height,3);
+            //TODO: Теряется точность++.
+            return baseArea * Height;
         }
 
-        /// <summary>
         /// <inheritdoc />
-        /// </summary>
         public override string Info => $"Parallelepiped H: {Height}; " +
                                        $"L1: {FirstSide}; " +
                                        $"L2: {SecondSide}; " +

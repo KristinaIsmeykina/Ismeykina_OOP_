@@ -17,7 +17,6 @@ namespace View
         public static void Main(string[] args)
         {
          
-
             var figureList = new List<FigureBase>();
             var rnd = new Random();
 
@@ -43,7 +42,7 @@ namespace View
             foreach (var figure in figureList)
             {
                 Console.WriteLine(figure.Info);
-                Console.WriteLine(figure.GetVolume());
+                Console.WriteLine(Math.Round(figure.GetVolume(),3));
             }
             Console.ReadKey();
 
