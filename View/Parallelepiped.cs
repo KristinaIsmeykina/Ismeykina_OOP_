@@ -119,28 +119,19 @@ namespace Model
         public Parallelepiped() { }
 
         /// <summary>
-        /// <inheritdoc />
+        /// Площадь основания Parallelepiped
         /// </summary>
-        /// <returns></returns>
-        public  double GetVolume()
-        {
-            double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180);
-             return Math.Round(baseArea * Height,3);
-        }
+        public double BaseArea => FirstSide * SecondSide * 
+                                  Math.Sin(Angle * Math.PI / 180);
 
-        /// <summary>
-        ///  <inheritdoc />
-        /// </summary>
-        public override double Volume => GetVolume();
-
-        /// <summary>
         /// <inheritdoc />
-        /// </summary>
+        public override double Volume => BaseArea * Height;
+
+        /// <inheritdoc />
         public override string Info => $"Parallelepiped H: {Height}; " +
                                        $"L1: {FirstSide}; " +
                                        $"L2: {SecondSide}; " +
                                        $"Angle: {Angle}";
-
 
         /// <summary>
         /// Генерация паралелепипида

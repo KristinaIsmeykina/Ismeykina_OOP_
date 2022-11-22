@@ -11,12 +11,15 @@ using System.Windows.Forms;
 
 namespace View
 {
-    //TODO: XML
+    //TODO: XML ++
+    /// <summary>
+    /// Класс Pyramid UserControl
+    /// </summary>
     public partial class PyramidUserControl : FigureBaseUserControl
     {
-        
+
         /// <summary>
-        /// //TODO: XML
+        /// Конструктор класса Parallelepiped UserControl
         /// </summary>
         public PyramidUserControl()
         {
@@ -28,7 +31,8 @@ namespace View
             NumberOfCornersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        //TODO: XML
+        //TODO: XML++
+        ///< inheritdoc />
         public override FigureBase GetFigur
         {
             get

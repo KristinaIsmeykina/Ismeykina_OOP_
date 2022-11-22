@@ -127,9 +127,10 @@ namespace Model
         }
 
         /// <summary>
-        /// <inheritdoc />
+        /// Площадь основания пирамиды
         /// </summary>
-        public double GetVolume()
+        /// <returns></returns>
+        public double BaseArea()
         {
             int added = 1;
             if (NumberOfCorners == 3)
@@ -137,17 +138,13 @@ namespace Model
                 added = 2;
             }
             double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180) / added;
-            return Math.Round(baseArea * Height,3);
+            return baseArea;
         }
 
-        /// <summary>
-        /// < inheritdoc />
-        /// </summary>
-        public override double Volume => GetVolume();
-
-        /// <summary>
         /// <inheritdoc />
-        /// </summary>
+        public override double Volume => BaseArea() * Height / 3;
+
+        /// <inheritdoc />
         public override string Info => $"Pyramid Corners:{NumberOfCorners}; " +
                                      $"H: {Height}; " +
                                      $"L1: {FirstSide}; " +

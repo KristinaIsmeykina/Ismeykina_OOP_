@@ -29,27 +29,14 @@ namespace Model
             }
         }
 
-        /// <summary>
-        ///  <inheritdoc />
-        /// </summary>
-        /// <returns></returns>
-        public  double GetVolume()
-        {
-            return Math.Round(4 * Math.PI * Math.Pow(Radius, 3) / 3,3);
-        }
-
-        /// <summary>
-        /// < inheritdoc />
-        /// </summary>
-        public override double Volume => GetVolume();
-
-        /// <summary>
         /// <inheritdoc />
-        /// </summary>
+        public override double Volume => 4 * Math.PI * Math.Pow(Radius, 3) / 3;
+
+        /// <inheritdoc />
         public override string Info => $"Sphere R: {Radius}";
 
         /// <summary>
-        /// Конструктор
+        /// Конструктор сферы
         /// </summary>
         /// <param name="radius"></param>
         public Sphere(double radius)

@@ -17,6 +17,11 @@ namespace Model
     public abstract class FigureBase
     {
         /// <summary>
+        /// Минимальное значение для параметров фигуры
+        /// </summary>
+        protected const double MinFigureParamValue = 0;
+
+        /// <summary>
         /// Проверяет является ли значение положительным
         /// </summary>
         /// <param name="value">Входное значение</param>
@@ -25,7 +30,7 @@ namespace Model
             if (value <= 0)
             {
                 throw new ArgumentOutOfRangeException(
-                    $"The value must be greater than 0");
+                   $"The value must be greater than {MinFigureParamValue}");
             }
             if (double.IsNaN(value))
             {

@@ -16,8 +16,6 @@ namespace View
     /// </summary>
     public partial class ParallelepipedUserControl : FigureBaseUserControl
     {
-        
-
         /// <summary>
         /// Конструктор класса Parallelepiped UserControl
         /// </summary>
@@ -31,8 +29,6 @@ namespace View
         }
         /// <summary>
         ///< inheritdoc />
-        /// </summary>
-        /// <returns></returns>
         public override FigureBase GetFigur
         {
             get

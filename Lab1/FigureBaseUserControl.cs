@@ -47,13 +47,19 @@ namespace View
                 {
                     errorMessage = "";
                 }
-                //TODO: RSDN
+                //TODO: RSDN ++
                 else
+                {
                     errorMessage = "Value must be positive";
+                }    
+                    
             }
 
-            else 
+            else
+            {
                 errorMessage = "Value must be an integer of decimal number";
+            }
+               
         }
 
     }
