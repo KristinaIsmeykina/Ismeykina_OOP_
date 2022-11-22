@@ -17,7 +17,6 @@ namespace View
     /// </summary>
     public partial class InputForm : Form
     {
-        //TODO: Нарушение инкапсуляции ++
         /// <summary>
         /// Свойство- фигура
         /// </summary>
@@ -34,9 +33,7 @@ namespace View
         /// Словарь radiobutton- usercontrol
         /// </summary>
         private readonly Dictionary<RadioButton, FigureBaseUserControl> _radioButtonToUserControl;
-
-
-
+        
         /// <summary>
         /// Конструктор InputForm
         /// </summary>
@@ -131,7 +128,6 @@ namespace View
             Close();
         }
 #if DEBUG
-        //TODO: директивы условной компиляции ++
         /// <summary>
         /// Добавление рандомной фигуры
         /// </summary>

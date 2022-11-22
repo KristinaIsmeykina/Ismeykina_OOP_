@@ -25,11 +25,8 @@ namespace View
             InitializeComponent();
             RadiusTextBox.TextChanged += TextBox_TextChanged;
         }
-
-        /// <summary>
+        
         /// < inheritdoc />
-        /// </summary>
-        /// <returns></returns>
         public override FigureBase GetFigur
         {
             get

@@ -35,8 +35,7 @@ namespace View
         /// <returns></returns>
         public override FigureBase GetFigur
         {
-           
-        get
+            get
             {
                     var newParallelepiped = new Parallelepiped()
                     {
@@ -62,8 +61,5 @@ namespace View
             IsValidValue(textBox.Text, out var errorMsg);
             errorProvider1.SetError(textBox, errorMsg);
         }
-
-        
-        
     }
 }

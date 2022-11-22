@@ -202,7 +202,5 @@ namespace View
             FromTextBox.Text = "0";
             ToTextBox.Text = "0";
         }
-
-     
     }
 }

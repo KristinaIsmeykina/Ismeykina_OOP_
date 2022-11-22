@@ -11,12 +11,12 @@ using Model;
 
 namespace View
 {
+    //TODO: RSDN
     /// <summary>
     /// Класс FigureBase UserControl
     /// </summary>
     public abstract partial class FigureBaseUserControl : UserControl
     {
-        //TODO: В свойство +++.
         /// <summary>
         /// Метод для получения фигуры
         /// </summary>
@@ -47,7 +47,7 @@ namespace View
                 {
                     errorMessage = "";
                 }
-
+                //TODO: RSDN
                 else
                     errorMessage = "Value must be positive";
             }

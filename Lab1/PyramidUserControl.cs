@@ -11,11 +11,12 @@ using System.Windows.Forms;
 
 namespace View
 {
+    //TODO: XML
     public partial class PyramidUserControl : FigureBaseUserControl
     {
         
         /// <summary>
-        /// 
+        /// //TODO: XML
         /// </summary>
         public PyramidUserControl()
         {
@@ -27,6 +28,7 @@ namespace View
             NumberOfCornersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
+        //TODO: XML
         public override FigureBase GetFigur
         {
             get
