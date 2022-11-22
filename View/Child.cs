@@ -63,7 +63,6 @@ namespace Model
         /// <param name="facility">учреждение</param>
         /// <param name="firstParent">первый родитель</param>
         /// <param name="secondParent">втрой родитель</param>
-        //TODO: RSDN /сделано
         public Child( string name, string surname, int age,  
                       GenderPerson gender, string facility,
                       string firstParent = null, string secondParent = null)
@@ -100,8 +99,7 @@ namespace Model
                                  
             return person;
         }
-
-        //TODO: RSDN
+        
         /// <summary>
         /// Присваивает ребенку родителя
         /// </summary>

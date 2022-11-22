@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    //TODO: RSDN
     /// <summary>
     /// Класс Person
     /// </summary>

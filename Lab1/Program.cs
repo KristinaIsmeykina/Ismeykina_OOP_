@@ -68,7 +68,6 @@ namespace View
                     (maleNames) : femaleNames;
                 List<string> secondName = genderType == 0 ? 
                     (femaleNames) : maleNames;
-                //TODO: RSDN/сделано
                 list1.Add(Adult.GetPair(firstName, secondName, surnames, workplaces,
                                         marriageStatus, genderType, random));
  
@@ -81,8 +80,7 @@ namespace View
                     (maleNames) : femaleNames;
                 List<string> secondName = genderType == 0 ?
                     (femaleNames) : maleNames;
-
-               //TODO: RSDN/сделано
+                
                list1.Add(Child.GetChildWithParrent(firstName, secondName, surnames,
                                                    facilities,genderType, random));
            

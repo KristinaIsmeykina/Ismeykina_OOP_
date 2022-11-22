@@ -95,8 +95,7 @@ namespace Model
 
             set => _workplace = value;
         }
-
-        //TODO: RSDN /сделано
+        
         /// <summary>
         /// Конструктор класса Adult
         /// </summary>
@@ -145,7 +144,6 @@ namespace Model
         /// <param name="genderType">пол</param>
         /// <param name="random">объект класса рандом</param>
         /// <returns>объект класса Adult</returns>
-        //TODO: RSDN /сделано
         public static Adult GetRandomAdult(List<string> names, List<string> surnames,
                                            List<string> workplaces, bool marriageStatus,
                                            int genderType, Random random)
@@ -173,7 +171,6 @@ namespace Model
         /// <param name="genderType">пол</param>
         /// <param name="random">объект класса </param>
         /// <returns>Объект класса Adult</returns>
-        //TODO: RSDN
         public static Adult GetPair(List<string> names, List<string> names2, 
                                     List<string> surnames,  List<string> workplaces, 
                                     bool marrigeStatus, int genderType, Random random)
