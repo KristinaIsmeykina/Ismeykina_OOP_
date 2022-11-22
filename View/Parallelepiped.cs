@@ -2,7 +2,6 @@
 
 namespace Model
 {
-    //TODO: RSDN/сделано
     /// <summary>
     /// Класс Parallelepiped
     /// </summary>
@@ -27,8 +26,7 @@ namespace Model
         /// Угол между первой и второй сторонной параллелепипеда
         /// </summary>
         private double _angle;
-
-        //TODO: XML/сделано
+        
         /// <summary>
         /// Максимальный угол
         /// </summary>
@@ -38,8 +36,6 @@ namespace Model
         /// Минимальный угол
         /// </summary>
         private const int MinAngle = 0;
-        
-        //TODO: XML/сделано
 
         /// <summary>
         /// Высота
@@ -124,6 +120,7 @@ namespace Model
         public override double GetVolume()
         {
             double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180);
+            //TODO: Теряется точность.
             return Math.Round(baseArea * Height,3);
         }
 
@@ -144,7 +141,6 @@ namespace Model
         {
             const int maxLength = 100;
             const int minLength = 0;
-            //TODO: зачем?
             var parallelepiped = new Parallelepiped(GetValue(minLength, maxLength),
                                                     GetValue(minLength, maxLength),
                                                     GetValue(minLength, maxLength),
