@@ -31,6 +31,7 @@ namespace View
         {
             this.components = new System.ComponentModel.Container();
             this.SelectFigureGroupBox = new System.Windows.Forms.GroupBox();
+            this.pyramidUserControl1 = new View.PyramidUserControl();
             this.SphereRadioButton = new System.Windows.Forms.RadioButton();
             this.PyramidRadioButton = new System.Windows.Forms.RadioButton();
             this.ParallelepipedRadioButton = new System.Windows.Forms.RadioButton();
@@ -44,7 +45,6 @@ namespace View
             this.pyramidUserControl = new View.PyramidUserControl();
             this.parallelepipedUserControl = new View.ParallelepipedUserControl();
             this.sphereUserControl = new View.SphereUserControl();
-            this.pyramidUserControl1 = new View.PyramidUserControl();
             this.SelectFigureGroupBox.SuspendLayout();
             this.SphereGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -63,6 +63,13 @@ namespace View
             this.SelectFigureGroupBox.TabIndex = 0;
             this.SelectFigureGroupBox.TabStop = false;
             this.SelectFigureGroupBox.Text = "Select figure";
+            // 
+            // pyramidUserControl1
+            // 
+            this.pyramidUserControl1.Location = new System.Drawing.Point(-52, 127);
+            this.pyramidUserControl1.Name = "pyramidUserControl1";
+            this.pyramidUserControl1.Size = new System.Drawing.Size(413, 326);
+            this.pyramidUserControl1.TabIndex = 10;
             // 
             // SphereRadioButton
             // 
@@ -150,7 +157,6 @@ namespace View
             this.AddRandomFigureButton.TabIndex = 8;
             this.AddRandomFigureButton.Text = "Add random figure";
             this.AddRandomFigureButton.UseVisualStyleBackColor = true;
-            this.AddRandomFigureButton.Visible = false;
             this.AddRandomFigureButton.Click += new System.EventHandler(this.AddRandomFigureButton_Click);
             // 
             // errorProvider1
@@ -177,13 +183,6 @@ namespace View
             this.sphereUserControl.Name = "sphereUserControl";
             this.sphereUserControl.Size = new System.Drawing.Size(327, 166);
             this.sphereUserControl.TabIndex = 9;
-            // 
-            // pyramidUserControl1
-            // 
-            this.pyramidUserControl1.Location = new System.Drawing.Point(-52, 127);
-            this.pyramidUserControl1.Name = "pyramidUserControl1";
-            this.pyramidUserControl1.Size = new System.Drawing.Size(413, 326);
-            this.pyramidUserControl1.TabIndex = 10;
             // 
             // InputForm
             // 

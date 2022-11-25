@@ -23,11 +23,11 @@ namespace View
         public FigureBase FigureBase { get; private set; }
 
 
-        //TODO: Зачем тут свойство?
+        //TODO: Зачем тут свойство?++
         /// <summary>
-        /// Свойство- выбранный radiobutton
+        /// выбранный radiobutton
         /// </summary>
-        public RadioButton CheckedRadioButton { get; set; }
+        private RadioButton _checkedRadioButton;
 
         /// <summary>
         /// Словарь radiobutton- usercontrol
@@ -46,7 +46,7 @@ namespace View
 #endif
             
             PyramidRadioButton.Checked = true;
-            CheckedRadioButton = PyramidRadioButton;
+            _checkedRadioButton = PyramidRadioButton;
             SphereRadioButton.CheckedChanged += RadioButton_CheckedChanged;
             PyramidRadioButton.CheckedChanged += RadioButton_CheckedChanged;
             ParallelepipedRadioButton.CheckedChanged += RadioButton_CheckedChanged;
@@ -73,7 +73,7 @@ namespace View
 
                 foreach (RadioButton value in radioButtonList)
                 {
-                    if (CheckedRadioButton.Equals(value))
+                    if (_checkedRadioButton.Equals(value))
                     {
                         var newForm = _radioButtonToUserControl[value];
                         FigureBase = newForm.GetFigur;
@@ -113,7 +113,7 @@ namespace View
                 if (value.Checked)
                 {
                     _radioButtonToUserControl[value].Visible = value.Checked;
-                    CheckedRadioButton = value;
+                    _checkedRadioButton = value;
                 }
             }
         }
