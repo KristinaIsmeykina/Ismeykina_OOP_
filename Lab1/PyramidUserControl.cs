@@ -33,7 +33,7 @@ namespace View
 
         //TODO: XML++
         ///< inheritdoc />
-        public override FigureBase GetFigur
+        public override FigureBase GetFigure
         {
             get
             {

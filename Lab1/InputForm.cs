@@ -76,7 +76,7 @@ namespace View
                     if (_checkedRadioButton.Equals(value))
                     {
                         var newForm = _radioButtonToUserControl[value];
-                        FigureBase = newForm.GetFigur;
+                        FigureBase = newForm.GetFigure;
                     }
                 }
 

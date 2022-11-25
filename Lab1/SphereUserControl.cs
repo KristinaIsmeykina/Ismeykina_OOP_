@@ -27,7 +27,7 @@ namespace View
         }
         
         /// < inheritdoc />
-        public override FigureBase GetFigur
+        public override FigureBase GetFigure
         {
             get
             {
