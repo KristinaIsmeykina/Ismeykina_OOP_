@@ -137,7 +137,6 @@ namespace Model
                 added = 2;
             }
             double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180) / added;
-            //TODO: Теряется точность ++.
             return baseArea * Height;
         }
 

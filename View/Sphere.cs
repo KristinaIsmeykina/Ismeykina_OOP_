@@ -32,7 +32,6 @@ namespace Model
         ///  <inheritdoc />
         public override double GetVolume()
         {
-            //TODO: Теряется точность ++.
             return 4 * Math.PI * Math.Pow(Radius, 3) / 3;
         }
 

@@ -44,6 +44,7 @@ namespace Model
         protected static double GetValue(int firstNumber, int secondNumber)
         {
             var random = new Random();
+            //TODO: round
             double result = Math.Round(random.NextDouble() * secondNumber + firstNumber, 3);
             return result;
         }

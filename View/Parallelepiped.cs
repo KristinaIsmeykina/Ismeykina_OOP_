@@ -117,7 +117,6 @@ namespace Model
         public override double GetVolume()
         {
             double baseArea = FirstSide * SecondSide * Math.Sin(Angle * Math.PI / 180);
-            //TODO: Теряется точность++.
             return baseArea * Height;
         }
 
