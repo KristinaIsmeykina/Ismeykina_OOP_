@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace View
 {
-    //TODO: XML ++
     /// <summary>
     /// Класс Pyramid UserControl
     /// </summary>
@@ -30,8 +29,7 @@ namespace View
             AngleOfSidesTextBox.TextChanged += TextBox_TextChanged;
             NumberOfCornersComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-
-        //TODO: XML++
+        
         ///< inheritdoc />
         public override FigureBase GetFigure
         {

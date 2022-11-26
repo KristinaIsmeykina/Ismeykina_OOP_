@@ -11,7 +11,6 @@ using Model;
 
 namespace View
 {
-    //TODO: RSDN
     /// <summary>
     /// Класс FigureBase UserControl
     /// </summary>
@@ -43,16 +42,9 @@ namespace View
 
             else if (double.TryParse(value, out var tmpValue))
             {
-                if (tmpValue > 0)
-                {
-                    errorMessage = "";
-                }
-                //TODO: RSDN ++
-                else
-                {
-                    errorMessage = "Value must be positive";
-                }    
-                    
+                errorMessage = tmpValue > 0 
+                    ? "" 
+                    : "Value must be positive";
             }
 
             else

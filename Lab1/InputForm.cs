@@ -22,8 +22,6 @@ namespace View
         /// </summary>
         public FigureBase FigureBase { get; private set; }
 
-
-        //TODO: Зачем тут свойство?++
         /// <summary>
         /// выбранный radiobutton
         /// </summary>
@@ -50,7 +48,7 @@ namespace View
             SphereRadioButton.CheckedChanged += RadioButton_CheckedChanged;
             PyramidRadioButton.CheckedChanged += RadioButton_CheckedChanged;
             ParallelepipedRadioButton.CheckedChanged += RadioButton_CheckedChanged;
-            //TODO: Почему это в конструкторе, а не сразу при инициализации
+
             _radioButtonToUserControl = new Dictionary<RadioButton, FigureBaseUserControl>()
             {
                 {SphereRadioButton, sphereUserControl},
