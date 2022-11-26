@@ -151,6 +151,7 @@ namespace View
             }
             DialogResult = DialogResult.OK;
         }
-    }
 #endif
+    }
+
 }

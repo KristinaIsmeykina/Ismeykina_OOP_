@@ -40,7 +40,9 @@ namespace View
             this.RadiusTextBox = new System.Windows.Forms.TextBox();
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+# if DEBUG
             this.AddRandomFigureButton = new System.Windows.Forms.Button();
+#endif
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pyramidUserControl = new View.PyramidUserControl();
             this.parallelepipedUserControl = new View.ParallelepipedUserControl();
@@ -149,6 +151,7 @@ namespace View
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+#if DEBUG
             // AddRandomFigureButton
             // 
             this.AddRandomFigureButton.Location = new System.Drawing.Point(57, 222);
@@ -159,6 +162,7 @@ namespace View
             this.AddRandomFigureButton.UseVisualStyleBackColor = true;
             this.AddRandomFigureButton.Click += new System.EventHandler(this.AddRandomFigureButton_Click);
             // 
+#endif
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -192,7 +196,9 @@ namespace View
             this.Controls.Add(this.pyramidUserControl);
             this.Controls.Add(this.parallelepipedUserControl);
             this.Controls.Add(this.sphereUserControl);
+#if DEBUG
             this.Controls.Add(this.AddRandomFigureButton);
+#endif
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.SelectFigureGroupBox);
@@ -225,11 +231,12 @@ namespace View
         private System.Windows.Forms.Button CancelButton;
 #if DEBUG
         private System.Windows.Forms.Button AddRandomFigureButton;
+#endif
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private PyramidUserControl pyramidUserControl1;
         private PyramidUserControl pyramidUserControl;
         private ParallelepipedUserControl parallelepipedUserControl;
         private SphereUserControl sphereUserControl;
-#endif
+
     }
 }
