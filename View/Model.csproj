@@ -49,5 +49,8 @@
     <Compile Include="Pyramid.cs" />
     <Compile Include="Sphere.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Lab5\LabWork5_Ismeykina.docx" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
